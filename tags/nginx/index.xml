@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>nginx on Sebastian Korotkiewicz - Tech{{log}}</title><link>http://localhost:1313/tags/nginx/</link><description>Recent content in nginx on Sebastian Korotkiewicz - Tech{{log}}</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 23 Feb 2020 17:43:31 +0200</lastBuildDate><atom:link href="http://localhost:1313/tags/nginx/index.xml" rel="self" type="application/rss+xml"/><item><title>Create a Tor Website with Nginx and PHP</title><link>http://localhost:1313/techlog/create-a-tor-website-with-nginx-and-php/</link><pubDate>Sun, 23 Feb 2020 17:43:31 +0200</pubDate><guid>http://localhost:1313/techlog/create-a-tor-website-with-nginx-and-php/</guid><description>li { padding-bottom: 5px; } Step 1: Install Debian Prepare Debian to install https packages sudo apt install apt-transport-https Step 2: Install Nginx and PHP sudo apt install nginx php7.3-fpm sudo rm /etc/nginx/sites-enabled/default sudo nano /etc/nginx/sites-enabled/default Add the followings to the new /etc/nginx/sites-enabled/default and save: server { listen 127.0.0.1:8080 default_server; server_name localhost; root /var/www/tor/public; index index.php index.html index.htm; server_tokens off; location / { allow 127.0.0.1; deny all; try_files $uri $uri/ /index.</description></item><item><title>Stream Live with Nginx</title><link>http://localhost:1313/techlog/stream-live-with-nginx/</link><pubDate>Sun, 26 May 2019 22:39:51 +0200</pubDate><guid>http://localhost:1313/techlog/stream-live-with-nginx/</guid><description>Prepare working directory mkdir stream-live &amp;amp;&amp;amp; cd stream-live Download nginx Latest nginx can be downloaded from this page.
+wget http://nginx.org/download/nginx-1.14.0.tar.gz tar -xf nginx-1.14.0.tar.gz Download modules git clone https://github.com/sergey-dryabzhinsky/nginx-rtmp-module.git git clone https://github.com/kaltura/nginx-vod-module Compile nginx cd nginx-1.14.0 ./configure --with-http_ssl_module --with-http_stub_status_module --add-module=/path/to/nginx-rtmp-module/ --add-module=/path/to/nginx-vod-module --prefix=/usr/local/nginx-streaming/ make -j 1 make install Configure nginx for stream video with hls via http and rtmp cd /usr/local/nginx-streaming/conf ; nano nginx.conf
+worker_processes auto; events { worker_connections 1024; } # RTMP configuration rtmp { server { listen 1935; # Listen on standard RTMP port chunk_size 4000; application show { live on; record off; hls on; hls_path /mnt/hls/; hls_fragment 5; on_publish http://pass.</description></item><item><title>Stream VoD with Nginx</title><link>http://localhost:1313/techlog/stream-vod-with-nginx/</link><pubDate>Sat, 09 Feb 2019 19:57:34 +0200</pubDate><guid>http://localhost:1313/techlog/stream-vod-with-nginx/</guid><description>Prepare working directory mkdir stream &amp;amp;&amp;amp; cd stream
+Download nginx Latest nginx can be downloaded from this page.
+wget http://nginx.org/download/nginx-1.14.0.tar.gz
+tar -xf nginx-1.14.0.tar.gz
+Download modules git clone https://github.com/sergey-dryabzhinsky/nginx-rtmp-module.git
+git clone https://github.com/kaltura/nginx-vod-module
+Compile nginx cd nginx-1.14.0
+./configure --with-http_ssl_module --add-module=/path/to/nginx-rtmp-module/ --add-module=/path/to/nginx-vod-module --prefix=/usr/local/nginx-streaming/
+make -j 1
+make install
+Configure nginx for stream video files with hls via http cd /usr/local/nginx-streaming/conf ; nano nginx.conf
+worker_processes auto; events { use epoll; } #enable stream vod on rtmp if you want this #rtmp { # server { # listen 1935; # # chunk_size 4000; # # # video on demand for mp4 files # application vod2 { # play /var/mp4s; # } # } #} http { log_format main &amp;#39;$remote_addr $remote_user [$time_local] &amp;#34;$request&amp;#34; &amp;#39; &amp;#39;$status &amp;#34;$http_referer&amp;#34; &amp;#34;$http_user_agent&amp;#34;&amp;#39;; default_type application/octet-stream; include /usr/local/nginx-streaming/conf/mime.</description></item><item><title>Nagios with Nginx</title><link>http://localhost:1313/techlog/nagios-with-nginx/</link><pubDate>Mon, 26 Jun 2017 18:10:58 +0200</pubDate><guid>http://localhost:1313/techlog/nagios-with-nginx/</guid><description>server { listen 80; server_name my.example.com; access_log /var/log/nginx/nagios.access.log; error_log /var/log/nginx/nagios.error.log info; expires 31d; #rewrite ^/nagios3/(.*)$ /$1 break; rewrite ^/nagios3/(.*)$ /$1; root /usr/share/nagios3/htdocs; index index.php index.html; auth_basic &amp;#34;Nagios Restricted Access&amp;#34;; auth_basic_user_file /etc/nagios3/htpasswd.users; location /stylesheets { alias /etc/nagios3/stylesheets; } location ~ \.cgi$ { root /usr/lib/cgi-bin/nagios3; rewrite ^/cgi-bin/nagios3/(.*)$ /$1; include /etc/nginx/fastcgi_params; fastcgi_param AUTH_USER $remote_user; fastcgi_param REMOTE_USER $remote_user; fastcgi_param SCRIPT_FILENAME /usr/lib/cgi-bin/nagios3$fastcgi_script_name; fastcgi_pass unix:/var/run/fcgiwrap.socket; } location ~ \.php$ { try_files $uri =404; fastcgi_split_path_info ^(.+\.php)(/.+)$; fastcgi_pass unix:/var/run/php5-fpm.</description></item><item><title>nginx + cgit + debian = one host</title><link>http://localhost:1313/techlog/nginx-cgit-debian-one-host/</link><pubDate>Fri, 20 Jan 2017 18:10:58 +0200</pubDate><guid>http://localhost:1313/techlog/nginx-cgit-debian-one-host/</guid><description>root@raspberrypi:/var/www# cat /etc/nginx/sites-enabled/www
+server {
+listen 80;
+server_name home.control;
+root /var/www;
+index index.php index.html index.htm;
+location / {
+try_files $uri $uri/ =404;
+autoindex on;
+}
+location ~ \.php$ {
+try_files $uri =404;
+fastcgi_split_path_info ^(.+\.php)(/.+)$;
+fastcgi_pass unix:/var/run/php5-fpm.sock;
+fastcgi_index index.php;
+fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+include fastcgi_params;
+}
+location /git {
+gzip off;
+alias /usr/local/cgit/share;
+try_files $uri @cgit;
+}
+location @cgit {
+fastcgi_pass unix:/tmp/cgi.sock;
+fastcgi_param QUERY_STRING $query_string;
+fastcgi_param REQUEST_METHOD $request_method;
+fastcgi_param CONTENT_TYPE $content_type;
+fastcgi_param CONTENT_LENGTH $content_length;
+fastcgi_param REQUEST_URI $request_uri;
+fastcgi_param DOCUMENT_URI $document_uri;
+fastcgi_param SERVER_PROTOCOL $server_protocol;
+fastcgi_param GATEWAY_INTERFACE CGI/1.</description></item><item><title>Nginx configuration for SSH tunnel</title><link>http://localhost:1313/techlog/nginx-configuration-for-ssh-tunnel/</link><pubDate>Sun, 09 Oct 2016 21:06:32 +0000</pubDate><guid>http://localhost:1313/techlog/nginx-configuration-for-ssh-tunnel/</guid><description>upstream tunnel {
+server 127.0.0.1:3000;
+}
+server {
+listen 80;
+server_name dev.server.tld www.dev.server.tld;
+#optional
+location / {
+proxy_set_header X-Real-IP $remote_addr;
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+proxy_set_header Host $http_host;
+proxy_redirect off;
+proxy_pass http://tunnel;
+}
+}
+ssh -vnNT -R 3000:localhost:80 root@server.tld</description></item><item><title>Nginx proxy_pass</title><link>http://localhost:1313/techlog/nginx-proxy_pass/</link><pubDate>Thu, 09 May 2013 09:48:18 +0000</pubDate><guid>http://localhost:1313/techlog/nginx-proxy_pass/</guid><description>From synchtube.itunix.eu:1337 to synchtube.itunix.eu
+server { # listen 66.225.195.83; server_name synchtube.itunix.eu; access_log /var/log/nginx/access.log; error_log /var/log/nginx/error.log; location / { proxy_pass http://synchtube.itunix.eu:1337; proxy_next_upstream error timeout invalid_header http_500 http_502 http_503 http_504; proxy_redirect off; proxy_buffering off; proxy_set_header Host static.example.com; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; } }</description></item></channel></rss>

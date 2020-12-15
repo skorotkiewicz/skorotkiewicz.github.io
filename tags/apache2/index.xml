@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>apache2 on Sebastian Korotkiewicz - Tech{{log}}</title><link>http://localhost:1313/tags/apache2/</link><description>Recent content in apache2 on Sebastian Korotkiewicz - Tech{{log}}</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 09 Oct 2019 04:03:39 +0200</lastBuildDate><atom:link href="http://localhost:1313/tags/apache2/index.xml" rel="self" type="application/rss+xml"/><item><title>Install Searx on Apache2 and uWSGI</title><link>http://localhost:1313/techlog/install-searx-on-apache2-and-uwsgi/</link><pubDate>Wed, 09 Oct 2019 04:03:39 +0200</pubDate><guid>http://localhost:1313/techlog/install-searx-on-apache2-and-uwsgi/</guid><description>uwsgi Install packages:
+sudo apt-get install uwsgi uwsgi-plugin-python Add searx user:
+useradd searx Create the configuration file /etc/uwsgi/apps-enabled/searx.ini with this content:
+[uwsgi] # Who will run the code uid = searx gid = searx # Number of workers (usually CPU count) workers = 4 # The right granted on the created socket chmod-socket = 666 # Plugin to use and interpretor config single-interpreter = true master = true plugin = python3 lazy-apps = true enable-threads = true # Module to import module = searx.</description></item><item><title>Gitlab with Apache2 Reverse Proxy</title><link>http://localhost:1313/techlog/gitlab-with-apache2-reverse-proxy/</link><pubDate>Mon, 25 Jun 2018 20:02:13 +0200</pubDate><guid>http://localhost:1313/techlog/gitlab-with-apache2-reverse-proxy/</guid><description>This is my config for gitlab with apache2 reverse proxy, Web IDE works!
+&amp;lt;VirtualHost *:80&amp;gt;
+ServerName gitlab.itunix.eu
+ServerAlias gitlab.itunix.eu mt.itunix.eu www.gitlab.itunix.eu www.mt.itunix.eu
+ServerAdmin skorotkiewicz@gmail.com
+RewriteEngine on
+ReWriteCond %{SERVER_PORT} !^443$
+RewriteRule ^/(.*) https://gitlab.itunix.eu/$1 [NC,R,L]
+&amp;lt;/VirtualHost&amp;gt;
+&amp;lt;VirtualHost *:443&amp;gt;
+ServerName gitlab.itunix.eu
+ServerAlias gitlab.itunix.eu www.gitlab.itunix.eu
+ServerAdmin skorotkiewicz@gmail.com
+ProxyPass / http://localhost:1234/ nocanon
+ProxyPassReverse / http://localhost:1234/
+ProxyPreserveHost On
+AllowEncodedSlashes NoDecode
+SSLEngine on
+SSLCertificateFile /etc/letsencrypt/live/itunix.eu-0001/cert.pem
+SSLCertificateKeyFile /etc/letsencrypt/live/itunix.eu-0001/privkey.pem
+SSLCertificateChainFile /etc/letsencrypt/live/itunix.eu-0001/fullchain.pem
+ErrorLog /var/log/apache2/error_gitlab.log
+CustomLog /var/log/apache2/access_gitlab.log combined
+&amp;lt;/VirtualHost&amp;gt;</description></item></channel></rss>

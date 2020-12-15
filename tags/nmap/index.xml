@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>nmap on Sebastian Korotkiewicz - Tech{{log}}</title><link>http://localhost:1313/tags/nmap/</link><description>Recent content in nmap on Sebastian Korotkiewicz - Tech{{log}}</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 02 Oct 2012 11:35:55 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/nmap/index.xml" rel="self" type="application/rss+xml"/><item><title>nmap - scan an ip range for a single open port</title><link>http://localhost:1313/techlog/nmap-scan-an-ip-range-for-a-single-open-port/</link><pubDate>Tue, 02 Oct 2012 11:35:55 +0000</pubDate><guid>http://localhost:1313/techlog/nmap-scan-an-ip-range-for-a-single-open-port/</guid><description>nmap -p80 192.168.0.0/24 -oG - | grep 80/open Example
+[modinfo@arch-pc ~]$ nmap -p80 192.168.0.0/24 -oG - | grep 80/open
+Host: 192.168.0.1 (router) Ports: 80/open/tcp//http///
+Host: 192.168.0.100 (aaa) Ports: 80/open/tcp//http///
+Host: 192.168.0.126 (nsa310) Ports: 80/open/tcp//http///
+Host: 192.168.0.133 (arch-pc) Ports: 80/open/tcp//http///</description></item></channel></rss>

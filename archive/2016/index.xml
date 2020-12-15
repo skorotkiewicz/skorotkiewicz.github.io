@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2016 on Sebastian Korotkiewicz - Tech{{log}}</title><link>http://localhost:1313/archive/2016/</link><description>Recent content in 2016 on Sebastian Korotkiewicz - Tech{{log}}</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 05 Dec 2016 18:40:24 +0000</lastBuildDate><atom:link href="http://localhost:1313/archive/2016/index.xml" rel="self" type="application/rss+xml"/><item><title>Run programs in the screen at startup using systemd</title><link>http://localhost:1313/techlog/run-programs-in-the-screen-at-startup-using-systemd/</link><pubDate>Mon, 05 Dec 2016 18:40:24 +0000</pubDate><guid>http://localhost:1313/techlog/run-programs-in-the-screen-at-startup-using-systemd/</guid><description>systemd is very simple and easy to use, here you can see how to run the program in a screen with the specified user
+create new file
+nano /etc/systemd/system/radio.service and put it into a new file
+[Unit] Description=Radio DJ After=network.target [Service] Type=oneshot ExecStart=/usr/bin/screen -dmS screennameradio /etc/liquidsoap/radio-pro.liq ExecStop=/usr/bin/screen -S screennameradio -X quit RemainAfterExit=yes User=radiodj [Install] WantedBy=multi-user.target and, of course
+systemctl enable radio systemctl start radio</description></item><item><title>Nginx configuration for SSH tunnel</title><link>http://localhost:1313/techlog/nginx-configuration-for-ssh-tunnel/</link><pubDate>Sun, 09 Oct 2016 21:06:32 +0000</pubDate><guid>http://localhost:1313/techlog/nginx-configuration-for-ssh-tunnel/</guid><description>upstream tunnel {
+server 127.0.0.1:3000;
+}
+server {
+listen 80;
+server_name dev.server.tld www.dev.server.tld;
+#optional
+location / {
+proxy_set_header X-Real-IP $remote_addr;
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+proxy_set_header Host $http_host;
+proxy_redirect off;
+proxy_pass http://tunnel;
+}
+}
+ssh -vnNT -R 3000:localhost:80 root@server.tld</description></item><item><title>ffmpeg on Raspbian - Raspberry Pi</title><link>http://localhost:1313/techlog/ffmpeg-on-raspbian-raspberry-pi/</link><pubDate>Fri, 30 Sep 2016 16:44:33 +0000</pubDate><guid>http://localhost:1313/techlog/ffmpeg-on-raspbian-raspberry-pi/</guid><description>First for all we need to build and install x264
+git clone --depth 1 git://git.videolan.org/x264 cd x264 ./configure --host=arm-unknown-linux-gnueabi --enable-static --disable-opencl make -j 4 sudo make install For mp3 support
+wget http://downloads.sourceforge.net/project/lame/lame/3.99/lame-3.99.tar.gz tar xzvf lame-3.99.tar.gz cd lame-3.99 ./configure make make install For Hardware Encoding
+add --enable-omx --enable-omx-rpi to ./configure options compile use encoder option -c:v h264_omx Then build and make ffmpeg
+git clone --depth=1 git://source.ffmpeg.org/ffmpeg.git cd ffmpeg ./configure --arch=armel --target-os=linux --enable-gpl --enable-libx264 --enable-libmp3lame --enable-nonfree --enable-omx --enable-omx-rpi make -j4 sudo make install ldconfig It takes just 25 minutes on a Raspberry Pi 3.</description></item><item><title>Gateway VPN - Raspberry Pi Router</title><link>http://localhost:1313/techlog/gateway-vpn-raspberry-pi-router/</link><pubDate>Mon, 26 Sep 2016 18:10:58 +0200</pubDate><guid>http://localhost:1313/techlog/gateway-vpn-raspberry-pi-router/</guid><description># nano /etc/sysctl.conf
+# net.ipv4.ip_forward=1
+# sysctl -p
+# iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+# iptables -t nat -A POSTROUTING -o tap0 -j MASQUERADE
+Enable VPN at boot # systemctl enable openvpn@Japan
+nano /etc/default/openvpn
+#AUTOSTART=&amp;quot;Japan&amp;quot;
+##################################################
+cron: @reboot sh /etc/openvpn/startRouting.sh
+cat /etc/openvpn/startRouting.sh iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+iptables -t nat -A POSTROUTING -o tap0 -j MASQUERADE
+cron: 0 0 * * * vnstati -i eth0 -o /var/www/bandwidth/current_s.</description></item><item><title>Fixing Lastpass &amp; Firefox</title><link>http://localhost:1313/techlog/fixing-lastpass-firefox/</link><pubDate>Sat, 12 Mar 2016 10:59:46 +0200</pubDate><guid>http://localhost:1313/techlog/fixing-lastpass-firefox/</guid><description>If you are having problems with your browser locking up whenever you’re entering a password perform the following change.
+Click the LastPass icon in your browser, and select preferences.
+Then click on Notifications in the left hand menu.
+Finally un-select the &amp;ldquo;Click Icons in Fields&amp;rdquo; option.
+The interactive bits in the fields seems to be the core cause of the browser slow down / hangs.</description></item><item><title>'Music' from /dev/urandom</title><link>http://localhost:1313/techlog/music-from-/dev/urandom/</link><pubDate>Sun, 10 Jan 2016 18:10:58 +0200</pubDate><guid>http://localhost:1313/techlog/music-from-/dev/urandom/</guid><description>cat /dev/urandom | hexdump -v -e &amp;#39;/1 &amp;#34;%u\n&amp;#34;&amp;#39; | awk &amp;#39;{ split(&amp;#34;0,2,4,5,7,9,11,12&amp;#34;,a,&amp;#34;,&amp;#34;); for (i = 0; i &amp;lt; 1; i+= 0.0001) printf(&amp;#34;%08X\n&amp;#34;, 100*sin(1382*exp((a[$1 % 8]/12)*log(2))*i)) }&amp;#39; | xxd -r -p | aplay -c 2 -f S32_LE -r 16000</description></item><item><title>Convert directory to QEMU/KVM virtual disk image</title><link>http://localhost:1313/techlog/convert-directory-to-qemu/kvm-virtual-disk-image/</link><pubDate>Fri, 01 Jan 2016 18:10:58 +0200</pubDate><guid>http://localhost:1313/techlog/convert-directory-to-qemu/kvm-virtual-disk-image/</guid><description>First, create a raw image of the required size. I&amp;rsquo;ll assume 10G is enough. Using seek creates a sparse file, which saves space.
+dd if=/dev/null of=example.img bs=1M seek=10240
+Next, create a filesystem on it.
+mkfs.ext4 -F example.img
+(Note that you need the -F option for mkfs.ext4 to operate on a file as opposed to a disk partition)
+Then, mount it.
+mkdir /mnt/example
+mount -t ext4 -o loop example.img /mnt/example
+Now you can copy your files to /mnt/example.</description></item><item><title>debootstrap debian chroot</title><link>http://localhost:1313/techlog/debootstrap-debian-chroot/</link><pubDate>Fri, 01 Jan 2016 18:10:58 +0200</pubDate><guid>http://localhost:1313/techlog/debootstrap-debian-chroot/</guid><description># debootstrap --arch i386 squeeze /mnt http://ftp.halifax.rwth-aachen.de/debian
+# chroot /mnt
+# apt-get install linux-image-686
+# apt-get install grub2
+(answer to Continue without installing GRUB? with Yes)
+# passwd root
+(put any password you want. If you miss this step, you are not logging into your new system ;)
+# exit
+# mount -o bind /dev/ /mnt/pendrive/dev/
+# mount -o bind /proc/ /mnt/pendrive/proc/
+# mount -o bind /sys/ /mnt/pendrive/sys/
+# chroot /mnt
+# grub-install /dev/sdc
+Installation finished.</description></item><item><title>Firefox Language</title><link>http://localhost:1313/techlog/firefox-language/</link><pubDate>Fri, 01 Jan 2016 18:10:58 +0200</pubDate><guid>http://localhost:1313/techlog/firefox-language/</guid><description> install your language file from here about:config -&amp;gt; 'general.useragent.locale': 'de' restart Firefox http://ftp.mozilla.org/pub/firefox/nightly/latest-mozilla-central-l10n/linux-x86_64/xpi/
+http://ftp.mozilla.org/pub/firefox/nightly/latest-mozilla-central-l10n</description></item><item><title>How to configure iptables for openvpn</title><link>http://localhost:1313/techlog/how-to-configure-iptables-for-openvpn/</link><pubDate>Fri, 01 Jan 2016 18:10:58 +0200</pubDate><guid>http://localhost:1313/techlog/how-to-configure-iptables-for-openvpn/</guid><description>If you have installed the openvpn server and iptable is blocking the service by default then use these configurations for openvpn to function properly. First let&amp;rsquo;s allow the tcp connection on the openvpn port. If you are using udp or another port number then change this line accordingly.
+iptables -A INPUT -i eth0 -m state --state NEW -p udp --dport 1194 -j ACCEPT
+Allow TUN interface connections to OpenVPN server</description></item><item><title>PHP bot to get wikipedia definitions</title><link>http://localhost:1313/techlog/php-bot-to-get-wikipedia-definitions/</link><pubDate>Fri, 01 Jan 2016 18:10:58 +0200</pubDate><guid>http://localhost:1313/techlog/php-bot-to-get-wikipedia-definitions/</guid><description>&amp;lt;?php function wikidefinition($s) { $url = &amp;#34;http://it.wikipedia.org/w/api.php?action=opensearch&amp;amp;search=&amp;#34;.urlencode($s).&amp;#34;&amp;amp;format=xml&amp;amp;limit=1&amp;#34;; $ch = curl_init($url); curl_setopt($ch, CURLOPT_HTTPGET, TRUE); curl_setopt($ch, CURLOPT_POST, FALSE); curl_setopt($ch, CURLOPT_HEADER, false); curl_setopt($ch, CURLOPT_NOBODY, FALSE); curl_setopt($ch, CURLOPT_VERBOSE, FALSE); curl_setopt($ch, CURLOPT_REFERER, &amp;#34;&amp;#34;); curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE); curl_setopt($ch, CURLOPT_MAXREDIRS, 4); curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE); curl_setopt($ch, CURLOPT_USERAGENT, &amp;#34;Mozilla/5.0 (Windows; U; Windows NT 6.1; he; rv:1.9.2.8) Gecko/20100722 Firefox/3.6.8&amp;#34;); $page = curl_exec($ch); $xml = simplexml_load_string($page); if((string)$xml-&amp;gt;Section-&amp;gt;Item-&amp;gt;Description) { return array((string)$xml-&amp;gt;Section-&amp;gt;Item-&amp;gt;Text, (string)$xml-&amp;gt;Section-&amp;gt;Item-&amp;gt;Description, (string)$xml-&amp;gt;Section-&amp;gt;Item-&amp;gt;Url); } else { return &amp;#34;&amp;#34;; } }</description></item><item><title>Saving Iptables Firewall Rules Permanent</title><link>http://localhost:1313/techlog/saving-iptables-firewall-rules-permanent/</link><pubDate>Fri, 01 Jan 2016 18:10:58 +0200</pubDate><guid>http://localhost:1313/techlog/saving-iptables-firewall-rules-permanent/</guid><description>run as root
+sudo -s
+Save current firewall rules to file
+iptables-save &amp;gt; /etc/firewall.conf
+INCLUDE ON BOOT
+echo '#!/bin/sh' &amp;gt; /etc/network/if-up.d/iptables
+echo &amp;quot;iptables-restore &amp;lt; /etc/firewall.conf&amp;quot; &amp;gt;&amp;gt; /etc/network/if-up.d/iptables
+chmod +x /etc/network/if-up.d/iptables
+SAVE ON SHUTDOWN/REBOOT
+echo '#!/bin/sh' &amp;gt; /etc/network/if-down.d/iptables
+echo &amp;quot;iptables-save &amp;gt; /etc/firewall.conf&amp;quot; &amp;gt;&amp;gt; /etc/network/if-down.d/iptables
+chmod +x /etc/network/if-down.d/iptables
+is working for me
+if you what to save your iptables rules after an change to iptables just run below.. but it will run the same command on reboot or shutdown.</description></item><item><title>Simple server backup</title><link>http://localhost:1313/techlog/simple-server-backup/</link><pubDate>Fri, 01 Jan 2016 18:10:58 +0200</pubDate><guid>http://localhost:1313/techlog/simple-server-backup/</guid><description>sudo mount /dev/xxxx -o remount-ro /mnt
+mkdir /backup; cd /backup
+tar --exclude='./backup' --exclude='./mnt/backup' -cvjpf mybackup.tar.bz2 /mnt
+Then you unpack with behavior permission
+sudo tar -xvjpf mybackup.tar.bz2
+Creating A Backup All Datebases And Restore mysqldump -u root -p --all-databases &amp;gt; all_databases.sql
+mysqldump -u root -p --all-databases &amp;lt; all_databases.sql
+Creating A Backup Single Datebase And Restore mysqldump -u root -p db_name &amp;gt; db_file.sql
+mysqldump -u root -p db_name &amp;lt; db_file.sql
+Split larger files into smaller parts?</description></item><item><title>ssh tunnel to localhost</title><link>http://localhost:1313/techlog/ssh-tunnel-to-localhost/</link><pubDate>Fri, 01 Jan 2016 18:10:58 +0200</pubDate><guid>http://localhost:1313/techlog/ssh-tunnel-to-localhost/</guid><description>ssh -R 9000:192.168.1.13:80 -N root@example.com</description></item><item><title>Weechat BNC</title><link>http://localhost:1313/techlog/weechat-bnc/</link><pubDate>Fri, 01 Jan 2016 18:10:58 +0200</pubDate><guid>http://localhost:1313/techlog/weechat-bnc/</guid><description>openssl s_client -connect znc.itunix.cloud:6697 &amp;lt;/dev/null 2&amp;gt;/dev/null | openssl x509 -in /dev/stdin -noout -fingerprint -sha256 | sed s/://g | cut -c 20-
+5A038025E789ED2F1032EB15XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX08FA693
+/server add BNC znc.itunix.cloud/6697 -ssl -username=l__q/freenode -password=XXXXXXXXXXXX -autoconnect
+/set irc.server.BNC.ssl_fingerprint 5A038025E789ED2F1032EB15XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX08FA693
+/connect BNC
+/save</description></item></channel></rss>

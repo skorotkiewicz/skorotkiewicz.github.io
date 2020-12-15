@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>md5 on Sebastian Korotkiewicz - Tech{{log}}</title><link>http://localhost:1313/tags/md5/</link><description>Recent content in md5 on Sebastian Korotkiewicz - Tech{{log}}</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 15 Dec 2012 10:42:47 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/md5/index.xml" rel="self" type="application/rss+xml"/><item><title>Create md5 from string im Linux</title><link>http://localhost:1313/techlog/create-md5-from-string-im-linux/</link><pubDate>Sat, 15 Dec 2012 10:42:47 +0000</pubDate><guid>http://localhost:1313/techlog/create-md5-from-string-im-linux/</guid><description>How to install?
+Create new file
+nano /usr/bin/md5 copy&amp;amp;paste code to /usr/bin/md5
+chmod:
+chmod +x /usr/bin/md5 Code:
+#!/bin/sh if [ $1 ] then hash=&amp;quot;$(echo -n &amp;quot;$1&amp;quot; | md5sum )&amp;quot; echo &amp;quot;$hash&amp;quot; else echo &amp;quot;Example usage: md5 &amp;lt;you-string&amp;gt;&amp;quot; fi Usage and Output:
+root@host:~# md5 sebastian c2d628ba98ed491776c9335e988e2e3b &amp;amp;#8211;</description></item></channel></rss>

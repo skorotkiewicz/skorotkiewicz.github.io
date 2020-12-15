@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>spam on Sebastian Korotkiewicz - Tech{{log}}</title><link>http://localhost:1313/tags/spam/</link><description>Recent content in spam on Sebastian Korotkiewicz - Tech{{log}}</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 01 Jan 2015 18:10:58 +0200</lastBuildDate><atom:link href="http://localhost:1313/tags/spam/index.xml" rel="self" type="application/rss+xml"/><item><title>StopForumSpam.com -> iptables</title><link>http://localhost:1313/techlog/stopforumspam.com-iptables/</link><pubDate>Thu, 01 Jan 2015 18:10:58 +0200</pubDate><guid>http://localhost:1313/techlog/stopforumspam.com-iptables/</guid><description>Start with the dependencies: apt-get install zip unzip ipset
+Then add this to your existing iptables firewall script: ipset create sfs_block hash:net
+iptables -I FORWARD -p tcp --dport 80:443 -m set --match-set sfs_block src -j DROP
+Then a script that updates the ipset: ipset destroy tempset
+ipset create tempset hash:net
+cd /tmp
+wget -N http://www.stopforumspam.com/downloads/listed_ip_7.zip
+unzip listed_ip_7.zip
+sed 's:^:add tempset :' listed_ip_7.txt &amp;gt; listed_ip_7_importfile.txt
+ipset restore &amp;lt; listed_ip_7_importfile.txt
+rm listed_ip_7_importfile.txt
+ipset swap tempset sfs_block</description></item></channel></rss>

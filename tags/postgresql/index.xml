@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>postgresql on Sebastian Korotkiewicz - Tech{{log}}</title><link>http://localhost:1313/tags/postgresql/</link><description>Recent content in postgresql on Sebastian Korotkiewicz - Tech{{log}}</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 08 Sep 2018 20:14:53 +0200</lastBuildDate><atom:link href="http://localhost:1313/tags/postgresql/index.xml" rel="self" type="application/rss+xml"/><item><title>Create user, datebase and grant permission in MySQL/PostgreSQL</title><link>http://localhost:1313/techlog/create-user-datebase-and-grant-permission-in-mysql/postgresql/</link><pubDate>Sat, 08 Sep 2018 20:14:53 +0200</pubDate><guid>http://localhost:1313/techlog/create-user-datebase-and-grant-permission-in-mysql/postgresql/</guid><description>MySQL 1.Login to MySQL
+mysql -u root -p
+2.Create new user
+CREATE USER 'forum'@'localhost' IDENTIFIED BY 'password';
+3.Create datebase for user
+CREATE DATABASE forum;
+4.Grant all permission for user datebase
+GRANT ALL PRIVILEGES ON forum.* TO 'forum'@'localhost';
+PostgreSQL 1.Creating user
+sudo -u postgres createuser &amp;lt;username&amp;gt;
+2.Creating Database
+sudo -u postgres createdb &amp;lt;dbname&amp;gt;
+3.Giving the user a password
+sudo -u postgres psql
+psql=# alter user &amp;lt;username&amp;gt; with encrypted password '&amp;lt;password&amp;gt;';
+4.Granting privileges on database</description></item></channel></rss>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2017 on Sebastian Korotkiewicz - Tech{{log}}</title><link>http://localhost:1313/archive/2017/</link><description>Recent content in 2017 on Sebastian Korotkiewicz - Tech{{log}}</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 24 Dec 2017 15:33:29 +0200</lastBuildDate><atom:link href="http://localhost:1313/archive/2017/index.xml" rel="self" type="application/rss+xml"/><item><title>Jak ugotować jajko idealne</title><link>http://localhost:1313/techlog/jak-ugotowa%C4%87-jajko-idealne/</link><pubDate>Sun, 24 Dec 2017 15:33:29 +0200</pubDate><guid>http://localhost:1313/techlog/jak-ugotowa%C4%87-jajko-idealne/</guid><description>Ważne jest, by jajka osiągnęły temperaturę pokojową, zanim zaczniemy je gotować. Gdybyśmy bowiem wrzucili je do gorącej wody prosto z lodówki, mogłyby popękać ich skorupka. Z tego samego powodu powinniśmy użyć małego rondelka i trzymać go na wolnym ogniu.
+Jak długo powinniśmy gotować jajka?
+Wszystko zależy bowiem od tego, jaki efekt chcemy uzyskać. Niektórzy z nas wolą jajka bardziej wodniste, inni lubią, gdy biało jest już lekko ścięte. Dlatego, zamiast stosować się do zaleceń z książki kucharskiej czy internetu, najlepiej samemu wypróbować ze stoperem, jaki czas gotowania będzie najlepszy, by jajko trafiało w nasze gusta.</description></item><item><title>How to add a Windows Firewall rule to enable client-to-client communication through OpenVPN</title><link>http://localhost:1313/techlog/how-to-add-a-windows-firewall-rule-to-enable-client-to-client-communication-through-openvpn/</link><pubDate>Sat, 09 Dec 2017 23:18:20 +0200</pubDate><guid>http://localhost:1313/techlog/how-to-add-a-windows-firewall-rule-to-enable-client-to-client-communication-through-openvpn/</guid><description>Open PowerShell with Administrator Privileges and type:
+check the path to your openvpn.exe! New-NetFirewallRule -DisplayName “OpenVPN allow Inbound” -Direction Inbound -Program %ProgramFiles%\OpenVPN\bin\openvpn.exe -RemoteAddress LocalSubnet -Action Allow New-NetFirewallRule -DisplayName “OpenVPN allow Outbound” -Direction Outbound -Program %ProgramFiles%\OpenVPN\bin\openvpn.exe -RemoteAddress LocalSubnet -Action Allow Set-NetFirewallProfile Public -DefaultInboundAction Allow -DefaultOutboundAction Allow from now every connected client should be able to ping you
+Optional: To see if it has been added open Windows Defender Firewall: wf.msc.
+that's all</description></item><item><title>A puzzle for 5 bitcoins</title><link>http://localhost:1313/techlog/a-puzzle-for-5-bitcoins/</link><pubDate>Wed, 06 Dec 2017 18:31:18 +0200</pubDate><guid>http://localhost:1313/techlog/a-puzzle-for-5-bitcoins/</guid><description>A few years ago a multilevel puzzle was published, in which there were 4.87 BTCs to win, now it was the last level and collected already 5BTC, calculated at the current rate of over $62770.00.
+The following image contains a private key to the address 1FLAMEN6rq2BqMqMnkUmsJBqCGWdwgVKcegd, the key will allow you to transfer the funds accumulated on it and use them for any purpose. Maybe someone will be able to brainstorm, reach a solution and make a little gift for a Christmas.</description></item><item><title>Remove all of the diacritics from a file</title><link>http://localhost:1313/techlog/remove-all-of-the-diacritics-from-a-file/</link><pubDate>Fri, 24 Nov 2017 16:29:35 +0200</pubDate><guid>http://localhost:1313/techlog/remove-all-of-the-diacritics-from-a-file/</guid><description>I like iconv as it handles all accents variations :
+cat non-ascii.txt | iconv -f utf8 -t ascii//TRANSLIT//IGNORE &amp;gt; ascii.txt</description></item><item><title>Facebook watches our messages from messenger.</title><link>http://localhost:1313/techlog/facebook-watches-our-messages-from-messenger./</link><pubDate>Mon, 06 Nov 2017 22:27:26 +0200</pubDate><guid>http://localhost:1313/techlog/facebook-watches-our-messages-from-messenger./</guid><description>How to get a 72h ban in a second after sending a message. By sending this exact photo to someone, we get a 72h ban (automatically?).</description></item><item><title>Configure mosquitto to use websockets</title><link>http://localhost:1313/techlog/configure-mosquitto-to-use-websockets/</link><pubDate>Sun, 05 Nov 2017 01:51:12 +0200</pubDate><guid>http://localhost:1313/techlog/configure-mosquitto-to-use-websockets/</guid><description>Add the following lines to /etc/mosquitto/mosquitto.conf in the &amp;ldquo;Default Listener&amp;rdquo; section: port 1883 listener 9001 protocol websockets</description></item><item><title>Docker - How to cleanup (unused) resources</title><link>http://localhost:1313/techlog/docker-how-to-cleanup-unused-resources/</link><pubDate>Mon, 09 Oct 2017 16:48:43 +0200</pubDate><guid>http://localhost:1313/techlog/docker-how-to-cleanup-unused-resources/</guid><description>Once in a while, you may need to cleanup resources (containers, volumes, images, networks) &amp;hellip;
+delete volumes // see: https://github.com/chadoe/docker-cleanup-volumes
+$ docker volume rm $(docker volume ls -qf dangling=true)
+$ docker volume ls -qf dangling=true | xargs -r docker volume rm
+delete networks $ docker network ls
+$ docker network ls | grep &amp;quot;bridge&amp;quot;
+$ docker network rm $(docker network ls | grep &amp;quot;bridge&amp;quot; | awk '/ / { print $1 }')
+remove docker images // see: http://stackoverflow.</description></item><item><title>fun with a friend's postcard</title><link>http://localhost:1313/techlog/fun-with-a-friends-postcard/</link><pubDate>Wed, 04 Oct 2017 17:08:44 +0200</pubDate><guid>http://localhost:1313/techlog/fun-with-a-friends-postcard/</guid><description>encryption of the message into zlib from codecs import encode from functools import reduce print reduce(encode, (&amp;#39;utf8&amp;#39;, &amp;#39;zlib&amp;#39;, &amp;#39;hex&amp;#39;), &amp;#34;this is my message on the postcard&amp;#34;) #output: 789c2bc9c82c5600a2dc4a85dcd4e2e2c4f45485fc3c85928c548582fce292e4c4a21400da1a0c9e output hex, save to file post.txt
+78 9c 2b c9 c8 2c 56 00 a2 dc 4a
+85 dc d4 e2 e2 c4 f4 54 85 fc 3c
+85 92 8c 54 85 82 fc e2 92 e4 c4
+a2 14 00 da 1a 0c 9e
+decryption of the message d = open(&amp;#34;post.</description></item><item><title>Dysleksja</title><link>http://localhost:1313/techlog/dysleksja/</link><pubDate>Tue, 12 Sep 2017 16:53:50 +0200</pubDate><guid>http://localhost:1313/techlog/dysleksja/</guid><description>Przyjaciel z dysleksją opisał mi, jak odczuwa czytanie lektury. Potrafi czytać, ale to wymaga sporej koncentracji, a litery wydają się &amp;ldquo;przeskakiwać&amp;rdquo;.
+Pamiętam jak czytałem artykuł o typoglikemii. Pomyślałem, pewnie można to zrobić interaktywnie na stronie z Javascriptem? Z pewnością tak.
+Dysleksja charakteryzuje się trudnościami w nauce płynnego czytania i dokładnego rozumienia tekstu, mimo normalnej inteligencji. Obejmuje to trudności w zakresie świadomości fonologicznej, dekodowania fonologicznego, szybkości przetwarzania, kodowania ortograficznego, słuchowej pamięci krótkotrwałej, umiejętności językowych/zrozumienia słownego i/lub szybkiego nazywania.</description></item><item><title>Radio station with RDS function on Raspberry Pi</title><link>http://localhost:1313/techlog/radio-station-with-rds-function-on-raspberry-pi/</link><pubDate>Mon, 04 Sep 2017 01:18:06 +0200</pubDate><guid>http://localhost:1313/techlog/radio-station-with-rds-function-on-raspberry-pi/</guid><description>Today I will demonstrate you how to install the FM radio transmitter on Raspberry Pi. It is not just a transmitter! It supports RDS function with all its options (PS, RT, TA/TP). So do it!
+The only thing we need to know is that the transmitter needs an antenna. Of course, you can broadcast from GPIO goldpin, but the range of such a solution is barely a few meters. Simply attach the short cables to the GPIO4 (4 pin inside) to extend the range up to a hundred meters.</description></item><item><title>Convert Mercurial project to Git</title><link>http://localhost:1313/techlog/convert-mercurial-project-to-git/</link><pubDate>Mon, 28 Aug 2017 04:35:53 +0200</pubDate><guid>http://localhost:1313/techlog/convert-mercurial-project-to-git/</guid><description>I&amp;rsquo;m using fast-export:
+cd ~
+git clone https://github.com/frej/fast-export.git
+git init git_repo
+cd git_repo
+~/fast-export/hg-fast-export.sh -r /path/to/old/mercurial_repo
+git checkout HEAD
+source: https://stackoverflow.com/questions/16037787/convert-mercurial-project-to-git</description></item><item><title>Simple start with YOLO v2</title><link>http://localhost:1313/techlog/simple-start-with-yolo-v2/</link><pubDate>Tue, 22 Aug 2017 17:14:30 +0200</pubDate><guid>http://localhost:1313/techlog/simple-start-with-yolo-v2/</guid><description>reduce frames to 15 per sec:
+# ffmpeg -i stepup.mp4 -r 15 stepup15.mp4
+make new directory for frames and put to stepup/ a video to split
+#mkdir stepup/; mkdir yolo_stepup/
+split to frames:
+# ffmpeg -i stepup15.mp4 stepup_%04d.png
+lets begin the games!
+run this script, make sure are you not in stepup/, you shold be in darknet/
+#!/bin/bash
+for file in stepup/*.png
+do
+./darknet detect cfg/yolo.cfg cfg/yolo.weights &amp;quot;$file&amp;quot;
+mv predictions.</description></item><item><title>Useful keyboard shortcuts for terminal</title><link>http://localhost:1313/techlog/useful-keyboard-shortcuts-for-terminal/</link><pubDate>Mon, 10 Jul 2017 16:42:08 +0200</pubDate><guid>http://localhost:1313/techlog/useful-keyboard-shortcuts-for-terminal/</guid><description>Terminal clipboard, check it out :)
+ctrl + u = Cut to the clipboard
+ctrl + y = Paste from the clipboard</description></item><item><title>Debian 9: Change the network from enp3s0 to eth0</title><link>http://localhost:1313/techlog/debian-9-change-the-network-from-enp3s0-to-eth0/</link><pubDate>Wed, 05 Jul 2017 16:17:32 +0200</pubDate><guid>http://localhost:1313/techlog/debian-9-change-the-network-from-enp3s0-to-eth0/</guid><description>nano /etc/udev/rules.d/10-network.rules
+SUBSYSTEM==&amp;quot;net&amp;quot;, ACTION==&amp;quot;add&amp;quot;, ATTR{address}==&amp;quot;08:00:27:a6:ad:0e&amp;quot;, NAME=&amp;quot;eth0&amp;quot;
+SUBSYSTEM==&amp;quot;net&amp;quot;, ACTION==&amp;quot;add&amp;quot;, ATTR{address}==&amp;quot;08:00:27:6e:77:cc&amp;quot;, NAME=&amp;quot;wlan0&amp;quot;
+then reboot.</description></item><item><title>1998 vs 2017</title><link>http://localhost:1313/techlog/1998-vs-2017/</link><pubDate>Sat, 01 Jul 2017 14:53:46 +0200</pubDate><guid>http://localhost:1313/techlog/1998-vs-2017/</guid><description>1998: Don&amp;rsquo;t get into strangers&amp;rsquo;s cars Don&amp;rsquo;t meet people from the internet 2017: Literally summon strangers from the internet to get into their car</description></item><item><title>Quick way to add new posts in Jekyll with Python</title><link>http://localhost:1313/techlog/quick-way-to-add-new-posts-in-jekyll-with-python/</link><pubDate>Sat, 01 Jul 2017 00:54:18 +0200</pubDate><guid>http://localhost:1313/techlog/quick-way-to-add-new-posts-in-jekyll-with-python/</guid><description>To make life a little easier
+from datetime import datetime MYPOST = &amp;#34;&amp;#34;&amp;#34;\ --- layout: post title: &amp;#34;{0}&amp;#34; date: {1} +0200 categories: {2} --- here my text &amp;#34;&amp;#34;&amp;#34; if __name__ == &amp;#34;__main__&amp;#34;: title = raw_input(&amp;#34;Title:\n&amp;#34;) categories = raw_input(&amp;#34;Categories:\n&amp;#34;) if not categories: categories = &amp;#34;posts&amp;#34; timestamp = datetime.today().strftime(&amp;#34;%Y-%m-%d%H:%M:%S&amp;#34;) datestamp = datetime.today().strftime(&amp;#34;%Y-%m-%d&amp;#34;) filename = datestamp + &amp;#34;-&amp;#34; + &amp;#34;-&amp;#34;.join(title.split(&amp;#34; &amp;#34;)) + &amp;#34;.md&amp;#34; filename = filename.lower() with open(filename, &amp;#34;w+&amp;#34;) as file: file.write(MYPOST.format(title, timestamp, categories))</description></item><item><title>Mark Zuckerberg says 'Facebook has 2 billion people!'</title><link>http://localhost:1313/techlog/mark-zuckerberg-says-facebook-has-2-billion-people/</link><pubDate>Wed, 28 Jun 2017 14:10:58 +0200</pubDate><guid>http://localhost:1313/techlog/mark-zuckerberg-says-facebook-has-2-billion-people/</guid><description>Mark Zuckerberg officially announced that over 2 billion people in the world have a Facebook account
+As of this morning, the Facebook community is now officially 2 billion people!
+We&amp;rsquo;re making progress connecting the world, and now let&amp;rsquo;s bring the world closer together.
+It&amp;rsquo;s an honor to be on this journey with you.</description></item><item><title>Nagios with Nginx</title><link>http://localhost:1313/techlog/nagios-with-nginx/</link><pubDate>Mon, 26 Jun 2017 18:10:58 +0200</pubDate><guid>http://localhost:1313/techlog/nagios-with-nginx/</guid><description>server { listen 80; server_name my.example.com; access_log /var/log/nginx/nagios.access.log; error_log /var/log/nginx/nagios.error.log info; expires 31d; #rewrite ^/nagios3/(.*)$ /$1 break; rewrite ^/nagios3/(.*)$ /$1; root /usr/share/nagios3/htdocs; index index.php index.html; auth_basic &amp;#34;Nagios Restricted Access&amp;#34;; auth_basic_user_file /etc/nagios3/htpasswd.users; location /stylesheets { alias /etc/nagios3/stylesheets; } location ~ \.cgi$ { root /usr/lib/cgi-bin/nagios3; rewrite ^/cgi-bin/nagios3/(.*)$ /$1; include /etc/nginx/fastcgi_params; fastcgi_param AUTH_USER $remote_user; fastcgi_param REMOTE_USER $remote_user; fastcgi_param SCRIPT_FILENAME /usr/lib/cgi-bin/nagios3$fastcgi_script_name; fastcgi_pass unix:/var/run/fcgiwrap.socket; } location ~ \.php$ { try_files $uri =404; fastcgi_split_path_info ^(.+\.php)(/.+)$; fastcgi_pass unix:/var/run/php5-fpm.</description></item><item><title>Windows on Bash // GUI!</title><link>http://localhost:1313/techlog/windows-on-bash-/-gui/</link><pubDate>Mon, 26 Jun 2017 18:10:58 +0200</pubDate><guid>http://localhost:1313/techlog/windows-on-bash-/-gui/</guid><description>Download VcXsrv (or any other X server) and run it.
+Launch Bash and type in the following lines
+# sudo apt-get install xorg xubuntu-desktop
+# echo 'export DISPLAY=:0' &amp;gt;&amp;gt; ~/.bashrc &amp;amp;&amp;amp; . ~/.bashrc
+# sudo sed -i 's$&amp;lt;listen&amp;gt;.*&amp;lt;/listen&amp;gt;$&amp;lt;listen&amp;gt;tcp:host=localhost,port=0&amp;lt;/listen&amp;gt;$' /etc/dbus-1/session.conf
+Close Bash and open it, then type in xfce4-session , if everything went right then the XFCE interface should show up in your X server window.</description></item><item><title>Deploy Jekyll Blog with Git</title><link>http://localhost:1313/techlog/deploy-jekyll-blog-with-git/</link><pubDate>Mon, 26 Jun 2017 00:53:58 +0200</pubDate><guid>http://localhost:1313/techlog/deploy-jekyll-blog-with-git/</guid><description>Local Installation Install jekyll gem install jekyll
+Creating a Blog Navigate to wherever you want to store your blog files on your local machine, and create a new blog like so:
+jekyll new awesomeblog
+This will create an awesomeblog directory containing the configuration files, posts directory and other required bits. Now you can change to that directory and fire up a server process to preview it in your browser.
+cd awesomeblog
+jekyll serve
+Jekyll will build your blog, and after a few seconds you should be able to visit http://localhost:4000 in your browser.</description></item><item><title>How to edit file in a docker container?</title><link>http://localhost:1313/techlog/how-to-edit-file-in-a-docker-container/</link><pubDate>Sat, 20 May 2017 18:10:58 +0200</pubDate><guid>http://localhost:1313/techlog/how-to-edit-file-in-a-docker-container/</guid><description>As in the comments, there&amp;rsquo;s no default editor set - strange - $EDITOR env variable is empty. You can login into container with:
+docker exec -it &amp;lt;container&amp;gt; bash and run:
+apt-get update
+apt-get install vim
+or use the following Dockerfile:
+FROM confluent/postgres-bw:0.1
+RUN [&amp;quot;apt-get&amp;quot;, &amp;quot;update&amp;quot;]
+RUN [&amp;quot;apt-get&amp;quot;, &amp;quot;install&amp;quot;, &amp;quot;-y&amp;quot;, &amp;quot;vim&amp;quot;]
+EDIT
+Docker images are delivered trimmed to bare minimum - so no editor is installed with the shipped container. That&amp;rsquo;s why there&amp;rsquo;s a need to install it manually.</description></item><item><title>Raspberry Alexa</title><link>http://localhost:1313/techlog/raspberry-alexa/</link><pubDate>Thu, 20 Apr 2017 18:10:58 +0200</pubDate><guid>http://localhost:1313/techlog/raspberry-alexa/</guid><description>sudo raspi-config
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install git
+git clone git://git.drogon.net/wiringPi
+cd wiringPi
+./build
+cd ~
+git clone https://github.com/alexa/alexa-avs-sample-app.git
+cd alexa-avs-sample-app
+nano automated_install.sh
+. automated_install.sh
+cd ~
+cd alexa-avs-sample-app/samples/companionService
+npm start
+Second window cd alexa-avs-sample-app/samples/javaclient
+mvn exec:exec
+Third window cd alexa-avs-sample-app/samples/wakeWordAgent/src
+./wakeWordAgent -e sensory</description></item><item><title>Roll Own VPN AdBlock Service</title><link>http://localhost:1313/techlog/roll-own-vpn-adblock-service/</link><pubDate>Mon, 10 Apr 2017 18:10:58 +0200</pubDate><guid>http://localhost:1313/techlog/roll-own-vpn-adblock-service/</guid><description>It&amp;rsquo;s actually super cheap &amp;amp; easy. The setup below costs a few dollars a year and uses ~20MB RAM total:
+Get a VPN Provider Install OpenVPN &amp;amp; setup client certs with https://github.com/Nyr/openvpn-install Setup your hosts file with http://winhelp2002.mvps.org/hosts.txt</description></item><item><title>nginx + cgit + debian = one host</title><link>http://localhost:1313/techlog/nginx-cgit-debian-one-host/</link><pubDate>Fri, 20 Jan 2017 18:10:58 +0200</pubDate><guid>http://localhost:1313/techlog/nginx-cgit-debian-one-host/</guid><description>root@raspberrypi:/var/www# cat /etc/nginx/sites-enabled/www
+server {
+listen 80;
+server_name home.control;
+root /var/www;
+index index.php index.html index.htm;
+location / {
+try_files $uri $uri/ =404;
+autoindex on;
+}
+location ~ \.php$ {
+try_files $uri =404;
+fastcgi_split_path_info ^(.+\.php)(/.+)$;
+fastcgi_pass unix:/var/run/php5-fpm.sock;
+fastcgi_index index.php;
+fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+include fastcgi_params;
+}
+location /git {
+gzip off;
+alias /usr/local/cgit/share;
+try_files $uri @cgit;
+}
+location @cgit {
+fastcgi_pass unix:/tmp/cgi.sock;
+fastcgi_param QUERY_STRING $query_string;
+fastcgi_param REQUEST_METHOD $request_method;
+fastcgi_param CONTENT_TYPE $content_type;
+fastcgi_param CONTENT_LENGTH $content_length;
+fastcgi_param REQUEST_URI $request_uri;
+fastcgi_param DOCUMENT_URI $document_uri;
+fastcgi_param SERVER_PROTOCOL $server_protocol;
+fastcgi_param GATEWAY_INTERFACE CGI/1.</description></item><item><title>Tiny IRC Doc</title><link>http://localhost:1313/techlog/tiny-irc-doc/</link><pubDate>Tue, 10 Jan 2017 18:10:58 +0200</pubDate><guid>http://localhost:1313/techlog/tiny-irc-doc/</guid><description>.post-content ul {list-style: none;}
+NickServ Register nickname on server:
+/nick YourNick
+/msg NickServ REGISTER YourPassword youremail@example.com
+Login
+/msg NickServ IDENTIFY YourNick YourPassword
+Logging In
+/connect chat.freenode.net 6697 YourNick:YourPassword
+ChanServ Register your channel:
+/msg ChanServ register #channel
+Enable the GUARD (ChanServ) flag for your channel using:
+/msg ChanServ set #channel guard on
+Set ops:
+/msg ChanServ flags #channel yournick +o</description></item></channel></rss>

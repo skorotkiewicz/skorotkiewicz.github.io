@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>docker on Sebastian Korotkiewicz - Tech{{log}}</title><link>http://localhost:1313/tags/docker/</link><description>Recent content in docker on Sebastian Korotkiewicz - Tech{{log}}</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 09 Oct 2017 16:48:43 +0200</lastBuildDate><atom:link href="http://localhost:1313/tags/docker/index.xml" rel="self" type="application/rss+xml"/><item><title>Docker - How to cleanup (unused) resources</title><link>http://localhost:1313/techlog/docker-how-to-cleanup-unused-resources/</link><pubDate>Mon, 09 Oct 2017 16:48:43 +0200</pubDate><guid>http://localhost:1313/techlog/docker-how-to-cleanup-unused-resources/</guid><description>Once in a while, you may need to cleanup resources (containers, volumes, images, networks) &amp;hellip;
+delete volumes // see: https://github.com/chadoe/docker-cleanup-volumes
+$ docker volume rm $(docker volume ls -qf dangling=true)
+$ docker volume ls -qf dangling=true | xargs -r docker volume rm
+delete networks $ docker network ls
+$ docker network ls | grep &amp;quot;bridge&amp;quot;
+$ docker network rm $(docker network ls | grep &amp;quot;bridge&amp;quot; | awk '/ / { print $1 }')
+remove docker images // see: http://stackoverflow.</description></item><item><title>How to edit file in a docker container?</title><link>http://localhost:1313/techlog/how-to-edit-file-in-a-docker-container/</link><pubDate>Sat, 20 May 2017 18:10:58 +0200</pubDate><guid>http://localhost:1313/techlog/how-to-edit-file-in-a-docker-container/</guid><description>As in the comments, there&amp;rsquo;s no default editor set - strange - $EDITOR env variable is empty. You can login into container with:
+docker exec -it &amp;lt;container&amp;gt; bash and run:
+apt-get update
+apt-get install vim
+or use the following Dockerfile:
+FROM confluent/postgres-bw:0.1
+RUN [&amp;quot;apt-get&amp;quot;, &amp;quot;update&amp;quot;]
+RUN [&amp;quot;apt-get&amp;quot;, &amp;quot;install&amp;quot;, &amp;quot;-y&amp;quot;, &amp;quot;vim&amp;quot;]
+EDIT
+Docker images are delivered trimmed to bare minimum - so no editor is installed with the shipped container. That&amp;rsquo;s why there&amp;rsquo;s a need to install it manually.</description></item></channel></rss>

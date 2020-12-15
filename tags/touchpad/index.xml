@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>touchpad on Sebastian Korotkiewicz - Tech{{log}}</title><link>http://localhost:1313/tags/touchpad/</link><description>Recent content in touchpad on Sebastian Korotkiewicz - Tech{{log}}</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 08 Dec 2018 19:52:54 +0200</lastBuildDate><atom:link href="http://localhost:1313/tags/touchpad/index.xml" rel="self" type="application/rss+xml"/><item><title>Activate tap to click on touchpad</title><link>http://localhost:1313/techlog/activate-tap-to-click-on-touchpad/</link><pubDate>Sat, 08 Dec 2018 19:52:54 +0200</pubDate><guid>http://localhost:1313/techlog/activate-tap-to-click-on-touchpad/</guid><description>Debian Stretch / Arch Linux Remove the xserver-xorg-input-synaptics package. (important)
+# apt remove xserver-xorg-input-synaptics
+## Arch
+[root@arch ~]# pacman -Ss libinput
+extra/libinput 1.12.3-1 [installed]
+Input device management and event handling library
+extra/xf86-input-libinput 0.28.1-1 (xorg-drivers) [installed]
+Generic input driver for the X.Org server based on libinput
+Install xserver-xorg-input-libinput:
+## Debian
+# apt install xserver-xorg-input-libinput
+In most cases, make sure you have the xserver-xorg-input-libinput package installed, and not the xserver-xorg-input-synaptics package.</description></item></channel></rss>

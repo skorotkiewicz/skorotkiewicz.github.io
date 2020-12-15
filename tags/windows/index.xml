@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>windows on Sebastian Korotkiewicz - Tech{{log}}</title><link>http://localhost:1313/tags/windows/</link><description>Recent content in windows on Sebastian Korotkiewicz - Tech{{log}}</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 16 Dec 2018 07:54:26 +0200</lastBuildDate><atom:link href="http://localhost:1313/tags/windows/index.xml" rel="self" type="application/rss+xml"/><item><title>"Bash Here" Context Menu in Windows Explorer</title><link>http://localhost:1313/techlog/bash-here-context-menu-in-windows-explorer/</link><pubDate>Sun, 16 Dec 2018 07:54:26 +0200</pubDate><guid>http://localhost:1313/techlog/bash-here-context-menu-in-windows-explorer/</guid><description>Here for bash
+Windows Registry Editor Version 5.00
+[HKEY_CLASSES_ROOT\Directory\Background\shell\ConEmu Bash Here]
+@=&amp;quot;ConEmu Bash Here&amp;quot;
+&amp;quot;Icon&amp;quot;=&amp;quot;C:\\Users\\sebas\\Desktop\\Programy\\ConEmuPack\\ConEmu64.exe,0&amp;quot;
+[HKEY_CLASSES_ROOT\Directory\Background\shell\ConEmu Bash Here\command]
+@=&amp;quot;\&amp;quot;C:\\Users\\sebas\\Desktop\\Programy\\ConEmuPack\\ConEmu64.exe\&amp;quot; -here -run {bash} -cur_console:n&amp;quot;
+Here for cmd
+Windows Registry Editor Version 5.00
+[HKEY_CLASSES_ROOT\Directory\Background\shell\ConEmu CMD Here]
+@=&amp;quot;ConEmu CMD Here&amp;quot;
+&amp;quot;Icon&amp;quot;=&amp;quot;C:\\Users\\sebas\\Desktop\\Programy\\ConEmuPack\\ConEmu64.exe,0&amp;quot;
+[HKEY_CLASSES_ROOT\Directory\Background\shell\ConEmu CMD Here\command]
+@=&amp;quot;\&amp;quot;C:\\Users\\sebas\\Desktop\\Programy\\ConEmuPack\\ConEmu64.exe\&amp;quot; -here -run {cmd} -cur_console:n&amp;quot;
+Remember to change the path to ConEmu installation and rename the username to your own</description></item><item><title>Building windows go programs on linux</title><link>http://localhost:1313/techlog/building-windows-go-programs-on-linux/</link><pubDate>Sun, 18 Feb 2018 13:54:53 +0200</pubDate><guid>http://localhost:1313/techlog/building-windows-go-programs-on-linux/</guid><description>$ cat hello.go
+package main import &amp;#34;fmt&amp;#34; func main() { fmt.Printf(&amp;#34;Hello\n&amp;#34;) } $ GOOS=windows GOARCH=386 go build -o hello.exe hello.go</description></item><item><title>How to add a Windows Firewall rule to enable client-to-client communication through OpenVPN</title><link>http://localhost:1313/techlog/how-to-add-a-windows-firewall-rule-to-enable-client-to-client-communication-through-openvpn/</link><pubDate>Sat, 09 Dec 2017 23:18:20 +0200</pubDate><guid>http://localhost:1313/techlog/how-to-add-a-windows-firewall-rule-to-enable-client-to-client-communication-through-openvpn/</guid><description>Open PowerShell with Administrator Privileges and type:
+check the path to your openvpn.exe! New-NetFirewallRule -DisplayName “OpenVPN allow Inbound” -Direction Inbound -Program %ProgramFiles%\OpenVPN\bin\openvpn.exe -RemoteAddress LocalSubnet -Action Allow New-NetFirewallRule -DisplayName “OpenVPN allow Outbound” -Direction Outbound -Program %ProgramFiles%\OpenVPN\bin\openvpn.exe -RemoteAddress LocalSubnet -Action Allow Set-NetFirewallProfile Public -DefaultInboundAction Allow -DefaultOutboundAction Allow from now every connected client should be able to ping you
+Optional: To see if it has been added open Windows Defender Firewall: wf.msc.
+that's all</description></item><item><title>Windows on Bash // GUI!</title><link>http://localhost:1313/techlog/windows-on-bash-/-gui/</link><pubDate>Mon, 26 Jun 2017 18:10:58 +0200</pubDate><guid>http://localhost:1313/techlog/windows-on-bash-/-gui/</guid><description>Download VcXsrv (or any other X server) and run it.
+Launch Bash and type in the following lines
+# sudo apt-get install xorg xubuntu-desktop
+# echo 'export DISPLAY=:0' &amp;gt;&amp;gt; ~/.bashrc &amp;amp;&amp;amp; . ~/.bashrc
+# sudo sed -i 's$&amp;lt;listen&amp;gt;.*&amp;lt;/listen&amp;gt;$&amp;lt;listen&amp;gt;tcp:host=localhost,port=0&amp;lt;/listen&amp;gt;$' /etc/dbus-1/session.conf
+Close Bash and open it, then type in xfce4-session , if everything went right then the XFCE interface should show up in your X server window.</description></item></channel></rss>

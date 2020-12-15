@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>mercurial on Sebastian Korotkiewicz - Tech{{log}}</title><link>http://localhost:1313/tags/mercurial/</link><description>Recent content in mercurial on Sebastian Korotkiewicz - Tech{{log}}</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 28 Aug 2017 04:35:53 +0200</lastBuildDate><atom:link href="http://localhost:1313/tags/mercurial/index.xml" rel="self" type="application/rss+xml"/><item><title>Convert Mercurial project to Git</title><link>http://localhost:1313/techlog/convert-mercurial-project-to-git/</link><pubDate>Mon, 28 Aug 2017 04:35:53 +0200</pubDate><guid>http://localhost:1313/techlog/convert-mercurial-project-to-git/</guid><description>I&amp;rsquo;m using fast-export:
+cd ~
+git clone https://github.com/frej/fast-export.git
+git init git_repo
+cd git_repo
+~/fast-export/hg-fast-export.sh -r /path/to/old/mercurial_repo
+git checkout HEAD
+source: https://stackoverflow.com/questions/16037787/convert-mercurial-project-to-git</description></item></channel></rss>

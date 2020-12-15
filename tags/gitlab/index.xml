@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>gitlab on Sebastian Korotkiewicz - Tech{{log}}</title><link>http://localhost:1313/tags/gitlab/</link><description>Recent content in gitlab on Sebastian Korotkiewicz - Tech{{log}}</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 25 Jun 2018 20:02:13 +0200</lastBuildDate><atom:link href="http://localhost:1313/tags/gitlab/index.xml" rel="self" type="application/rss+xml"/><item><title>Gitlab with Apache2 Reverse Proxy</title><link>http://localhost:1313/techlog/gitlab-with-apache2-reverse-proxy/</link><pubDate>Mon, 25 Jun 2018 20:02:13 +0200</pubDate><guid>http://localhost:1313/techlog/gitlab-with-apache2-reverse-proxy/</guid><description>This is my config for gitlab with apache2 reverse proxy, Web IDE works!
+&amp;lt;VirtualHost *:80&amp;gt;
+ServerName gitlab.itunix.eu
+ServerAlias gitlab.itunix.eu mt.itunix.eu www.gitlab.itunix.eu www.mt.itunix.eu
+ServerAdmin skorotkiewicz@gmail.com
+RewriteEngine on
+ReWriteCond %{SERVER_PORT} !^443$
+RewriteRule ^/(.*) https://gitlab.itunix.eu/$1 [NC,R,L]
+&amp;lt;/VirtualHost&amp;gt;
+&amp;lt;VirtualHost *:443&amp;gt;
+ServerName gitlab.itunix.eu
+ServerAlias gitlab.itunix.eu www.gitlab.itunix.eu
+ServerAdmin skorotkiewicz@gmail.com
+ProxyPass / http://localhost:1234/ nocanon
+ProxyPassReverse / http://localhost:1234/
+ProxyPreserveHost On
+AllowEncodedSlashes NoDecode
+SSLEngine on
+SSLCertificateFile /etc/letsencrypt/live/itunix.eu-0001/cert.pem
+SSLCertificateKeyFile /etc/letsencrypt/live/itunix.eu-0001/privkey.pem
+SSLCertificateChainFile /etc/letsencrypt/live/itunix.eu-0001/fullchain.pem
+ErrorLog /var/log/apache2/error_gitlab.log
+CustomLog /var/log/apache2/access_gitlab.log combined
+&amp;lt;/VirtualHost&amp;gt;</description></item><item><title>Fix GitLab is taking too much time to respond. 502 Error</title><link>http://localhost:1313/techlog/fix-gitlab-is-taking-too-much-time-to-respond.-502-error/</link><pubDate>Sat, 09 Jun 2018 19:23:43 +0200</pubDate><guid>http://localhost:1313/techlog/fix-gitlab-is-taking-too-much-time-to-respond.-502-error/</guid><description>Solution by iamchanghyunpark
+&amp;ldquo;I checked the pid value in the log and checked if there was a running process with the same pid, and no there was none.
+I&amp;rsquo;m guessing this is because of the unexpected powerdown, and unicorn.pid was not properly cleared.
+My solution was simple&amp;rdquo;
+docker-compose exec gitlab bash
+vi log/unicorn.stderr.log # remove the value (which is the pid), save and exit
+exit # from the bash shell of the gitlab container
+#Now restart the containers
+docker-compose down
+docker-compose up -d</description></item></channel></rss>

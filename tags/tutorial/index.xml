@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tutorial on Sebastian Korotkiewicz - Tech{{log}}</title><link>http://localhost:1313/tags/tutorial/</link><description>Recent content in tutorial on Sebastian Korotkiewicz - Tech{{log}}</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 10 Jan 2017 18:10:58 +0200</lastBuildDate><atom:link href="http://localhost:1313/tags/tutorial/index.xml" rel="self" type="application/rss+xml"/><item><title>Tiny IRC Doc</title><link>http://localhost:1313/techlog/tiny-irc-doc/</link><pubDate>Tue, 10 Jan 2017 18:10:58 +0200</pubDate><guid>http://localhost:1313/techlog/tiny-irc-doc/</guid><description>.post-content ul {list-style: none;}
+NickServ Register nickname on server:
+/nick YourNick
+/msg NickServ REGISTER YourPassword youremail@example.com
+Login
+/msg NickServ IDENTIFY YourNick YourPassword
+Logging In
+/connect chat.freenode.net 6697 YourNick:YourPassword
+ChanServ Register your channel:
+/msg ChanServ register #channel
+Enable the GUARD (ChanServ) flag for your channel using:
+/msg ChanServ set #channel guard on
+Set ops:
+/msg ChanServ flags #channel yournick +o</description></item></channel></rss>
