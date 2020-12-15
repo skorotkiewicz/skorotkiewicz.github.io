@@ -10,7 +10,7 @@
   <meta name="author" content="{{ .Site.Params.Author }}" />
   <link rel="alternate" type="application/rss+xml" title="Techlog" href="/index.xml">
   {{ partial "seo" . }}
-  {{ $minima := resources.Get "minima.scss" | resources.ToCSS (dict "outputStyle" "compressed") | fingerprint }}
+  {{ $minima := resources.Get "scss/minima.scss" | resources.ToCSS (dict "outputStyle" "compressed") | fingerprint }}
   <link rel="stylesheet" href="{{ $minima.Permalink }}">
 </head>
 
