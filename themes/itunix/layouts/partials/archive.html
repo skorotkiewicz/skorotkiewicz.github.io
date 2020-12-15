@@ -7,10 +7,9 @@
     {{ range where .Site.Pages "Section" "year" }}
     {{ $years := .Date.Format "2006" }}
 
-    {{ $it := (findRE "t0" .Permalink) }}
-    {{ $iy := (findRE "/year/" .Permalink) }}
+    {{ $ia := (findRE "/archive/" .Permalink) }}
 
-        {{ if and (le $iy 0) (le $it 0) }}
+        {{ if and (ge $ia 1) }}
             <li class="year">
 
                 <div class="top">
@@ -65,25 +64,3 @@
 
     {{ end }}
 </ul>
-
-<style>
-.archive-years {
-  display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
-}
-.archive-years .year {
-  margin: 10px;
-  border: 2px solid #495464;
-  min-width: 200px;
-  box-sizing: border-box;
-  list-style: none;
-  background-color: #f4f4f2;
-}
-.archive-years .year .top {
-  background-color: #bbbfca;
-  padding: 5px;
-  font-stretch: condensed;
-  text-align: center;
-}
-</style>
