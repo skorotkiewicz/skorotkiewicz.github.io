@@ -1,0 +1,59 @@
+baseurl: "http://localhost:1313/"
+languageCode: "en-us"
+title: "Sebastian Korotkiewicz - Tech{{log}}"
+theme: "itunix"
+footnotereturnlinkcontents: "↩"
+
+taxonomies:
+  year: "year"
+  month: "month"
+  tags: "tags"
+  categories: "categories"
+
+permalinks:
+  year: "/archive/:slug/"
+  month: "/archive/:slug/"
+  note: "/note/:slug/"
+  techlog: "/techlog/:slug/"
+  daily: "/daily/:year/:month/:day/:slug/"
+
+menu:
+  main:
+    - name: Posts
+      url: "techlog/"
+      weight: 1
+    - name: Notes
+      url: "note/"
+      weight: 2
+    - name: Categories
+      url: "categories/"
+      weight: 3
+    - name: Tags
+      url: "tags/"
+      weight: 4
+    - name: Contact
+      url: "contact/"
+      weight: 5
+    - name: Search
+      url: "search/"
+      weight: 6
+    - name: Daily
+      url: "daily/"
+      weight: 7
+
+params:
+  author: "Sebastian Korotkiewicz"
+  description: "A simple log of my adventures in the technology world"
+  github: "skorotkiewicz"
+  twitter: "skorotkiewicz"
+  avatar: "/images/skorotkiewicz-1.1.0.png"
+  contact: "mailto:skorotkiewicz@gmail.com"
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+outputs:
+  home: ["HTML", "RSS", "JSON"]
+  section: ["HTML", "RSS", "JSON"]

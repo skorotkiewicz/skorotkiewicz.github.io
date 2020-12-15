@@ -1,0 +1,63 @@
+.bmc-button img{width:27px!important;margin-bottom:1px!important;box-shadow:none!important;border:none!important;vertical-align:middle!important}
+.bmc-button{width: 185px;line-height:36px!important;height:37px!important;text-decoration:none!important;display:inline-flex!important;color:#ffffff!important;background-color:rgba(255, 130, 63, 0.9)!important;border-radius:3px!important;border:1px solid transparent!important;padding:0 9px!important;font-size:17px!important;letter-spacing:-0.08px!important;;margin:0 auto!important;font-family:'Lato',sans-serif!important;-webkit-box-sizing:border-box!important;box-sizing:border-box!important}
+.paypal-button{width: 185px;line-height:30px!important;height:37px!important;text-decoration:none!important;display:inline-flex!important;color:#ffffff!important;background-color:rgba(63, 153, 255, 0.9)!important;border-radius:3px!important;border:1px solid transparent!important;padding:0 9px!important;font-size:16px!important;letter-spacing:-0.08px!important;margin:0 auto!important;font-family:'Lato',sans-serif!important;-webkit-box-sizing:border-box!important;box-sizing:border-box!important}
+
+.breakingNews {padding-left: 10px; padding-top: 5px; font-size: 14px; color: #fff; max-width: 300px !important; display: inline-block;}
+@media only screen and (max-width : 550px) {
+  .breakingNews { 
+    padding-top: 45px !important;
+    padding-bottom: 3px;
+    display: block;
+    margin-left: -10px !important;
+   }
+}
+
+main {
+  min-height: 50vh;
+}
+
+.pull-left {
+  float: left !important;
+}
+.pull-right {
+  float: right !important;
+}
+.post-meta {
+  margin: 5px 0;
+}
+
+pre {
+  border: 1px solid #ddd;
+  box-shadow: 5px 5px 5px #eee;
+  padding: 1em;
+  overflow-x: auto;
+}
+code {
+  background: #f9f9f9;
+}
+pre code {
+  background: none;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin-top: 20px;
+
+  .page-link {
+    margin: 5px;
+    border: 1px solid #27496d;
+    padding: 5px;
+    border-radius: 30px;
+    color: #142850 !important;
+  }
+  
+  .active {
+    // margin: 5px;
+    border-radius: 30px;
+    background-color: #ff00ff70;
+  }
+
+}
+

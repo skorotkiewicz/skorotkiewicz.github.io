@@ -1,0 +1,89 @@
+<hr style="margin-top: 20px;">
+<span style="font-size: 24px;">Archive</span>
+<hr>
+
+<a name="archive"></a>
+<ul class="archive-years">
+    {{ range where .Site.Pages "Section" "year" }}
+    {{ $years := .Date.Format "2006" }}
+
+    {{ $it := (findRE "t0" .Permalink) }}
+    {{ $iy := (findRE "/year/" .Permalink) }}
+
+        {{ if and (le $iy 0) (le $it 0) }}
+            <li class="year">
+
+                <div class="top">
+                    <a href="{{ .Permalink }}">{{ $years }}</a>
+                </div>
+
+                <div class="months">
+                    <!-- .Site.RegularPages -->
+                    {{ range (.Site.RegularPages).GroupByDate "January" }}
+                        {{ $l := (len .Pages)}}
+
+                        {{ if gt $l 0 }}
+
+                            {{ range .Pages }}
+                                {{ $date := string (.Date.Format "2006-1")}}
+                                {{ $year := string (.Date.Format "2006")}}
+
+                                {{ if eq $years $year }}
+                                    {{ $.Scratch.Set $date $l }}
+                                {{ end }}
+                            {{ end }}
+
+                        {{ end }}
+                    {{ end }}
+
+                    <ul>
+                        {{ range $i, $sequence :=  (seq 12) }}
+
+                            {{ $e := string ($sequence) }}
+                            {{ $p := print $years "-" $sequence }}
+                            {{ $posts := $.Scratch.Get $p }}
+
+                            {{ if gt $posts 0 }}
+                                <li>
+                                    <a href="/archive/{{ $years }}/{{ printf "%02d" (int $e) }}/">
+                                        {{ dateFormat "January" (printf "2001-%02d-01" $sequence) }} (Posts: {{ $posts }})
+                                    </a> 
+                                </li>
+                            {{ else }}
+                                <li>
+                                    {{ dateFormat "January" (printf "2001-%02d-01" $sequence) }}
+                                </li>
+                            {{ end }}
+
+                        {{ end }}
+                    </ul>
+
+                </div>
+
+            </li>
+        {{ end }}
+
+    {{ end }}
+</ul>
+
+<style>
+.archive-years {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.archive-years .year {
+  margin: 10px;
+  border: 2px solid #495464;
+  min-width: 200px;
+  box-sizing: border-box;
+  list-style: none;
+  background-color: #f4f4f2;
+}
+.archive-years .year .top {
+  background-color: #bbbfca;
+  padding: 5px;
+  font-stretch: condensed;
+  text-align: center;
+}
+</style>

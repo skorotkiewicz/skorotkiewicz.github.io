@@ -1,0 +1,57 @@
+{{ partial "header.html" . }}
+
+<main class="page-content" aria-label="Content" style="padding-bottom: 5px;">
+  <div class="wrapper wrapper_post">
+    <div class="home">
+
+      <h1>{{ .Title }}</h1>
+
+      {{ if eq .Section "categories" }}
+      <ul class="terms">
+        {{ range .Data.Terms }}
+        <li>
+          <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a> ({{ .Count }})
+        </li>
+        {{ end }}
+      </ul>
+      {{ end }}
+
+      {{ if eq .Section "tags" }}
+        <em>Explore the tags interactively:</em>
+        <div id="tag-wrapper" style="width: 100%; height: 400px;"></div>
+
+        <h3>All tags alphabetically</h3>
+        <ul>
+          {{ $data := .Data }}
+          {{ range $key, $value := .Data.Terms }}
+          <li><a href="/{{ $data.Plural }}/{{ $key | urlize }}">{{ $key }}</a> {{ len $value }}</li>
+          {{ end }}
+        </ul>
+
+        <script src="{{ .Site.BaseURL }}js/wordcloud2.js"></script>
+        <script>
+          let tagArray = new Array();
+          {{ range $key, $value := .Data.Terms }}
+          tagArray.push([{{ $key }}, {{ len $value }} ])
+          {{ end }}
+
+          const tagWrapper = document.querySelector("#tag-wrapper");
+          WordCloud(tagWrapper, {
+              list: tagArray,
+              weightFactor: 10,
+              classes: "tag-cloud-item",
+          });
+
+          tagWrapper.addEventListener('wordcloudstop', function (e) {
+              document.querySelectorAll('.tag-cloud-item').forEach(function (element) {
+                  const text = element.innerHTML;
+                  element.innerHTML = `<a href="/tags/${text}" style="color: inherit;">${text}</a>`;
+              });
+          });
+          </script>
+      {{ end }}
+
+    </div>
+  </div>
+</main>
+{{ partial "footer.html" . }}

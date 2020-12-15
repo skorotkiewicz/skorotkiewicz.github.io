@@ -1,0 +1,79 @@
+{{ partial "header.html" . }}
+
+<main class="page-content" aria-label="Content" style="padding-bottom: 5px;">
+  <div class="wrapper wrapper_post">
+
+    <div class="home">
+      
+      {{if not .IsHome }}
+
+        {{ if or (eq .Section "techlog") (eq .Section "note") (eq .Section "daily") }}
+          <h1>{{ .Title }}</h1>
+        {{ end }}
+
+        {{ if eq .Section "tags" }}
+          <h2>Articles with <em>#{{ .Title }}</em></h2>
+        {{ end }}
+
+        {{ if eq .Section "categories" }}
+          <h2>Articles with categories: <em>{{ .Title }}</em></h2>
+        {{ end }}
+
+      {{ end }}
+
+      {{ .Content }}
+
+      {{ if or (eq .Section "year") (eq .Section "month") }}
+        <hr>
+          <span style="font-size: 24px;">Archive for <em>{{.Title}}</em></span>
+        <hr>
+      {{ end }}
+
+      <div class="posts">
+        {{ $pages := .Pages }}
+        {{ $s := ""}}
+        {{ if .IsHome }}
+          {{ $pages = .Site.RegularPages }}
+          {{ $s = "daily"}}
+        {{ end }}
+
+        {{ $paginator := .Paginate (where $pages "Section" "!=" $s) 20 }}
+        {{ range $paginator.Pages }}
+
+          {{ if or (eq .Section "daily") }}
+            <div class="postRow">
+
+              <div id="postDate" class="postCell" style="background-color: #1f3c88; color: #f6f5f5;">
+                {{ .Date.Format "2006-01-02" }}
+              </div>
+
+              <div id="postTitle" class="postCell" style="border-top: 1px solid #ee6f57; background-color: #f4f7c5; ">
+                <a style="color: #000;" href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
+              </div>
+
+            </div>
+          {{ end }}
+
+          {{ if or (eq .Section "techlog") (eq .Section "note") }}
+            <div class="postRow">
+              <div id="postDate" class="postCell">{{ .Date.Format "2006-01-02" }}</div>
+              <div id="postTitle" class="postCell">
+                <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
+              </div>
+            </div>
+          {{ else }}
+            <!-- <a href="{{ .RelPermalink }}">{{ .Title }}</a> -->
+          {{ end }}
+
+        {{ end }}
+      </div>
+
+      {{ template "_internal/pagination.html" . }}
+
+      {{ partial "archive" . }}
+
+    </div>
+  </div>
+</main>
+
+{{ partial "footer.html" . }}

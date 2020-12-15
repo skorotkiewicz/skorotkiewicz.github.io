@@ -1,0 +1,46 @@
+.spoiler > {
+  input {
+    + label:after {
+      content: "+";
+      float: right;
+      font-family: monospace;
+      font-weight: bold;
+    }
+    &:checked + label:after {
+      content: "-";
+      float: right;
+      font-family: monospace;
+      font-weight: bold;
+    }
+    display: none;
+    + label {
+      background: #CCC;
+      padding: 5px 15px;
+      overflow: hidden;
+      width: 90%;
+      box-sizing: border-box;
+      display: block;
+    }
+  }
+  .spoiler_body {
+    background: #CCC;
+    padding: 5px 15px;
+    overflow: hidden;
+    width: 90%;
+    box-sizing: border-box;
+    display: block;
+  }
+  input {
+    + label + .spoiler_body {
+      display: none;
+    }
+    &:checked + label + .spoiler_body {
+      display: block;
+    }
+  }
+  .spoiler_body {
+    background: #FFF;
+    border: 3px solid #CCC;
+    border-top: none;
+  }
+}

@@ -1,0 +1,25 @@
+#share-buttons {display: inline-block; vertical-align: middle; }
+#share-buttons:after {content: ""; display: block; clear: both;}
+#share-buttons > a {
+    position: relative;
+    text-align: left; 
+    height: 36px; 
+    width: 32px; 
+    float: left; 
+    text-align: center;
+}
+#share-buttons > a > svg {height: 16px; fill: #d5d5d5; margin-top: 10px;}
+#share-buttons > a:hover {cursor: pointer;}
+#share-buttons > a.facebook:hover > svg {fill: #3B5998;}
+#share-buttons > a.twitter:hover > svg {fill: #55ACEE;}
+#share-buttons > a.linkedin:hover > svg {fill: #0077b5;}
+#share-buttons > a.pinterest:hover > svg {fill: #CB2027;}
+#share-buttons > a.mail:hover > svg {fill: #7D7D7D;}
+#share-buttons > a.hnews:hover > svg {fill: #f68423;}
+#share-buttons > a.instagram:hover > svg {fill: #C73B92;}
+#share-buttons > a.facebook > svg {height: 18px; margin-top: 9px;}
+#share-buttons > a.twitter > svg {height: 20px; margin-top: 8px;}
+#share-buttons > a.linkedin > svg {height: 19px; margin-top: 7px;}
+#share-buttons > a.pinterest > svg {height: 20px; margin-top: 9px;}
+#share-buttons > a.hnews > svg {height: 17; margin-top: 10px;}
+#share-buttons > a.mail > svg {height: 14px; margin-top: 11px;}
