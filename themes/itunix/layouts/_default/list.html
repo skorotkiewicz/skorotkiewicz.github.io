@@ -4,6 +4,10 @@
   <div class="wrapper wrapper_post">
 
     <div class="home">
+
+      {{if .IsHome }}
+        <img src="{{ .Site.Params.Avatar }}" style="border-radius:50%;max-width:15%;min-width:40px;float:right;" alt="Avatar" />
+      {{ end }}
       
       {{if not .IsHome }}
 
