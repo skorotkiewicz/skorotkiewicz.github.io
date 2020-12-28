@@ -10,7 +10,7 @@ tags:
   - kali
   - security
 slug: restore-wifi-password
-draft: true
+draft: false
 ---
 
 ## STEP 1 - Get Handshake
