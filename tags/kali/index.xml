@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>kali on Sebastian Korotkiewicz - Tech{{log}}</title><link>https://skorotkiewicz.github.io/tags/kali/</link><description>Recent content in kali on Sebastian Korotkiewicz - Tech{{log}}</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 25 Dec 2020 09:21:04 +0100</lastBuildDate><atom:link href="https://skorotkiewicz.github.io/tags/kali/index.xml" rel="self" type="application/rss+xml"/><item><title>Restore Wifi Password</title><link>https://skorotkiewicz.github.io/note/restore-wifi-password/</link><pubDate>Fri, 25 Dec 2020 09:21:04 +0100</pubDate><guid>https://skorotkiewicz.github.io/note/restore-wifi-password/</guid><description>STEP 1 - Get Handshake Check if your wireless card does support monitor mode.
+If you do not see an interface listed then your wireless card does not support monitor mode.
+airmon-ng Put your network device into monitor mode
+# airmon-ng start wlan0 Listen for all nearby beacon frames to get target BSSID and channel
+# airodump-ng wlan0mon Start listening for the handshake
+# airodump-ng --channel 6 —-bssid 9C:5C:8E:C9:AB:C0 --write capture/ wlan0mon Optionally deauth a connected client to force a handshake</description></item></channel></rss>
