@@ -18,5 +18,5 @@ To do every flac in a directory:
 ```
 for f in ./*.flac; do ffmpeg -i "$f" -c:v copy -c:a alac "${f%.*}.m4a"; done
 mkdir ALAC
-mv *.m4a to ALAC
+mv *.m4a ALAC
 ```
