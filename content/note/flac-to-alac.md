@@ -5,8 +5,12 @@ year: "2021"
 month: "2021/04"
 # categories:
 #   - Posts
-# tags:
-#   - linux
+tags:
+  - linux
+  - apple
+  - ffmpeg
+  - flac
+  - alac
 slug: flac-to-alac
 draft: false
 ---
