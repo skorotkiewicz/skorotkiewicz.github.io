@@ -8,7 +8,7 @@ month: "2021/04"
 # tags:
 #   - linux
 slug: flac-to-alac
-draft: true
+draft: false
 ---
 
 It preserve the metadata by itself.
