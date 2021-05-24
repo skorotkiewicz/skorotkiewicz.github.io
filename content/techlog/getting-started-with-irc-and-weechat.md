@@ -13,7 +13,7 @@ tags:
   - weechat
   - libera
 slug: getting-started-with-irc-and-weechat
-draft: true
+draft: false
 ---
 
 Hi, first of all I would like to tell you what IRC is, I will explain it in simple words so that even non-technical people can start playing with IRC.
