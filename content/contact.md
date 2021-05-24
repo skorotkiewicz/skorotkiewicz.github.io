@@ -2,7 +2,10 @@
 title: Contact
 ---
 
-<h3 style="border-bottom: 2px solid #e8e8e8;padding: 5px;">Sebastian Korotkiewicz<br /><small>System Administrator, self-employed</small></h3>
+<h3 style="border-bottom: 2px solid #e8e8e8;padding: 5px;">
+  Sebastian Korotkiewicz
+  <!-- <br /><small>System Administrator, self-employed</small> -->
+</h3>
 
 <strong>Direct contact</strong>
 
@@ -30,7 +33,7 @@ title: Contact
   <div class="row">
     <div class="col-sm-1">IRC</div>
     <div class="col-sm-10">
-        l__q @ freenode
+        l__q @ irc.libera.chat (<s>freenode</s>)
     </div>
   </div>
 
@@ -157,7 +160,7 @@ title: Contact
 <h2>Cryptocurrencies</h2>
 <ul>
 <li>Bitcoin: 14ynnZ1STpFFWjMLpq6uqJhu1HZe9nswhu</li>
-<li>Litecoin: LWktCYxneW54HovtHU9BfWBmkaZqzHiwoM</li>
-<li>Dogecoin: DCNw4eprz62oXxKXMYkrYDehnJTKUTbZBA</li>
-<li>Ethereum: 0xc726f49a5875ed4117c4d3ca217b242087a05ef9</li>
+<li>Dogecoin: DLToiwvmBMY7i2zpuhos236thfjEX5NJwX</li>
+<!-- <li>Litecoin: LWktCYxneW54HovtHU9BfWBmkaZqzHiwoM</li> -->
+<!-- <li>Ethereum: 0xc726f49a5875ed4117c4d3ca217b242087a05ef9</li> -->
 </ul>
