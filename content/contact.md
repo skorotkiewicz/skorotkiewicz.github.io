@@ -110,7 +110,14 @@ title: Contact
         dev.to/<a href="https://dev.to/skorotkiewicz">skorotkiewicz</a>
     </div>
   </div>
-
+ 
+  <div class="row">
+    <div class="col-sm-1">Mastodon</div>
+    <div class="col-sm-10">
+        fosstodon.org/<a rel="me" href="https://fosstodon.org/@skorotkiewicz">@skorotkiewicz</a>
+    </div>
+  </div>
+  
   <!-- <div class="row">
     <div class="col-sm-1">Bitmessage</div>
     <div class="col-sm-10">
