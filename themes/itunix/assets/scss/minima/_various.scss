@@ -1,6 +1,13 @@
 .bmc-button img{width:27px!important;margin-bottom:1px!important;box-shadow:none!important;border:none!important;vertical-align:middle!important}
 .bmc-button{width: 185px;line-height:36px!important;height:37px!important;text-decoration:none!important;display:inline-flex!important;color:#ffffff!important;background-color:rgba(255, 130, 63, 0.9)!important;border-radius:3px!important;border:1px solid transparent!important;padding:0 9px!important;font-size:17px!important;letter-spacing:-0.08px!important;;margin:0 auto!important;font-family:'Lato',sans-serif!important;-webkit-box-sizing:border-box!important;box-sizing:border-box!important}
-.paypal-button{width: 185px;line-height:30px!important;height:37px!important;text-decoration:none!important;display:inline-flex!important;color:#ffffff!important;background-color:rgba(63, 153, 255, 0.9)!important;border-radius:3px!important;border:1px solid transparent!important;padding:0 9px!important;font-size:16px!important;letter-spacing:-0.08px!important;margin:0 auto!important;font-family:'Lato',sans-serif!important;-webkit-box-sizing:border-box!important;box-sizing:border-box!important}
+.paypal-button{width: 185px;line-height:30px!important;height:37px!important;text-decoration:none!important;display:inline-flex!important;color:#ffffff!important;background-color:rgba(63, 153, 255, 0.9)!important;border-radius:3px!important;border:1px solid transparent!important;padding:0 9px!important;font-size:16px!important;letter-spacing:-0.08px!important;margin:0 auto!important;font-family:'Lato',sans-serif!important;-webkit-box-sizing:border-box!important;box-sizing:border-box!important
+
+
+  ;display: flex;
+  align-items: center;
+  // justify-content: center;
+
+}
 
 .breakingNews {padding-left: 10px; padding-top: 5px; font-size: 14px; color: #fff; max-width: 300px !important; display: inline-block;}
 @media only screen and (max-width : 550px) {
@@ -54,16 +61,20 @@ pre code {
     margin: 5px;
     border: 1px solid #27496d;
     padding: 5px;
-    border-radius: 30px;
+    border-radius: 1rem;
     color: #142850 !important;
   }
   
   .active {
     // background-color: #ff00ff70;
-      border-radius: 5px;
-      background: yellowgreen;
-      transform: perspective(8px) rotateX(5deg) rotateY(5deg) rotateZ(-20deg);
-      margin: 2px;
+
+    // border-radius: 5px;
+      // background: yellowgreen;
+      // transform: perspective(8px) rotateX(5deg) rotateY(5deg) rotateZ(-20deg);
+      // margin: 2px;
+      
+      border-bottom: .5rem solid yellowgreen;
+      padding-bottom: .3rem;
 
       // text-shadow: 
       //  -3px 0px 3px yellow,
