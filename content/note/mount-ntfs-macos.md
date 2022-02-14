@@ -20,6 +20,7 @@ To do so, there are two possibilities
 Install the `ntfs-3g` package from _darelover_, as the original package is not updated to macOS Big Sur.
 
 ```
+brew cask install osxfuse
 brew install darelover/ntfs-3g/ntfs-3g
 ```
 
