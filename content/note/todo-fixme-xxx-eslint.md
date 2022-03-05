@@ -5,9 +5,11 @@ year: "2022"
 month: "2022/02"
 # categories:
 #   - Posts
-# tags:
-#   - linux
-slug: xxx-eslint
+tags:
+  - eslint
+  - warn
+  - javascript
+slug: todo-fixme-xxx-eslint
 draft: false
 ---
 

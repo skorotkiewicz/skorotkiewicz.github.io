@@ -5,8 +5,10 @@ year: "2022"
 month: "2022/02"
 # categories:
 #   - Posts
-# tags:
-#   - linux
+tags:
+  - macos
+  - ntfs
+  - mount
 slug: mount-ntfs-macos
 draft: false
 ---
