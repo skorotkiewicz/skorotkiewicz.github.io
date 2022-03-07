@@ -31,7 +31,7 @@ And securely mount your USB drive in a read-write access:
 sudo /usr/local/bin/ntfs-3g /dev/disk3s1 /Volumes/NTFS -olocal -oallow_other -o auto_xattr
 ```
 
-The first time you try to mount it, you will be asked to give macOS permissions for osxfuse request for reboot.
+The first time you try to mount it, you will be asked to give macOS permissions for osxfuse and a request for reboot.
 After the reboot it will mount the drive nicely and safely again.
 
 Now we have access to our NTFS drive again.
