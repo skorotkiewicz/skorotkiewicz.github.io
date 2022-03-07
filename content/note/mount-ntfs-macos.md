@@ -13,9 +13,41 @@ slug: mount-ntfs-macos
 draft: false
 ---
 
-## First method
-
 Unfortunately NTFS is not natively supported on macOS, but sometimes we need write access to an NTFS disk.
+
+<strong>EDIT:</strong>
+
+Now you can install the official osxfuse without any problem.
+
+```
+brew tap gromgit/homebrew-fuse
+brew reinstall macfuse
+brew install ntfs-3g-mac
+```
+
+And securely mount your USB drive in a read-write access:
+
+```
+sudo /usr/local/bin/ntfs-3g /dev/disk3s1 /Volumes/NTFS -olocal -oallow_other -o auto_xattr
+```
+
+The first time you try to mount it, you will be asked to give macOS permissions for osxfuse request for reboot.
+After the reboot it will mount the drive nicely and safely again.
+
+Now we have access to our NTFS drive again.
+
+<div style="border: 1px solid #ff0000; padding: 5px;margin: 30px;">
+Warning, do not use mounty.app, it works, but after a few writes it corrupts the files and you have to repair the disk from Windows!
+
+Use only osxfuse: [github.com/osxfuse/osxfuse/wiki/NTFS-3G](https://github.com/osxfuse/osxfuse/wiki/NTFS-3G)
+
+</div>
+
+<h4>Have a wonderful day!</h4>
+
+<details>
+<summary style="cursor: pointer; color: blue">Here is an outdated entry</summary>
+<s style="opacity: 0.3">
 
 To do so, there are two possibilities
 
@@ -41,4 +73,5 @@ sudo mount -t ntfs -o rw,auto,nobrowse /dev/disk3s1 ~/NTFS
 sudo umount ~/NTFS
 ```
 
-Now we have access to our NTFS drive again.
+</s>
+</details>
