@@ -8,12 +8,24 @@ dl, dd, ol, ul, figure {
   padding: 0;
 }
 
+// @font-face {
+//   font-style: normal;
+//   font-family: "Meslo LG";
+//   src: local("Meslo LG S"), url("/MesloLGS-Regular.ttf") format("truetype");
+// }
 
 
 /**
  * Basic styling
  */
 body {
+  // font-display: swap;
+  // font-weight: 400;
+  // font-size: 14px;
+  // font-family: "Menlo", "Meslo LG", monospace;
+  // line-height: 1.725;
+  // text-rendering: geometricPrecision;
+
   font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
   color: $text-color;
   background-color: $background-color;
