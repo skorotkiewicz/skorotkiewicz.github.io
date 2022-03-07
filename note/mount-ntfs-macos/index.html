@@ -11,7 +11,7 @@
 brew reinstall macfuse
 brew install ntfs-3g-mac
 </code></pre><p>And securely mount your USB drive in a read-write access:</p><pre><code>sudo /usr/local/bin/ntfs-3g /dev/disk3s1 /Volumes/NTFS -olocal -oallow_other -o auto_xattr
-</code></pre><p>The first time you try to mount it, you will be asked to give macOS permissions for osxfuse request for reboot.
+</code></pre><p>The first time you try to mount it, you will be asked to give macOS permissions for osxfuse and a request for reboot.
 After the reboot it will mount the drive nicely and safely again.</p><p>Now we have access to our NTFS drive again.</p><div style="border:1px solid red;padding:5px;margin:30px">Warning, do not use mounty.app, it works, but after a few writes it corrupts the files and you have to repair the disk from Windows!<p>Use only osxfuse: <a href=https://github.com/osxfuse/osxfuse/wiki/NTFS-3G>github.com/osxfuse/osxfuse/wiki/NTFS-3G</a></p></div><h4>Have a wonderful day!</h4><details><summary style=cursor:pointer;color:blue>Here is an outdated entry</summary>
 <s style=opacity:.3><p>To do so, there are two possibilities</p><p>Install the <code>ntfs-3g</code> package from <em>darelover</em>, as the original package is not updated to macOS Big Sur.</p><pre><code>brew cask install osxfuse
 brew install darelover/ntfs-3g/ntfs-3g

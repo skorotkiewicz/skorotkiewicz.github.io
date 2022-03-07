@@ -4,4 +4,4 @@ module.exports = { extends: [&amp;quot;blitz&amp;quot;], rules: { &amp;quot;no-u
 EDIT:
 Now you can install the official osxfuse without any problem.
 brew tap gromgit/homebrew-fuse brew reinstall macfuse brew install ntfs-3g-mac And securely mount your USB drive in a read-write access:
-sudo /usr/local/bin/ntfs-3g /dev/disk3s1 /Volumes/NTFS -olocal -oallow_other -o auto_xattr The first time you try to mount it, you will be asked to give macOS permissions for osxfuse request for reboot.</description></item></channel></rss>
+sudo /usr/local/bin/ntfs-3g /dev/disk3s1 /Volumes/NTFS -olocal -oallow_other -o auto_xattr The first time you try to mount it, you will be asked to give macOS permissions for osxfuse and a request for reboot.</description></item></channel></rss>
