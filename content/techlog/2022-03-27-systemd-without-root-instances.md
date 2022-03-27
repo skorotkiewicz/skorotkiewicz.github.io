@@ -20,6 +20,8 @@ mkdir -p  ~/.config/systemd/user/
 
 ### Create a systemd service unit file under the directory.
 
+The @ symbol indicates that a substitution will be made. Systemd will take whatever you type after it and replace the variable %i inside the service unit file. The variable can be seen in this excerpt of the SimpleHTTPServer@.service file:
+
 ```
 $ vim  ~/.config/systemd/user/SimpleHTTPServer@.service
 [Unit]
@@ -54,9 +56,11 @@ SimpleHTTPServer@.service disabled
 
 ### You can start the service then after creation.
 
-```
-# 1991 is our port who listen
+Start instance with the appropriate port.
+`1991` is our port to listen.  
+To manage, just append port after the @ symbol.
 
+```
 $ systemctl --user enable --now SimpleHTTPServer@1991
 Created symlink /home/grizzly/.config/systemd/user/multi-user.target.wants/SimpleHTTPServer@1991.service → /home/grizzly/.config/systemd/user/SimpleHTTPServer@.service.
 ```
