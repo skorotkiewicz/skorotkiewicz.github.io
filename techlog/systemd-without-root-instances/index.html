@@ -7,7 +7,7 @@
 <a class=page-link href=/daily/>Daily</a></div></nav></div></header><main class=page-content aria-label=Content style=padding-bottom:5px><div class="wrapper wrapper_post"><article class=post itemscope itemtype=http://schema.org/BlogPosting><header class=post-header><h1 class=post-title itemprop="name headline">Systemd Without Root and with Instances</h1><div class=post-meta><div class="post-date pull-left">Posted on
 <time datetime=2022-03-27T09:43:14+02:00>Mar 27, 2022</time></div><div class=pull-right><a href=/tags/linux/>#linux</a>
 <a href=/tags/systemd/>#systemd</a></div></div><br></header><div class=post-content itemprop=articleBody><p>A user Systemd service should be placed in <code>~/.config/systemd/user/</code> directory if you want to have full ownership as normal user. Create it if it doesn’t exist.</p><pre><code>mkdir -p  ~/.config/systemd/user/
-</code></pre><h2 id=create-a-systemd-service-unit-file-under-the-directory>Create a systemd service unit file under the directory.</h2><pre><code>$ vim  ~/.config/systemd/user/SimpleHTTPServer@.service
+</code></pre><h3 id=create-a-systemd-service-unit-file-under-the-directory>Create a systemd service unit file under the directory.</h3><pre><code>$ vim  ~/.config/systemd/user/SimpleHTTPServer@.service
 [Unit]
 Description=SimpleHTTPServer
 After=network-online.target
@@ -20,17 +20,17 @@ Restart=always
 
 [Install]
 WantedBy=multi-user.target
-</code></pre><h2 id=reload-systemd>Reload systemd.</h2><pre><code>$ systemctl --user daemon-reload
-</code></pre><h2 id=confirm-the-service-is-available>Confirm the service is available.</h2><pre><code>$ systemctl --user list-unit-files SimpleHTTPServer@.service
+</code></pre><h3 id=reload-systemd>Reload systemd.</h3><pre><code>$ systemctl --user daemon-reload
+</code></pre><h3 id=confirm-the-service-is-available>Confirm the service is available.</h3><pre><code>$ systemctl --user list-unit-files SimpleHTTPServer@.service
 UNIT FILE                 STATE
 SimpleHTTPServer@.service disabled
 
 1 unit files listed.
-</code></pre><h2 id=you-can-start-the-service-then-after-creation>You can start the service then after creation.</h2><pre><code># 1991 is our port who listen
+</code></pre><h3 id=you-can-start-the-service-then-after-creation>You can start the service then after creation.</h3><pre><code># 1991 is our port who listen
 
 $ systemctl --user enable --now SimpleHTTPServer@1991
 Created symlink /home/grizzly/.config/systemd/user/multi-user.target.wants/SimpleHTTPServer@1991.service → /home/grizzly/.config/systemd/user/SimpleHTTPServer@.service.
-</code></pre><h2 id=lets-check-the-status-of-our-service>Let’s check the status of our service.</h2><pre><code>$ systemctl --user status SimpleHTTPServer@1991.service
+</code></pre><h3 id=lets-check-the-status-of-our-service>Let’s check the status of our service.</h3><pre><code>$ systemctl --user status SimpleHTTPServer@1991.service
 ● SimpleHTTPServer@1991.service - SimpleHTTPServer
    Loaded: loaded (/home/grizzly/.config/systemd/user/SimpleHTTPServer@.service; enabled; vendor preset: enabled)
    Active: active (running) since Sun 2022-03-27 09:51:28 CEST; 1min 30s ago
