@@ -18,7 +18,7 @@ A user Systemd service should be placed in `~/.config/systemd/user/` directory i
 mkdir -p  ~/.config/systemd/user/
 ```
 
-## Create a systemd service unit file under the directory.
+### Create a systemd service unit file under the directory.
 
 ```
 $ vim  ~/.config/systemd/user/SimpleHTTPServer@.service
@@ -36,13 +36,13 @@ Restart=always
 WantedBy=multi-user.target
 ```
 
-## Reload systemd.
+### Reload systemd.
 
 ```
 $ systemctl --user daemon-reload
 ```
 
-## Confirm the service is available.
+### Confirm the service is available.
 
 ```
 $ systemctl --user list-unit-files SimpleHTTPServer@.service
@@ -52,7 +52,7 @@ SimpleHTTPServer@.service disabled
 1 unit files listed.
 ```
 
-## You can start the service then after creation.
+### You can start the service then after creation.
 
 ```
 # 1991 is our port who listen
@@ -61,7 +61,7 @@ $ systemctl --user enable --now SimpleHTTPServer@1991
 Created symlink /home/grizzly/.config/systemd/user/multi-user.target.wants/SimpleHTTPServer@1991.service → /home/grizzly/.config/systemd/user/SimpleHTTPServer@.service.
 ```
 
-## Let’s check the status of our service.
+### Let’s check the status of our service.
 
 ```
 $ systemctl --user status SimpleHTTPServer@1991.service
