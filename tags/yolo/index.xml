@@ -1,4 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>yolo on Sebastian Korotkiewicz - Tech{{log}}</title><link>https://skorotkiewicz.github.io/tags/yolo/</link><description>Recent content in yolo on Sebastian Korotkiewicz - Tech{{log}}</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 22 Aug 2017 17:14:30 +0200</lastBuildDate><atom:link href="https://skorotkiewicz.github.io/tags/yolo/index.xml" rel="self" type="application/rss+xml"/><item><title>Simple start with YOLO v2</title><link>https://skorotkiewicz.github.io/techlog/simple-start-with-yolo-v2/</link><pubDate>Tue, 22 Aug 2017 17:14:30 +0200</pubDate><guid>https://skorotkiewicz.github.io/techlog/simple-start-with-yolo-v2/</guid><description>reduce frames to 15 per sec:
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>yolo on Sebastian Korotkiewicz - Tech{{log}}</title><link>https://skorotkiewicz.github.io/tags/yolo/</link><description>Recent content in yolo on Sebastian Korotkiewicz - Tech{{log}}</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 02 Jul 2022 19:25:21 +0200</lastBuildDate><atom:link href="https://skorotkiewicz.github.io/tags/yolo/index.xml" rel="self" type="application/rss+xml"/><item><title>Start With Yolo V6</title><link>https://skorotkiewicz.github.io/techlog/start-with-yolov6/</link><pubDate>Sat, 02 Jul 2022 19:25:21 +0200</pubDate><guid>https://skorotkiewicz.github.io/techlog/start-with-yolov6/</guid><description>Create conda environment:
+$ conda create -n yolo python=3.8 -y
+Activate environment:
+$ conda activate yolo
+Download repo and install dependencies:
+$ git clone https://github.com/meituan/YOLOv6 &amp;amp;&amp;amp; cd YOLOv6 $ pip install -r requirements.txt Download a pretrained model from the YOLOv6 release
+Create new directory for frames:
+$ mkdir input/
+Split video to frames:
+ffmpeg -i stepup.mp4 input/stepup_%04d.png
+Start to dedect objects in frames:
+python tools/infer.py --weights yolov6n.pt --source input/</description></item><item><title>Simple start with YOLO v2</title><link>https://skorotkiewicz.github.io/techlog/simple-start-with-yolo-v2/</link><pubDate>Tue, 22 Aug 2017 17:14:30 +0200</pubDate><guid>https://skorotkiewicz.github.io/techlog/simple-start-with-yolo-v2/</guid><description>reduce frames to 15 per sec:
 # ffmpeg -i stepup.mp4 -r 15 stepup15.mp4
 make new directory for frames and put to stepup/ a video to split
 #mkdir stepup/; mkdir yolo_stepup/
