@@ -12,8 +12,6 @@ slug: earth-speed-units
 draft: false
 ---
 
-## Earth Speed Units (ESU)
-
 ESU is a new unit of measurement for speed that is designed to be more intuitive and user-friendly than traditional units. It is based on the speed of a car traveling at 100 km/h on a level road on the Earth's surface.
 
 ### Converting from km/h to ESU
