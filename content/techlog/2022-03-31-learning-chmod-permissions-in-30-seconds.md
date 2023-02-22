@@ -10,7 +10,7 @@ tags:
   - chmod
   - permissions
 slug: learning-chmod-permissions-in-30-seconds
-draft: true
+draft: false
 ---
 
 ## Scary about "drwxr-xr-x"?
