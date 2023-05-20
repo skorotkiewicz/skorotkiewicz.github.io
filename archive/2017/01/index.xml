@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2017/01 on Sebastian Korotkiewicz - Tech{{log}}</title><link>https://skorotkiewicz.github.io/archive/2017/01/</link><description>Recent content in 2017/01 on Sebastian Korotkiewicz - Tech{{log}}</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://skorotkiewicz.github.io/archive/2017/01/index.xml" rel="self" type="application/rss+xml"/><item><title>nginx + cgit + debian = one host</title><link>https://skorotkiewicz.github.io/techlog/nginx-cgit-debian-one-host/</link><pubDate>Fri, 20 Jan 2017 18:10:58 +0200</pubDate><guid>https://skorotkiewicz.github.io/techlog/nginx-cgit-debian-one-host/</guid><description>root@raspberrypi:/var/www# cat /etc/nginx/sites-enabled/www
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2017/01 on Sebastian Korotkiewicz - Tech{{log}}</title><link>https://sekor.eu.org/archive/2017/01/</link><description>Recent content in 2017/01 on Sebastian Korotkiewicz - Tech{{log}}</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://sekor.eu.org/archive/2017/01/index.xml" rel="self" type="application/rss+xml"/><item><title>nginx + cgit + debian = one host</title><link>https://sekor.eu.org/techlog/nginx-cgit-debian-one-host/</link><pubDate>Fri, 20 Jan 2017 18:10:58 +0200</pubDate><guid>https://sekor.eu.org/techlog/nginx-cgit-debian-one-host/</guid><description>root@raspberrypi:/var/www# cat /etc/nginx/sites-enabled/www
 server {
 listen 80;
 server_name home.control;
@@ -30,7 +30,7 @@ fastcgi_param CONTENT_LENGTH $content_length;
 fastcgi_param REQUEST_URI $request_uri;
 fastcgi_param DOCUMENT_URI $document_uri;
 fastcgi_param SERVER_PROTOCOL $server_protocol;
-fastcgi_param GATEWAY_INTERFACE CGI/1.</description></item><item><title>Tiny IRC Doc</title><link>https://skorotkiewicz.github.io/techlog/tiny-irc-doc/</link><pubDate>Tue, 10 Jan 2017 18:10:58 +0200</pubDate><guid>https://skorotkiewicz.github.io/techlog/tiny-irc-doc/</guid><description>.post-content ul {list-style: none;}
+fastcgi_param GATEWAY_INTERFACE CGI/1.</description></item><item><title>Tiny IRC Doc</title><link>https://sekor.eu.org/techlog/tiny-irc-doc/</link><pubDate>Tue, 10 Jan 2017 18:10:58 +0200</pubDate><guid>https://sekor.eu.org/techlog/tiny-irc-doc/</guid><description>.post-content ul {list-style: none;}
 NickServ Register nickname on server:
 /nick YourNick
 /msg NickServ REGISTER YourPassword youremail@example.com

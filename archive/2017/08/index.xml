@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2017/08 on Sebastian Korotkiewicz - Tech{{log}}</title><link>https://skorotkiewicz.github.io/archive/2017/08/</link><description>Recent content in 2017/08 on Sebastian Korotkiewicz - Tech{{log}}</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://skorotkiewicz.github.io/archive/2017/08/index.xml" rel="self" type="application/rss+xml"/><item><title>Convert Mercurial project to Git</title><link>https://skorotkiewicz.github.io/techlog/convert-mercurial-project-to-git/</link><pubDate>Mon, 28 Aug 2017 04:35:53 +0200</pubDate><guid>https://skorotkiewicz.github.io/techlog/convert-mercurial-project-to-git/</guid><description>I&amp;rsquo;m using fast-export:
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2017/08 on Sebastian Korotkiewicz - Tech{{log}}</title><link>https://sekor.eu.org/archive/2017/08/</link><description>Recent content in 2017/08 on Sebastian Korotkiewicz - Tech{{log}}</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://sekor.eu.org/archive/2017/08/index.xml" rel="self" type="application/rss+xml"/><item><title>Convert Mercurial project to Git</title><link>https://sekor.eu.org/techlog/convert-mercurial-project-to-git/</link><pubDate>Mon, 28 Aug 2017 04:35:53 +0200</pubDate><guid>https://sekor.eu.org/techlog/convert-mercurial-project-to-git/</guid><description>I&amp;rsquo;m using fast-export:
 cd ~
 git clone https://github.com/frej/fast-export.git
 git init git_repo
 cd git_repo
 ~/fast-export/hg-fast-export.sh -r /path/to/old/mercurial_repo
 git checkout HEAD
-source: https://stackoverflow.com/questions/16037787/convert-mercurial-project-to-git</description></item><item><title>Simple start with YOLO v2</title><link>https://skorotkiewicz.github.io/techlog/simple-start-with-yolo-v2/</link><pubDate>Tue, 22 Aug 2017 17:14:30 +0200</pubDate><guid>https://skorotkiewicz.github.io/techlog/simple-start-with-yolo-v2/</guid><description>reduce frames to 15 per sec:
+source: https://stackoverflow.com/questions/16037787/convert-mercurial-project-to-git</description></item><item><title>Simple start with YOLO v2</title><link>https://sekor.eu.org/techlog/simple-start-with-yolo-v2/</link><pubDate>Tue, 22 Aug 2017 17:14:30 +0200</pubDate><guid>https://sekor.eu.org/techlog/simple-start-with-yolo-v2/</guid><description>reduce frames to 15 per sec:
 # ffmpeg -i stepup.mp4 -r 15 stepup15.mp4
 make new directory for frames and put to stepup/ a video to split
 #mkdir stepup/; mkdir yolo_stepup/
