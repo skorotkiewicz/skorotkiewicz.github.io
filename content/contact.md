@@ -17,6 +17,13 @@ title: Contact
   </div>
 
   <div class="row">
+    <div class="col-sm-1">nostr</div>
+    <div class="col-sm-10">
+        af26863d814cbaf3e4849d30fa2d1f8a2ab138c236f9b0210ae17c1dde1e1fb7
+    </div>
+  </div>
+
+  <div class="row">
     <div class="col-sm-1">XMPP</div>
     <div class="col-sm-10">
         skorotkiewicz@404.city (<s>snopyta.org</s>)
