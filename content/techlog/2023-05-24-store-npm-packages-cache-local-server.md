@@ -18,7 +18,7 @@ draft: false
 
 If you want to move the Node.js/React package cache to a local server, there are several approaches you can consider. One of them is using a private npm registry like Verdaccio and setting it up on your server.
 
-1. Install and configure Verdaccio on your local server. You can find more information on the Verdaccio project's website (https://verdaccio.org/).
+1. Install and configure Verdaccio on your local server. You can find more information on the Verdaccio project's website ([https://verdaccio.org/](https://verdaccio.org/)).
 2. Run the Verdaccio server on your local server. It will act as a private repository for your packages.
 3. Configure your Node.js/React projects to use the Verdaccio private registry as the main package source. You can do this by editing the `.npmrc` file in your project directory or by adding the appropriate entries to the `package.json` file (under the `"config"` section).
 
