@@ -7,34 +7,34 @@
 		<meta http-equiv="Content-Security-Policy"
 			content="default-src 'none'; manifest-src 'self'; connect-src 'self' ws: wss:; script-src 'self'; script-src-elem 'self'; script-src-attr 'none'; style-src 'self' fonts.googleapis.com; img-src http: https: data:; media-src *; font-src 'self' fonts.gstatic.com; child-src 'none';" />
 		<title>Yo, Sup</title>
-		<link rel="manifest" href="/pwa/manifest.json"/>
-		<link rel="icon" href="/icon/icon.svg" type="image/svg+xml"/>
-		<link rel="apple-touch-icon" href="/pwa/icon-256.png"/>
-		<link rel="stylesheet" href="/css/vars.css?v=1">
-		<link rel="stylesheet" href="/css/utils.css?v=1">
-		<link rel="stylesheet" href="/css/styles.css?v=13">
-		<link rel="stylesheet" href="/css/responsive.css?v=10">
-		<script defer src="/js/util.js?v=5"></script>
-		<script defer src="/js/ui/safe-html.js?v=1"></script>
-		<script defer src="/js/ui/util.js?v=8"></script>
-		<script defer src="/js/ui/render.js?v=15"></script>
-		<script defer src="/js/ui/state.js?v=1"></script>
-		<script defer src="/js/ui/fmt.js?v=1"></script>
-		<script defer src="/js/ui/profile.js?v=1"></script>
-		<script defer src="/js/ui/settings.js?v=1"></script>
-		<script defer src="/js/ui/dm.js?v=1"></script>
-		<script defer src="/js/nostr.js?v=7"></script>
-		<script defer src="/js/core.js?v=1"></script>
-		<script defer src="/js/model.js?v=1"></script>
-		<script defer src="/js/contacts.js?v=1"></script>
-		<script defer src="/js/event.js?v=1"></script>
-		<script defer src="/js/lib.js?v=1"></script>
-		<script defer src="/js/main.js?v=1"></script>
+		<link rel="manifest" href="pwa/manifest.json"/>
+		<link rel="icon" href="icon/icon.svg" type="image/svg+xml"/>
+		<link rel="apple-touch-icon" href="pwa/icon-256.png"/>
+		<link rel="stylesheet" href="css/vars.css?v=1">
+		<link rel="stylesheet" href="css/utils.css?v=1">
+		<link rel="stylesheet" href="css/styles.css?v=13">
+		<link rel="stylesheet" href="css/responsive.css?v=10">
+		<script defer src="js/util.js?v=5"></script>
+		<script defer src="js/ui/safe-html.js?v=1"></script>
+		<script defer src="js/ui/util.js?v=8"></script>
+		<script defer src="js/ui/render.js?v=15"></script>
+		<script defer src="js/ui/state.js?v=1"></script>
+		<script defer src="js/ui/fmt.js?v=1"></script>
+		<script defer src="js/ui/profile.js?v=1"></script>
+		<script defer src="js/ui/settings.js?v=1"></script>
+		<script defer src="js/ui/dm.js?v=1"></script>
+		<script defer src="js/nostr.js?v=7"></script>
+		<script defer src="js/core.js?v=1"></script>
+		<script defer src="js/model.js?v=1"></script>
+		<script defer src="js/contacts.js?v=1"></script>
+		<script defer src="js/event.js?v=1"></script>
+		<script defer src="js/lib.js?v=1"></script>
+		<script defer src="js/main.js?v=1"></script>
 	</head>
 	<body>
 		<div id="container-busy">
 			<div class="loader" title="Loading...">
-				<img class="dark-invert" src="/icon/loader-fragment.svg"/>
+				<img class="dark-invert" src="icon/loader-fragment.svg"/>
 			</div>
 		</div>
 		<div id="container-welcome" class="hide">
@@ -42,7 +42,7 @@
 				<div class="padded">
 					<h1>
 						Yo, Sup? 
-						<img class="icon svg" src="/icon/logo-inverted.svg"/>
+						<img class="icon svg" src="icon/logo-inverted.svg"/>
 					</h1>
 					<p>A minimal experience for Nostr.</p>
 					<p>Please access with a nos2x compatible browser.</p>
@@ -57,32 +57,32 @@
 			<nav id="nav" class="nav full flex-noshrink vertical-hide">
 				<div>
 					<div id="app-icon-logo">
-						<img class="icon svg" title="Damus" src="/icon/logo-inverted.svg"/>
+						<img class="icon svg" title="Damus" src="icon/logo-inverted.svg"/>
 					</div>
 					<button action="open-view" data-view="friends" class="nav icon" 
 						title="Home">
-						<img class="icon svg inactive" src="/icon/home.svg"/>
-						<img class="icon svg active" src="/icon/home-active.svg"/>
+						<img class="icon svg inactive" src="icon/home.svg"/>
+						<img class="icon svg active" src="icon/home-active.svg"/>
 					</button>
 					<button action="open-view" data-view="dm" class="nav icon" 
 						title="Direct Messages">
-						<img class="icon svg inactive" src="/icon/messages.svg"/>
-						<img class="icon svg active" src="/icon/messages-active.svg"/>
+						<img class="icon svg inactive" src="icon/messages.svg"/>
+						<img class="icon svg active" src="icon/messages-active.svg"/>
 						<div class="new-notifications hide" role="dm"></div>
 					</button>
 					<button action="open-view" data-view="notifications"
 						class="nav icon" title="Notifications">
-						<img class="icon svg inactive" src="/icon/notifications.svg"/>
-						<img class="icon svg active" src="/icon/notifications-active.svg"/>
+						<img class="icon svg inactive" src="icon/notifications.svg"/>
+						<img class="icon svg active" src="icon/notifications-active.svg"/>
 						<div class="new-notifications hide" role="activity"></div>
 					</button>
 					<button action="open-view" data-view="settings" 
 						title="Settings" class="nav icon">
-						<img class="icon svg inactive" src="/icon/settings.svg"/>
-						<img class="icon svg active" src="/icon/settings-active.svg"/>
+						<img class="icon svg inactive" src="icon/settings.svg"/>
+						<img class="icon svg active" src="icon/settings-active.svg"/>
 					</button>
 					<button action="new-note" title="New Note" class="nav icon new-note">
-						<img class="icon svg invert" src="/icon/new-note.svg"/>
+						<img class="icon svg invert" src="icon/new-note.svg"/>
 					</button>
 				</div>
 			</nav>
@@ -96,9 +96,9 @@
 								Mark All Read
 							</button>
 							<img class="pfp hide" role="their-pfp" data-pubkey=""
-							src="/icon/no-user.svg"/>
+							src="icon/no-user.svg"/>
 							<img class="pfp hide" role="my-pfp" data-pubkey=""
-							src="/icon/no-user.svg"/>
+							src="icon/no-user.svg"/>
 						</div>
 					</header>
 					<div id="profile-info" role="profile-info" class="bottom-border hide">
@@ -109,20 +109,20 @@
 							<div class="profile-tools">
 								<button class="icon link hide"
 								name="profile-website" action="open-link">
-									<img class="icon svg" src="/icon/profile-website.svg"/>
+									<img class="icon svg" src="icon/profile-website.svg"/>
 								</button>
 								<button class="icon link hide" 
 								title="Copy Lightning Address"
 								name="profile-lud06" action="open-lud06">
-									<img class="icon svg" src="/icon/profile-zap.svg"/>
+									<img class="icon svg" src="icon/profile-zap.svg"/>
 								</button>
 								<button class="icon" name="message-user"
 								title="Directly Message">
-									<img class="icon svg" src="/icon/message-user.svg"/>
+									<img class="icon svg" src="icon/message-user.svg"/>
 								</button>
 								<button class="icon" name="copy-pk"
 								data-pk="" title="Copy Public Key">
-									<img class="icon svg" src="/icon/pubkey.svg"/></button>
+									<img class="icon svg" src="icon/pubkey.svg"/></button>
 								
 								<button class="action" name="follow-user" 
 								data-pk="">Follow</button>
@@ -138,7 +138,7 @@
 					</div>
 					<div class="loading-events">
 						<div class="loader" title="Loading...">
-							<img class="dark-invert" src="/icon/loader-fragment.svg"/>
+							<img class="dark-invert" src="icon/loader-fragment.svg"/>
 						</div>
 					</div>
 					<div id="show-new" class="show-new bottom-border hide">
@@ -156,7 +156,7 @@
 							<header>
 								<label>Relays</label>
 								<button id="add-relay" class="btn-text">
-									<img class="svg icon small" src="/icon/add-relay.svg"/>
+									<img class="svg icon small" src="icon/add-relay.svg"/>
 								</button>
 							</header>
 							<table id="relay-list" class="row">
@@ -189,29 +189,29 @@
 						<nav class="nav mobile">
 							<button action="open-view" data-view="friends" class="icon" 
 								title="Home">
-								<img class="icon svg inactive" src="/icon/home.svg"/>
-								<img class="icon svg active" src="/icon/home-active.svg"/>
+								<img class="icon svg inactive" src="icon/home.svg"/>
+								<img class="icon svg active" src="icon/home-active.svg"/>
 							</button>
 							<button action="open-view" data-view="dm" class="icon" 
 								title="Direct Messages">
-								<img class="icon svg inactive" src="/icon/messages.svg"/>
-								<img class="icon svg active" src="/icon/messages-active.svg"/>
+								<img class="icon svg inactive" src="icon/messages.svg"/>
+								<img class="icon svg active" src="icon/messages-active.svg"/>
 								<div class="new-notifications hide" role="dm"></div>
 							</button>
 							<button action="open-view" data-view="notifications"
 								class="icon" title="Notifications">
-								<img class="icon svg inactive" src="/icon/notifications.svg"/>
-								<img class="icon svg active" src="/icon/notifications-active.svg"/>
+								<img class="icon svg inactive" src="icon/notifications.svg"/>
+								<img class="icon svg active" src="icon/notifications-active.svg"/>
 								<div class="new-notifications hide" role="activity"></div>
 							</button>
 							<button action="open-view" data-view="settings" 
 								title="Settings" class="icon">
-								<img class="icon svg inactive" src="/icon/settings.svg"/>
-								<img class="icon svg active" src="/icon/settings-active.svg"/>
+								<img class="icon svg inactive" src="icon/settings.svg"/>
+								<img class="icon svg active" src="icon/settings-active.svg"/>
 							</button>
 							<button id="new-note-mobile" action="new-note" 
 								title="New Note" class="nav icon new-note">
-								<img class="icon svg invert" src="/icon/new-note.svg"/>
+								<img class="icon svg invert" src="icon/new-note.svg"/>
 							</button>
 						</nav>
 					</footer>
@@ -229,7 +229,7 @@
 				<header>
 					<label>Reply To</label>
 					<button class="icon" action="close-modal">
-						<img class="icon svg" src="/icon/close-modal.svg"/>
+						<img class="icon svg" src="icon/close-modal.svg"/>
 					</button>
 				</header>
 				<div id="replying-to"></div>
@@ -251,7 +251,7 @@
 				<header>
 					<label>Update Profile</label>
 					<button class="icon" action="close-modal">
-						<img class="icon svg" src="/icon/close-modal.svg"/>
+						<img class="icon svg" src="icon/close-modal.svg"/>
 					</button>
 				</header>
 				<div>
@@ -274,7 +274,7 @@
 				<header>
 					<label>Event Details</label>
 					<button class="icon modal-floating-close-btn" action="close-modal">
-						<img class="icon svg" src="/icon/close-modal.svg"/>
+						<img class="icon svg" src="icon/close-modal.svg"/>
 					</button>
 				</header>
 				<div class="max-content">
