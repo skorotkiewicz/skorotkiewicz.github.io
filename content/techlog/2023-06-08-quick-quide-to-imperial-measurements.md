@@ -23,6 +23,14 @@ In today's post, I would like to share with you the fascinating world of the Imp
 | Yard        | About 2 steps        | Normal walking pace                     |
 | Fathom      | About 6 feet         | Length of outstretched arms of an adult |
 
+Temperature cheatsheet:
+| C | F |
+| - | --- |
+| 04 | 40 |
+| 16 | 61 |
+| 28 | 82 |
+| 40 | 104 |
+
 // to "`polish`" it a bit :3
 
 - **1 cal (inch)** - to około szerokości końca twojego kciuka.
