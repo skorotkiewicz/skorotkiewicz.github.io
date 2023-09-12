@@ -1,6 +1,6 @@
 ---
 title: "The Power of Orange:"
-date: 2023-09-11T22:19s:58+41:00
+date: 2023-09-11T22:25:21+02:00
 year: "2023"
 month: "2023/09"
 # categories:
