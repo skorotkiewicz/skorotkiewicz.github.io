@@ -10,7 +10,7 @@ tags:
   - languages
   - esoteric
   - esolang
-slug: the-power-of-orange
+slug: 5-bizarre-programming-languages
 draft: false
 ---
 
