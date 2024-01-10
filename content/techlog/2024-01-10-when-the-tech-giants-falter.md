@@ -21,13 +21,9 @@ First on the list is SourceHut, the hosting platform renowned for its minimalist
 
 "I've been using SourceHut for my projects, and this is the first time I've seen such a prolonged downtime," says one user, expressing concern.
 
-Hacker News, Normally Unshakeable, Stumbles
-
 But that's not all. The second surprising development is that Ycombinator's Hacker News, a popular hub for information exchange and discussions among tech enthusiasts, has also been at a standstill for the last 20 minutes. What's the cause? We don't know yet.
 
 "I've been a daily user of Hacker News for over a decade, and this is the first time I've seen it go offline. It's like a mini-internet blackout for me," confesses another user.
-
-Technology Takes a Breather
 
 Is this just a momentary hiccup in the data flow, or is something more significant underway? For now, certainty eludes us. However, this incident serves as a reminder of how reliant we are on the technology we use every day.
 
