@@ -17,11 +17,9 @@ Today, in the virtual realm, a seismic disturbance rippled through the tech land
 
 SourceHut Tremors: 3 Hours of Silence
 
-First on the list is SourceHut, the hosting platform renowned for its minimalist approach and commitment to user privacy. However, for the past three hours, access to the service has been unattainable. While details regarding the outage remain undisclosed, users hold their breath, awaiting a return to normalcy.
+First on the list is SourceHut, the hosting platform renowned for its minimalist approach and commitment to user privacy. However, for the past hour, access to the service has been unattainable. While details regarding the outage remain undisclosed, users hold their breath, awaiting a return to normalcy.
 
-"I've been using SourceHut for my projects, and this is the first time I've seen such a prolonged downtime," says one user, expressing concern.
-
-But that's not all. The second surprising development is that Ycombinator's Hacker News, a popular hub for information exchange and discussions among tech enthusiasts, has also been at a standstill for the last 20 minutes. What's the cause? We don't know yet.
+But that's not all. The second surprising development is that Ycombinator's Hacker News, a popular hub for information exchange and discussions among tech enthusiasts, has also been at a standstill for the last 3 hours. What's the cause? We don't know yet.
 
 "I've been a daily user of Hacker News for over a decade, and this is the first time I've seen it go offline. It's like a mini-internet blackout for me," confesses another user.
 
