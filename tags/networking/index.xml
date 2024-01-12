@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>networking on Sebastian Korotkiewicz - Tech{{log}}</title><link>https://sekor.eu.org/tags/networking/</link><description>Recent content in networking on Sebastian Korotkiewicz - Tech{{log}}</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 12 Jan 2024 07:00:00 +0200</lastBuildDate><atom:link href="https://sekor.eu.org/tags/networking/index.xml" rel="self" type="application/rss+xml"/><item><title>Setup user autostart and properly configure systemd in Arch Linux</title><link>https://sekor.eu.org/techlog/setup-user-autostart-archlinux/</link><pubDate>Fri, 12 Jan 2024 07:00:00 +0200</pubDate><guid>https://sekor.eu.org/techlog/setup-user-autostart-archlinux/</guid><description>Create user:
+useradd -m -s /bin/bash username Create example service, like node app:
+nano ~/.config/systemd/user/app.service containing:
+[Unit] Description=One of the servers [Service] ExecStart=/usr/bin/node /home/username/server.js [Install] WantedBy=default.target From root run: loginctl enable-linger username
+and from user add: DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$UID/bus
+to /home/username/.bashrc
+Then user can run: systemctl --user enable app.service
+enable/disable/start/stop/status</description></item></channel></rss>
