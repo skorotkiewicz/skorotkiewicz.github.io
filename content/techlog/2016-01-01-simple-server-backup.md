@@ -18,7 +18,6 @@ mkdir /backup
 cd /backup
 
 tar --exclude='/backup' --exclude='/mnt/backup' --exclude='/mnt/mnt' -cvjpf mybackup.tar.bz2 /mnt
-
 ```
 <s>tar --exclude='./backup' --exclude='./mnt/backup' -cvjpf mybackup.tar.bz2 /mnt</s>
 
