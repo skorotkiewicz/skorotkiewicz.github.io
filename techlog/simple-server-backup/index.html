@@ -12,7 +12,6 @@ mkdir /backup
 cd /backup
 
 tar --exclude='/backup' --exclude='/mnt/backup' --exclude='/mnt/mnt' -cvjpf mybackup.tar.bz2 /mnt
-
 </code></pre><p><s>tar &ndash;exclude='./backup' &ndash;exclude='./mnt/backup' -cvjpf mybackup.tar.bz2 /mnt</s></p><p>Then you unpack with behavior permission</p><p><code>sudo tar -xvjpf mybackup.tar.bz2</code></p><h1 id=creating-a-backup-all-datebases-and-restore>Creating A Backup All Datebases And Restore</h1><pre><code>mysqldump -u root -p --all-databases &gt; all_databases.sql
 mysqldump -u root -p --all-databases &lt; all_databases.sql
 </code></pre><h1 id=creating-a-backup-single-datebase-and-restore>Creating A Backup Single Datebase And Restore</h1><pre><code>mysqldump -u root -p db_name &gt; db_file.sql
