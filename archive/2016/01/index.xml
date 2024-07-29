@@ -36,15 +36,16 @@ echo &amp;quot;iptables-save &amp;gt; /etc/firewall.conf&amp;quot; &amp;gt;&amp;
 chmod +x /etc/network/if-down.d/iptables
 is working for me
 if you what to save your iptables rules after an change to iptables just run below.. but it will run the same command on reboot or shutdown.</description></item><item><title>Simple server backup</title><link>https://sekor.eu.org/techlog/simple-server-backup/</link><pubDate>Fri, 01 Jan 2016 18:10:58 +0200</pubDate><guid>https://sekor.eu.org/techlog/simple-server-backup/</guid><description>sudo mount /dev/xxxx -o remount-ro /mnt
-mkdir /backup; cd /backup
-tar --exclude='./backup' --exclude='./mnt/backup' -cvjpf mybackup.tar.bz2 /mnt
+mkdir /backup
+cd /backup
+tar --exclude='/backup' --exclude='/mnt/backup' --exclude='/mnt/mnt' -cvjpf mybackup.tar.bz2 /mnt
+tar &amp;ndash;exclude='./backup' &amp;ndash;exclude='./mnt/backup' -cvjpf mybackup.tar.bz2 /mnt
 Then you unpack with behavior permission
 sudo tar -xvjpf mybackup.tar.bz2
 Creating A Backup All Datebases And Restore mysqldump -u root -p --all-databases &amp;gt; all_databases.sql
 mysqldump -u root -p --all-databases &amp;lt; all_databases.sql
 Creating A Backup Single Datebase And Restore mysqldump -u root -p db_name &amp;gt; db_file.sql
-mysqldump -u root -p db_name &amp;lt; db_file.sql
-Split larger files into smaller parts?</description></item><item><title>ssh tunnel to localhost</title><link>https://sekor.eu.org/techlog/ssh-tunnel-to-localhost/</link><pubDate>Fri, 01 Jan 2016 18:10:58 +0200</pubDate><guid>https://sekor.eu.org/techlog/ssh-tunnel-to-localhost/</guid><description>ssh -R 9000:192.168.1.13:80 -N root@example.com</description></item><item><title>Weechat BNC</title><link>https://sekor.eu.org/techlog/weechat-bnc/</link><pubDate>Fri, 01 Jan 2016 18:10:58 +0200</pubDate><guid>https://sekor.eu.org/techlog/weechat-bnc/</guid><description>openssl s_client -connect znc.itunix.cloud:6697 &amp;lt;/dev/null 2&amp;gt;/dev/null | openssl x509 -in /dev/stdin -noout -fingerprint -sha256 | sed s/://g | cut -c 20-
+mysqldump -u root -p db_name &amp;lt; db_file.</description></item><item><title>ssh tunnel to localhost</title><link>https://sekor.eu.org/techlog/ssh-tunnel-to-localhost/</link><pubDate>Fri, 01 Jan 2016 18:10:58 +0200</pubDate><guid>https://sekor.eu.org/techlog/ssh-tunnel-to-localhost/</guid><description>ssh -R 9000:192.168.1.13:80 -N root@example.com</description></item><item><title>Weechat BNC</title><link>https://sekor.eu.org/techlog/weechat-bnc/</link><pubDate>Fri, 01 Jan 2016 18:10:58 +0200</pubDate><guid>https://sekor.eu.org/techlog/weechat-bnc/</guid><description>openssl s_client -connect znc.itunix.cloud:6697 &amp;lt;/dev/null 2&amp;gt;/dev/null | openssl x509 -in /dev/stdin -noout -fingerprint -sha256 | sed s/://g | cut -c 20-
 5A038025E789ED2F1032EB15XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX08FA693
 /server add BNC znc.itunix.cloud/6697 -ssl -username=l__q/freenode -password=XXXXXXXXXXXX -autoconnect
 /set irc.server.BNC.ssl_fingerprint 5A038025E789ED2F1032EB15XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX08FA693

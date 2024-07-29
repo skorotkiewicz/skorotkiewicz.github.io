@@ -7,9 +7,13 @@
 <a class=page-link href=/daily/>Daily</a></div></nav></div></header><main class=page-content aria-label=Content style=padding-bottom:5px><div class="wrapper wrapper_post"><article class=post itemscope itemtype=http://schema.org/BlogPosting><header class=post-header><h1 class=post-title itemprop="name headline">Simple server backup</h1><div class=post-meta><div class="post-date pull-left">Posted on
 <time datetime=2016-01-01T18:10:58+02:00>Jan 1, 2016</time></div><div class=pull-right><a href=/tags/linux/>#linux</a>
 <a href=/tags/backup/>#backup</a></div></div><br></header><div class=post-content itemprop=articleBody><pre><code>sudo mount /dev/xxxx -o remount-ro /mnt
-mkdir /backup; cd /backup
-tar --exclude='./backup' --exclude='./mnt/backup' -cvjpf mybackup.tar.bz2 /mnt
-</code></pre><p>Then you unpack with behavior permission</p><p><code>sudo tar -xvjpf mybackup.tar.bz2</code></p><h1 id=creating-a-backup-all-datebases-and-restore>Creating A Backup All Datebases And Restore</h1><pre><code>mysqldump -u root -p --all-databases &gt; all_databases.sql
+
+mkdir /backup
+cd /backup
+
+tar --exclude='/backup' --exclude='/mnt/backup' --exclude='/mnt/mnt' -cvjpf mybackup.tar.bz2 /mnt
+
+</code></pre><p><s>tar &ndash;exclude='./backup' &ndash;exclude='./mnt/backup' -cvjpf mybackup.tar.bz2 /mnt</s></p><p>Then you unpack with behavior permission</p><p><code>sudo tar -xvjpf mybackup.tar.bz2</code></p><h1 id=creating-a-backup-all-datebases-and-restore>Creating A Backup All Datebases And Restore</h1><pre><code>mysqldump -u root -p --all-databases &gt; all_databases.sql
 mysqldump -u root -p --all-databases &lt; all_databases.sql
 </code></pre><h1 id=creating-a-backup-single-datebase-and-restore>Creating A Backup Single Datebase And Restore</h1><pre><code>mysqldump -u root -p db_name &gt; db_file.sql
 mysqldump -u root -p db_name &lt; db_file.sql
