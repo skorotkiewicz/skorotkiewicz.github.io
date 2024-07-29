@@ -50,3 +50,18 @@ Lets says I have an image and its too big (10MB). All I do is:<br />
 and then to put it together I use cat:<br />
 
 `cat prefixFiles* > newimage.jpg`
+
+
+
+# rsync 
+
+backup from remote server 192.168.0.100 to local /mnt
+
+```
+mount /dev/sda1 /mnt/
+rsync -aHxv root@192.168.0.100:/* /mnt --exclude=/dev --exclude=/proc --exclude=/sys --exclude=/tmp
+```
+
+```
+/backup_`date +"%F"`.tar.bz2
+```
