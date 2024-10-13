@@ -12,7 +12,7 @@ slug: using-your-android-phone-as-a-webcam
 draft: false
 ---
 
-# Installing the dependencies
+## Installing the dependencies
 
 First of all you need to install some dependencies:
 
@@ -26,9 +26,9 @@ Then you need to load the module:
 sudo modprobe v4l2loopback exclusive_caps=1
 ```
 
-# Usage
+## Usage
 
-## Camera Sharing
+# Camera Sharing
 
 For using the front camera, first enable **usb debugging** in your phone, then connect your phone via cable and run this command in terminal:
 
@@ -38,7 +38,7 @@ scrcpy --video-source=camera --camera-size=1920x1080 --camera-facing=front --v4l
 
 For the back camera just change `--camera-facing=front` to `--camera-facing=back` .
 
-## Testing camera
+# Testing camera
 
 Just open obs, or run this command:
 
@@ -46,7 +46,7 @@ Just open obs, or run this command:
 ffplay /dev/video0
 ```
 
-## Mic sharing
+# Mic sharing
 
 For microphone you can run this command:
 
@@ -55,3 +55,8 @@ scrcpy --no-video --audio-source=mic --no-window
 ```
 
 This would share your phone mic as system audio.
+
+### Resources
+
+- [https://wiki.parchlinux.com/en/phone-webcam](https://wiki.parchlinux.com/en/phone-webcam)
+- [https://adityatelange.in/blog/android-phone-webcam-linux/](https://adityatelange.in/blog/android-phone-webcam-linux/)
