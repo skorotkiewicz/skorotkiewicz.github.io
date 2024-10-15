@@ -6,8 +6,8 @@ month: "2024/10"
 # categories:
 #   - Posts
 tags:
-  - android
-  - linux
+  - ice
+  - innovation
 slug: intelligent-ice
 draft: false
 ---
