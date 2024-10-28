@@ -34,3 +34,11 @@ echo "put -r  /home/modinfo/Desktop/test /root/" | sftp -r root@a.sekor.eu.org
 ```
 
 This sends the `d.zip` file from your local computer directory `/home/user/` to the `/var/www/html/` directory on the server.
+
+### Example
+
+```
+echo "get -a /backup/mybackup.tar.bz2" | sftp -r root@a.sekor.eu.org
+```
+
+Downloading backup from server to local
