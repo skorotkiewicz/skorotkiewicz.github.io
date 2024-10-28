@@ -13,7 +13,7 @@ slug: send-and-receive-files-from-the-server-with-sftp-resume
 draft: false
 ---
 
-## Downloading a File from the Server
+### Downloading a File from the Server
 
 ```
 echo "get /var/www/html/d.zip /home/user/" | sftp root@a.sekor.eu.org
@@ -24,7 +24,7 @@ echo "get -r /root/test" | sftp -r root@a.sekor.eu.org
 
 This will download the file `d.zip` from the server directory `/var/www/html/` to your local directory `/home/user/`.
 
-## Uploading a File to the Server
+### Uploading a File to the Server
 
 ```
 echo "put /home/user/d.zip /var/www/html/" | sftp root@a.sekor.eu.org
