@@ -7,11 +7,11 @@
 <a class=page-link href=/daily/>Daily</a></div></nav></div></header><main class=page-content aria-label=Content style=padding-bottom:5px><div class="wrapper wrapper_post"><article class=post itemscope itemtype=http://schema.org/BlogPosting><header class=post-header><h1 class=post-title itemprop="name headline">Send and Receive Files from the Server with sftp with resume</h1><div class=post-meta><div class="post-date pull-left">Posted on
 <time datetime=2024-10-28T07:00:00+02:00>Oct 28, 2024</time></div><div class=pull-right><a href=/tags/sftp/>#sftp</a>
 <a href=/tags/linux/>#linux</a>
-<a href=/tags/server/>#server</a></div></div><br></header><div class=post-content itemprop=articleBody><h2 id=downloading-a-file-from-the-server>Downloading a File from the Server</h2><pre><code>echo &quot;get /var/www/html/d.zip /home/user/&quot; | sftp root@a.sekor.eu.org
+<a href=/tags/server/>#server</a></div></div><br></header><div class=post-content itemprop=articleBody><h3 id=downloading-a-file-from-the-server>Downloading a File from the Server</h3><pre><code>echo &quot;get /var/www/html/d.zip /home/user/&quot; | sftp root@a.sekor.eu.org
 
 # directory:
 echo &quot;get -r /root/test&quot; | sftp -r root@a.sekor.eu.org
-</code></pre><p>This will download the file <code>d.zip</code> from the server directory <code>/var/www/html/</code> to your local directory <code>/home/user/</code>.</p><h2 id=uploading-a-file-to-the-server>Uploading a File to the Server</h2><pre><code>echo &quot;put /home/user/d.zip /var/www/html/&quot; | sftp root@a.sekor.eu.org
+</code></pre><p>This will download the file <code>d.zip</code> from the server directory <code>/var/www/html/</code> to your local directory <code>/home/user/</code>.</p><h3 id=uploading-a-file-to-the-server>Uploading a File to the Server</h3><pre><code>echo &quot;put /home/user/d.zip /var/www/html/&quot; | sftp root@a.sekor.eu.org
 
 # directory:
 echo &quot;put -r  /home/modinfo/Desktop/test /root/&quot; | sftp -r root@a.sekor.eu.org
