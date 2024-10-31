@@ -1,5 +1,5 @@
 ---
-title: How to use Winee"
+title: How to use Wine"
 date: 2024-10-31T07:00:00+02:00
 year: "2024"
 month: "2024/10"
