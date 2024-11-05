@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>wine on Sebastian Korotkiewicz - Tech{{log}}</title><link>https://sekor.eu.org/tags/wine/</link><description>Recent content in wine on Sebastian Korotkiewicz - Tech{{log}}</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 31 Oct 2024 07:00:00 +0200</lastBuildDate><atom:link href="https://sekor.eu.org/tags/wine/index.xml" rel="self" type="application/rss+xml"/><item><title>Setting Up Ableton Live with Wine</title><link>https://sekor.eu.org/techlog/setting-up-ableton-live-with-wine/</link><pubDate>Thu, 31 Oct 2024 07:00:00 +0200</pubDate><guid>https://sekor.eu.org/techlog/setting-up-ableton-live-with-wine/</guid><description>Configure Wine for 64-bit Architecture
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>wine on Sebastian Korotkiewicz - Tech{{log}}</title><link>https://sekor.eu.org/tags/wine/</link><description>Recent content in wine on Sebastian Korotkiewicz - Tech{{log}}</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 31 Oct 2024 07:00:00 +0200</lastBuildDate><atom:link href="https://sekor.eu.org/tags/wine/index.xml" rel="self" type="application/rss+xml"/><item><title>Setting Up Ableton Live with Wine</title><link>https://sekor.eu.org/techlog/setting-up-ableton-live-with-wine/</link><pubDate>Thu, 31 Oct 2024 07:00:00 +0200</pubDate><guid>https://sekor.eu.org/techlog/setting-up-ableton-live-with-wine/</guid><description>1. Configure Wine for 64-bit Architecture
 Set Wine to 64-bit mode and specify a custom Wine prefix directory:
-export WINEARCH=win64 export WINEPREFIX=~/.wine64.ableton mkdir -p &amp;quot;$WINEPREFIX&amp;quot; Run Wine Configuration
+export WINEARCH=win64 export WINEPREFIX=~/.wine64.ableton mkdir -p &amp;quot;$WINEPREFIX&amp;quot; 2. Run Wine Configuration
 Launch Wine and select Windows 7 as the operating system:
-wine64 winecfg Navigate to Wine Directory
+wine64 winecfg 3. Navigate to Wine Directory
 Move into your designated Wine directory:
-cd &amp;quot;$WINEPREFIX&amp;quot; Install Required Libraries
-Use winetricks to install all necessary libraries:</description></item></channel></rss>
+cd &amp;quot;$WINEPREFIX&amp;quot; 4. Install Required Libraries
+Use winetricks to install all necessary libraries:
+pacman -S winetricks winetricks gdiplus msxml3 msxml4 msxml6 vcrun2005 quicktime72 fontsmooth=rgb msls31 d3dcompiler_43 corefonts atmlib 5.</description></item></channel></rss>

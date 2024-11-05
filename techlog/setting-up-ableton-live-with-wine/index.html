@@ -7,18 +7,18 @@
 <a class=page-link href=/daily/>Daily</a></div></nav></div></header><main class=page-content aria-label=Content style=padding-bottom:5px><div class="wrapper wrapper_post"><article class=post itemscope itemtype=http://schema.org/BlogPosting><header class=post-header><h1 class=post-title itemprop="name headline">Setting Up Ableton Live with Wine</h1><div class=post-meta><div class="post-date pull-left">Posted on
 <time datetime=2024-10-31T07:00:00+02:00>Oct 31, 2024</time></div><div class=pull-right><a href=/tags/sftp/>#sftp</a>
 <a href=/tags/linux/>#linux</a>
-<a href=/tags/wine/>#wine</a></div></div><br></header><div class=post-content itemprop=articleBody><ol><li><p>Configure Wine for 64-bit Architecture</p><p>Set Wine to 64-bit mode and specify a custom Wine prefix directory:</p></li></ol><pre><code>export WINEARCH=win64
+<a href=/tags/wine/>#wine</a></div></div><br></header><div class=post-content itemprop=articleBody><p><strong>1. Configure Wine for 64-bit Architecture</strong></p><p>Set Wine to 64-bit mode and specify a custom Wine prefix directory:</p><pre><code>export WINEARCH=win64
 export WINEPREFIX=~/.wine64.ableton
 mkdir -p &quot;$WINEPREFIX&quot;
-</code></pre><ol start=2><li><p>Run Wine Configuration</p><p>Launch Wine and select Windows 7 as the operating system:</p></li></ol><pre><code>wine64 winecfg
-</code></pre><ol start=3><li><p>Navigate to Wine Directory</p><p>Move into your designated Wine directory:</p></li></ol><pre><code>cd &quot;$WINEPREFIX&quot;
-</code></pre><ol start=4><li><p>Install Required Libraries</p><p>Use winetricks to install all necessary libraries:</p></li></ol><pre><code>pacman -S winetricks
+</code></pre><p><strong>2. Run Wine Configuration</strong></p><p>Launch Wine and select Windows 7 as the operating system:</p><pre><code>wine64 winecfg
+</code></pre><p><strong>3. Navigate to Wine Directory</strong></p><p>Move into your designated Wine directory:</p><pre><code>cd &quot;$WINEPREFIX&quot;
+</code></pre><p><strong>4. Install Required Libraries</strong></p><p>Use winetricks to install all necessary libraries:</p><pre><code>pacman -S winetricks
 
 winetricks gdiplus msxml3 msxml4 msxml6 vcrun2005 quicktime72 fontsmooth=rgb msls31 d3dcompiler_43 corefonts atmlib
-</code></pre><ol start=5><li><p>Download and Install Ableton Live</p><p>Download Ableton Live and extract the installer. Once extracted, navigate to the installer folder and run the setup:</p></li></ol><pre><code>export WINEARCH=win64
+</code></pre><p><strong>5. Download and Install Ableton Live</strong></p><p>Download Ableton Live and extract the installer. Once extracted, navigate to the installer folder and run the setup:</p><pre><code>export WINEARCH=win64
 export WINEPREFIX=~/.wine64.ableton
 wine64 Ableton\ Live\ 11\ Suite\ Installer.exe
-</code></pre><ol start=6><li><p>Running Ableton Live</p><p>After installation, to start Ableton Live, use <code>explorer.exe</code>:</p></li></ol><pre><code>export WINEARCH=win64
+</code></pre><p><strong>6. Running Ableton Live</strong></p><p>After installation, to start Ableton Live, use <code>explorer.exe</code>:</p><pre><code>export WINEARCH=win64
 export WINEPREFIX=~/.wine64.ableton
 wine64 explorer.exe
 </code></pre><p>Then, navigate to <code>'C:\ProgramData\Ableton\Live 11 Suite\Program\Ableton Live 11 Suite.exe'</code>:</p><pre><code>My Computer
