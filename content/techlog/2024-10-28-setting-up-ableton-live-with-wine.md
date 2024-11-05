@@ -13,9 +13,9 @@ slug: setting-up-ableton-live-with-wine
 draft: false
 ---
 
-1. Configure Wine for 64-bit Architecture
+**1. Configure Wine for 64-bit Architecture**
 
-   Set Wine to 64-bit mode and specify a custom Wine prefix directory:
+Set Wine to 64-bit mode and specify a custom Wine prefix directory:
 
 ```
 export WINEARCH=win64
@@ -23,25 +23,25 @@ export WINEPREFIX=~/.wine64.ableton
 mkdir -p "$WINEPREFIX"
 ```
 
-2. Run Wine Configuration
+**2. Run Wine Configuration**
 
-   Launch Wine and select Windows 7 as the operating system:
+Launch Wine and select Windows 7 as the operating system:
 
 ```
 wine64 winecfg
 ```
 
-3. Navigate to Wine Directory
+**3. Navigate to Wine Directory**
 
-   Move into your designated Wine directory:
+Move into your designated Wine directory:
 
 ```
 cd "$WINEPREFIX"
 ```
 
-4. Install Required Libraries
+**4. Install Required Libraries**
 
-   Use winetricks to install all necessary libraries:
+Use winetricks to install all necessary libraries:
 
 ```
 pacman -S winetricks
@@ -49,9 +49,9 @@ pacman -S winetricks
 winetricks gdiplus msxml3 msxml4 msxml6 vcrun2005 quicktime72 fontsmooth=rgb msls31 d3dcompiler_43 corefonts atmlib
 ```
 
-5. Download and Install Ableton Live
+**5. Download and Install Ableton Live**
 
-   Download Ableton Live and extract the installer. Once extracted, navigate to the installer folder and run the setup:
+Download Ableton Live and extract the installer. Once extracted, navigate to the installer folder and run the setup:
 
 ```
 export WINEARCH=win64
@@ -59,9 +59,9 @@ export WINEPREFIX=~/.wine64.ableton
 wine64 Ableton\ Live\ 11\ Suite\ Installer.exe
 ```
 
-6. Running Ableton Live
+**6. Running Ableton Live**
 
-   After installation, to start Ableton Live, use `explorer.exe`:
+After installation, to start Ableton Live, use `explorer.exe`:
 
 ```
 export WINEARCH=win64
