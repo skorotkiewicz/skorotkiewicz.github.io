@@ -19,4 +19,3 @@ This script, saved as `/usr/local/bin/open` has basically the same outcome as th
 ```
 xdg-open "$1" &> /dev/null &
 ```
-
