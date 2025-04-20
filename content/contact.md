@@ -17,6 +17,15 @@ title: Contact
   </div>
 
   <div class="row">
+    <div class="col-sm-1">fediverse</div>
+    <div class="col-sm-10">
+        <a rel="me" href="https://pod.sekor.eu.org/@modinfo">
+        @modinfo@pod.sekor.eu.org
+        </a>
+    </div>
+  </div>
+
+  <div class="row">
     <div class="col-sm-1">nostr</div>
     <div class="col-sm-10">
         <a href="https://yosup.app/profile/af26863d814cbaf3e4849d30fa2d1f8a2ab138c236f9b0210ae17c1dde1e1fb7">
