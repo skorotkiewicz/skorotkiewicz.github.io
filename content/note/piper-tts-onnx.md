@@ -54,3 +54,7 @@ AddVoice "de" "male1"   "de_DE-thorsten-high.onnx"
 
 GenericCharset "UTF-8"
 ```
+
+```sh
+systemctl restart --user speech-dispatcher.socket
+```
