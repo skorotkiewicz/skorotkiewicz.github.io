@@ -46,7 +46,7 @@ params:
   description: "A simple log of my adventures in the technology world"
   github: "skorotkiewicz"
   twitter: "skorotkiewicz"
-  avatar: "/images/skorotkiewicz-1.3.0-min.png"
+  avatar: "/images/skorotkiewicz-1.2.0-min.png"
   contact: "mailto:skorotkiewicz@gmail.com"
 
 markup:
