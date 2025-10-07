@@ -4,6 +4,7 @@ date: "2020-12-15"
 year: "2020"
 month: "2020/12"
 slug: my-first-note
+draft: true
 ---
 
 Today a lot has changed on my blog, the biggest change is the migration from **Jekyll** to **Hugo**.
