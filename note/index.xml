@@ -20,7 +20,4 @@ If you do not see an interface listed then your wireless card does not support m
 airmon-ng Put your network device into monitor mode
 # airmon-ng start wlan0 Listen for all nearby beacon frames to get target BSSID and channel
 # airodump-ng wlan0mon Start listening for the handshake
-# airodump-ng --channel 6 —-bssid 9C:5C:8E:C9:AB:C0 --write capture/ wlan0mon Optionally deauth a connected client to force a handshake</description></item><item><title>This is my first note on my blog</title><link>https://sekor.eu.org/note/my-first-note/</link><pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate><guid>https://sekor.eu.org/note/my-first-note/</guid><description>Today a lot has changed on my blog, the biggest change is the migration from Jekyll to Hugo.
-From now on my previous website and blog are integrated into one whole unit.
-I also added small features, such as tags (with fancy CloudTag) ^_^, categories or even an archive that clearly shows how many posts I have made in one month :)
-The blog is still open source, if you want you can watch my swears at github.</description></item></channel></rss>
+# airodump-ng --channel 6 —-bssid 9C:5C:8E:C9:AB:C0 --write capture/ wlan0mon Optionally deauth a connected client to force a handshake</description></item></channel></rss>
