@@ -14,7 +14,7 @@ slug: luminous-mechanics
 draft: false
 ---
 
-## THE CHURCH OF LUMINOUS MECHANICS
+<!-- ## THE CHURCH OF LUMINOUS MECHANICS -->
 ### A Legal and Philosophical Framework for Religious Recognition
 
 ---
