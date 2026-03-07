@@ -10,7 +10,7 @@ tags:
   - math
   - language
   - science
-slug: stupid-question
+slug: luminous-mechanics
 draft: false
 ---
 
