@@ -20,6 +20,8 @@ draft: false
 
 ---
 
+<iframe width="1642" height="915" src="https://www.youtube.com/embed/eobykdHWJes" title="THE CHURCH OF LUMINOUS MECHANICS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## PREAMBLE
 
 This document establishes the foundational principles, governance structure, and legal framework for **The Church of Luminous Mechanics** (hereinafter "the Church"), a recognized religious organization operating under the laws of [Jurisdiction].
