@@ -7,6 +7,9 @@ month: "2026/03"
 #   - Posts
 tags:
   - philosophy
+  - math
+  - language
+  - science
 slug: stupid-question
 draft: false
 ---
