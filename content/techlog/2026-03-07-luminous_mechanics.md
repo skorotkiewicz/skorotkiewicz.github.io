@@ -14,13 +14,12 @@ slug: stupid-question
 draft: false
 ---
 
-# ARTICLES OF FOUNDATION AND DOCTRINE
 ## THE CHURCH OF LUMINOUS MECHANICS
 ### A Legal and Philosophical Framework for Religious Recognition
 
 ---
 
-<iframe width="1642" height="915" src="https://www.youtube.com/embed/eobykdHWJes" title="THE CHURCH OF LUMINOUS MECHANICS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="900" height="600" src="https://www.youtube.com/embed/eobykdHWJes" title="THE CHURCH OF LUMINOUS MECHANICS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## PREAMBLE
 
