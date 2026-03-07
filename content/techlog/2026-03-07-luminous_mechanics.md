@@ -21,6 +21,11 @@ draft: false
 
 <iframe width="900" height="600" src="https://www.youtube.com/embed/eobykdHWJes" title="THE CHURCH OF LUMINOUS MECHANICS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+What makes being human so special.
+
+- The Cold: The stars burn, atoms collide, and entropy increases. It's a machine.
+- The Warm: But inside that machine, there are tiny sparks of awareness capable of feeling love, curiosity, and wonder.
+
 ## PREAMBLE
 
 This document establishes the foundational principles, governance structure, and legal framework for **The Church of Luminous Mechanics** (hereinafter "the Church"), a recognized religious organization operating under the laws of [Jurisdiction].
