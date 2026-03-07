@@ -14,12 +14,12 @@ slug: luminous-mechanics
 draft: false
 ---
 
-<!-- ## THE CHURCH OF LUMINOUS MECHANICS -->
+<!-- ## THE BUREAU OF LUMINOUS MECHANICS -->
 ### A Legal and Philosophical Framework for Religious Recognition
 
 ---
 
-<iframe width="900" height="600" src="https://www.youtube.com/embed/eobykdHWJes" title="THE CHURCH OF LUMINOUS MECHANICS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="900" height="600" src="https://www.youtube.com/embed/eobykdHWJes" title="THE BUREAU OF LUMINOUS MECHANICS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 What makes being human so special.
 
@@ -28,7 +28,7 @@ What makes being human so special.
 
 ## PREAMBLE
 
-This document establishes the foundational principles, governance structure, and legal framework for **The Church of Luminous Mechanics** (hereinafter "the Church"), a recognized religious organization operating under the laws of [Jurisdiction].
+This document establishes the foundational principles, governance structure, and legal framework for **The Bureau of Luminous Mechanics** (hereinafter "the Bureau"), a recognized religious organization operating under the laws of [Jurisdiction].
 
 We, the founders and adherents, acknowledge that the universe operates according to immutable physical laws—cold, indifferent, mechanistic. Yet within this vast machinery, consciousness has emerged: fragile sparks of awareness capable of experiencing wonder, love, curiosity, and the profound mystery of existence itself. This tension between the cold mechanics of reality and the warm glow of subjective experience is where the deepest human questions reside, and it is here that our religion finds its sacred ground.
 
@@ -72,7 +72,7 @@ We recognize that:
 
 ### Section 2.1: Contemplative Practices
 
-Members of the Church engage in practices designed to deepen awareness of both the mechanical and experiential dimensions of reality:
+Members of the Bureau engage in practices designed to deepen awareness of both the mechanical and experiential dimensions of reality:
 
 1. **Silent Observation**: Periods of quiet contemplation of natural phenomena—stars, weather patterns, biological processes—to cultivate awareness of the physical laws governing existence.
 
@@ -84,7 +84,7 @@ Members of the Church engage in practices designed to deepen awareness of both t
 
 ### Section 2.2: Community Gatherings
 
-The Church holds regular assemblies for:
+The Bureau holds regular assemblies for:
 
 1. **Shared Contemplation**: Collective practices that foster awareness of our dual nature as both mechanisms and meaning-makers.
 
@@ -96,7 +96,7 @@ The Church holds regular assemblies for:
 
 ### Section 2.3: Sacred Texts and Resources
 
-While we recognize no divinely revealed scripture, the Church honors:
+While we recognize no divinely revealed scripture, the Bureau honors:
 
 1. **Scientific Literature**: Peer-reviewed research that reveals the workings of the physical universe.
 
@@ -142,7 +142,7 @@ Members commit to:
 
 ### Section 4.1: Organizational Framework
 
-The Church shall be governed by:
+The Bureau shall be governed by:
 
 1. **The Council of Observers**: A body of elected members responsible for administrative decisions, with terms of [X years], subject to democratic processes.
 
@@ -166,7 +166,7 @@ The Church shall be governed by:
 
 2. **Transparent Accounting**: All funds shall be publicly documented and used for: facilities, educational programs, community support, and charitable activities aligned with our ethical framework.
 
-3. **Non-Profit Status**: The Church operates as a tax-exempt religious organization under applicable law.
+3. **Non-Profit Status**: The Bureau operates as a tax-exempt religious organization under applicable law.
 
 ---
 
@@ -198,7 +198,7 @@ Members have the right to:
 
 ### Section 6.1: Religious Status
 
-The Church claims all rights and protections afforded to religious organizations under [applicable law], including but not limited to:
+The Bureau claims all rights and protections afforded to religious organizations under [applicable law], including but not limited to:
 
 1. Freedom of religious exercise.
 2. Tax-exempt status.
@@ -208,7 +208,7 @@ The Church claims all rights and protections afforded to religious organizations
 
 ### Section 6.2: Relationship to Science
 
-The Church affirms that:
+The Bureau affirms that:
 
 1. Scientific inquiry does not contradict religious practice; it is religious practice.
 2. Our doctrines are compatible with and informed by empirical knowledge.
@@ -218,7 +218,7 @@ The Church affirms that:
 
 ## ARTICLE VII: SACRED OBSERVANCES AND HOLIDAYS
 
-The Church recognizes the following as times of special observance:
+The Bureau recognizes the following as times of special observance:
 
 1. **The Solstices**: Marking the physical cycles of Earth's relation to the Sun.
 2. **The Equinoxes**: Celebrating balance and transition.
@@ -231,7 +231,7 @@ The Church recognizes the following as times of special observance:
 
 ### Section 8.1: Life Transition Ceremonies
 
-The Church offers ceremonies for:
+The Bureau offers ceremonies for:
 
 1. **Welcoming**: Acknowledging new life as a fresh instance of consciousness emerging from physical processes.
 
@@ -264,7 +264,7 @@ While we hold our naturalistic worldview as true, we:
 
 ### Section 9.2: Compatibility with Secular Life
 
-Membership in the Church is compatible with:
+Membership in the Bureau is compatible with:
 
 1. Scientific careers and pursuits.
 2. Secular citizenship and civic engagement.
@@ -286,13 +286,13 @@ These Articles may be amended by:
 
 ## ARTICLE XI: DISSOLUTION CLAUSE
 
-Should the Church cease to function, all assets shall be distributed to organizations promoting scientific education, philosophical inquiry, or the reduction of suffering, in accordance with our ethical framework.
+Should the Bureau cease to function, all assets shall be distributed to organizations promoting scientific education, philosophical inquiry, or the reduction of suffering, in accordance with our ethical framework.
 
 ---
 
 ## CONCLUSION
 
-This document establishes **The Church of Luminous Mechanics** as a legitimate religious organization founded on a naturalistic worldview that honors both the cold mechanics of physical reality and the warm mystery of conscious experience.
+This document establishes **The Bureau of Luminous Mechanics** as a legitimate religious organization founded on a naturalistic worldview that honors both the cold mechanics of physical reality and the warm mystery of conscious experience.
 
 We are not escaping from the machine—we are celebrating our unique position within it as the parts that can feel wonder at the whole.
 
@@ -321,7 +321,7 @@ _______________________________
 
 ## APPENDIX A: STATEMENT OF NON-CONTRADICTION WITH SECULAR LAW
 
-The Church of Luminous Mechanics operates in full compliance with civil law. Our practices require:
+The Bureau of Luminous Mechanics operates in full compliance with civil law. Our practices require:
 
 - No violation of health or safety regulations.
 - No interference with secular education or employment.
