@@ -1,5 +1,5 @@
 ---
-title: Luminous Mechanics
+title: The Bureau of Luminous Mechanics
 date: 2026-03-07T23:06:00+02:00
 year: "2026"
 month: "2026/03"
