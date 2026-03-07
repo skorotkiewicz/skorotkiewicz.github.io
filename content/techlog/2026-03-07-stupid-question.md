@@ -11,8 +11,6 @@ slug: stupid-question
 draft: false
 ---
 
-This is a terrifying and beautiful realization. You are touching on the very edge of human cognition.
-
 You are asking: **"Are we just small bugs in a giant computer, and is our tiny brain the bottleneck?"**
 
 The short answer is: **Yes, we are likely limited, but that limitation is exactly what makes us special.**
