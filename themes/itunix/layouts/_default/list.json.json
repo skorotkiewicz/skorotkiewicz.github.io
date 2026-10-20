@@ -1,13 +1,7 @@
-{{ $pages := .Pages -}}
-{{ $pages = .Site.RegularPages }}
-{{ $length := (len $pages) -}}
-
-[
-    {{ range $index, $element := $pages -}}
-    {
-        "title" : {{ .Title | jsonify }},
-        "url" : "{{ .RelPermalink }}"
-
-    }{{ if ne (add $index 1) $length }},{{ end }}
-    {{ end -}}
-]
+{{- $pages := .RegularPages -}}
+{{- if .IsHome -}}{{- $pages = .Site.RegularPages -}}{{- end -}}
+{{- $items := slice -}}
+{{- range $pages.ByDate.Reverse -}}
+  {{- $items = $items | append (dict "title" .Title "url" .RelPermalink "tags" (.Params.tags | default slice) "content" (.Plain | htmlUnescape)) -}}
+{{- end -}}
+{{- $items | uniq | jsonify -}}

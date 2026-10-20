@@ -1,8 +1,8 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
-year: "{{ now.Format "2006" }}"
-month: "{{ now.Format "2006/01" }}"
+year: "{{ (time.AsTime .Date).Format "2006" }}"
+month: "{{ (time.AsTime .Date).Format "2006/01" }}"
 # categories:
 #   - Posts
 # tags:

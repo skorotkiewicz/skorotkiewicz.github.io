@@ -1,6 +1,6 @@
 {{ partial "header.html" . }}
 
-<main class="page-content" aria-label="Content" style="padding-bottom: 5px;">
+<main id="main-content" tabindex="-1" class="page-content" aria-label="Content" style="padding-bottom: 5px;">
   <div class="wrapper wrapper_post">
     <div class="home">
 
@@ -17,38 +17,21 @@
       {{ end }}
 
       {{ if eq .Section "tags" }}
+        {{ $tags := slice }}
+        {{ range $key, $value := .Data.Terms }}
+          {{ $tags = $tags | append (dict "name" $key "count" (len $value) "url" $value.Page.RelPermalink) }}
+        {{ end }}
         <em>Explore the tags interactively:</em>
-        <div id="tag-wrapper" style="width: 100%; height: 400px;"></div>
+        <div id="tag-wrapper" data-tags="{{ $tags | jsonify }}" style="width: 100%; height: 400px;"></div>
 
         <h3>All tags alphabetically</h3>
         <ul>
           {{ $data := .Data }}
           {{ range $key, $value := .Data.Terms }}
-          <li><a href="/{{ $data.Plural }}/{{ $key | urlize }}">{{ $key }}</a> {{ len $value }}</li>
+          <li><a href="{{ $value.Page.RelPermalink }}">{{ $key }}</a> {{ len $value }}</li>
           {{ end }}
         </ul>
 
-        <script src="{{ .Site.BaseURL }}js/wordcloud2.js"></script>
-        <script>
-          let tagArray = new Array();
-          {{ range $key, $value := .Data.Terms }}
-          tagArray.push([{{ $key }}, {{ len $value }} ])
-          {{ end }}
-
-          const tagWrapper = document.querySelector("#tag-wrapper");
-          WordCloud(tagWrapper, {
-              list: tagArray,
-              weightFactor: 10,
-              classes: "tag-cloud-item",
-          });
-
-          tagWrapper.addEventListener('wordcloudstop', function (e) {
-              document.querySelectorAll('.tag-cloud-item').forEach(function (element) {
-                  const text = element.innerHTML;
-                  element.innerHTML = `<a href="/tags/${text}" style="color: inherit;">${text}</a>`;
-              });
-          });
-          </script>
       {{ end }}
 
     </div>

@@ -1,70 +1,22 @@
-<!-- <hr style="margin-top: 20px;"> -->
-
 <div style="margin-top: 20px;border-top: 1px solid #000;display: flex;justify-content: center;">
-    <span style="font-size: 22px;">Archive</span>
+  <span style="font-size: 22px;" id="archive">Archive</span>
 </div>
-
-<!-- <hr> -->
-
-<a name="archive"></a>
 <ul class="archive-years">
-    {{ range where .Site.Pages "Section" "year" }}
-    {{ $years := .Date.Format "2006" }}
-
-    {{ $ia := (findRE "/archive/" .Permalink) }}
-
-        {{ if and (ge $ia 1) }}
-            <li class="year">
-
-                <div class="top">
-                    <a href="{{ .Permalink }}">{{ $years }}</a>
-                </div>
-
-                <div class="months">
-                    <!-- .Site.RegularPages -->
-                    {{ range (.Site.RegularPages).GroupByDate "January" }}
-                        {{ $l := (len .Pages)}}
-
-                        {{ if gt $l 0 }}
-
-                            {{ range .Pages }}
-                                {{ $date := string (.Date.Format "2006-1")}}
-                                {{ $year := string (.Date.Format "2006")}}
-
-                                {{ if eq $years $year }}
-                                    {{ $.Scratch.Set $date $l }}
-                                {{ end }}
-                            {{ end }}
-
-                        {{ end }}
-                    {{ end }}
-
-                    <ul>
-                        {{ range $i, $sequence :=  (seq 12) }}
-
-                            {{ $e := string ($sequence) }}
-                            {{ $p := print $years "-" $sequence }}
-                            {{ $posts := $.Scratch.Get $p }}
-
-                            {{ if gt $posts 0 }}
-                                <li>
-                                    <a href="/archive/{{ $years }}/{{ printf "%02d" (int $e) }}/">
-                                        {{ dateFormat "January" (printf "2001-%02d-01" $sequence) }} (Posts: {{ $posts }})
-                                    </a> 
-                                </li>
-                            {{ else }}
-                                <li>
-                                    {{ dateFormat "January" (printf "2001-%02d-01" $sequence) }}
-                                </li>
-                            {{ end }}
-
-                        {{ end }}
-                    </ul>
-
-                </div>
-
-            </li>
+  {{ range (.Site.Taxonomies.year.Alphabetical | collections.Reverse) }}
+    {{ $year := .Page.LinkTitle }}
+    {{ $pages := .Page.RegularPages }}
+    <li class="year">
+      <div class="top"><a href="{{ .Page.RelPermalink }}">{{ $year }}</a></div>
+      <div class="months"><ul>
+        {{ range seq 12 }}
+          {{ $month := . }}
+          {{ $count := 0 }}
+          {{ range $pages }}{{ if eq (int .Date.Month) $month }}{{ $count = add $count 1 }}{{ end }}{{ end }}
+          {{ $monthName := dateFormat "January" (printf "2001-%02d-01" $month) }}
+          {{ $term := $.Site.GetPage (printf "/month/%s/%02d" $year $month) }}
+          <li>{{ if and (gt $count 0) $term }}<a href="{{ $term.RelPermalink }}">{{ $monthName }} (Posts: {{ $count }})</a>{{ else }}{{ $monthName }}{{ end }}</li>
         {{ end }}
-
-    {{ end }}
+      </ul></div>
+    </li>
+  {{ end }}
 </ul>

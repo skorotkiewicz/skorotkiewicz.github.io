@@ -2,25 +2,24 @@
 <html lang="{{ .Site.Language.Locale }}">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ .Title }} | {{ .Site.Title }}</title>
-  <meta name="generator" content="Hugo" />
-  <meta name="description" content="{{ .Site.Params.Description }}" />
+  {{ hugo.Generator }}
   <meta name="author" content="{{ .Site.Params.Author }}" />
   <link rel="alternate" type="application/rss+xml" title="Techlog" href="/index.xml">
   <link rel="icon" type="image/png" href="/images/favicon.png" sizes="64x64" />
   {{ partial "seo" . }}
-  {{ $minima := resources.Get "scss/minima.scss" | css.Sass (dict "outputStyle" "compressed") | fingerprint }}
-  <link rel="stylesheet" href="{{ $minima.Permalink }}">
+  {{ $minima := resources.Get "scss/minima.scss" | css.Sass (dict "transpiler" "dartsass" "outputStyle" "compressed") | fingerprint }}
+  <link rel="stylesheet" href="{{ $minima.RelPermalink }}" integrity="{{ $minima.Data.Integrity }}">
 </head>
 
-<body>
+<body{{ if and .IsPage (eq .File.Path "search.md") }} class="search-page"{{ end }}>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
   <header class="site-header" role="banner">
     <div class="wrapper">
 
-      <a class="site-title" href="/" style="height: 30px;">
+      <a class="site-title" href="{{ "" | relURL }}" aria-label="Techlog home" style="height: 30px;">
         <svg width="200" height="55">
           <g fill="#cccccc" transform="matrix(1.95,0,0,1.95,0.80,-6.8)">
             <path
@@ -31,7 +30,7 @@
       </a>
 
       <nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" aria-label="Toggle navigation" />
         <label for="nav-trigger">
           <span class="menu-icon">
             <svg viewBox="0 0 18 15" width="18px" height="15px">
@@ -47,7 +46,7 @@
 
         <div class="trigger">
           {{ range .Site.Menus.main }}
-            <a class="page-link" href="{{ .URL | relURL }}">{{ .Name }}</a>
+            <a class="page-link" href="{{ .URL | relURL }}"{{ if eq $.RelPermalink (.URL | relURL) }} aria-current="page"{{ end }}>{{ .Name }}</a>
           {{ end }}
         </div>
       </nav>

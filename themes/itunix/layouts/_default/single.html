@@ -1,15 +1,18 @@
 {{ partial "header.html" . }}
 
-<main class="page-content" aria-label="Content" style="padding-bottom: 5px;">
+<main id="main-content" tabindex="-1" class="page-content" aria-label="Content" style="padding-bottom: 5px;">
     <div class="wrapper wrapper_post">
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <article class="post" itemscope itemtype="https://schema.org/BlogPosting">
+            {{ if not (in (slice "techlog" "note" "daily") .Section) }}
+            <h1 class="visually-hidden">{{ .Title }}</h1>
+            {{ end }}
 
             {{ if eq .Section "daily" }}
             <header class="post-header" style="background-color: #1f3c88; padding: 10px; color: #f6f5f5;">
                 <h1 class="post-title" itemprop="name headline"><span style="color: #bbe1fa;">Daily: </span> {{ .Title }}</h1>
                 <div class="post-meta">
 
-                    {{ if (gt .Params.date 0) }}
+                    {{ if not .Date.IsZero }}
                     <div class="post-date pull-left" style="background-color: #070d59; padding: 10px;color: #f6f5f5;">Posted on
                         <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
                             {{ .Date.Format "Jan 2, 2006" }}
@@ -30,7 +33,7 @@
                         <h2 class="author">{{ . }}</h2>
                     {{ end }}
 
-                    {{ if (gt .Params.date 0) }}
+                    {{ if not .Date.IsZero }}
                     <div class="post-date pull-left">Posted on
                         <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
                             {{ .Date.Format "Jan 2, 2006" }}
@@ -73,7 +76,7 @@
                             d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z" />
                     </svg></a>
                 <a class="linkedin" title="Share this on Linkedin"
-                    href="https://www.linkedin.com/shareArticle?mini=true&url={{ .Permalink | absURL }}&title=&summary=&source=');"><svg
+                    href="https://www.linkedin.com/sharing/share-offsite/?url={{ .Permalink }}"><svg
                         viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z" />

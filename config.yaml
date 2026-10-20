@@ -1,11 +1,11 @@
-baseurl: "https://sekor.eu.org/"
+baseURL: "https://sekor.eu.org/"
 locale: "en-US"
 timeZone: "Europe/Berlin"
 # ignoreFiles:
 #   - ' copy\.md$'
 title: "Sebastian Korotkiewicz - Tech{{log}}"
 theme: "itunix"
-footnotereturnlinkcontents: "↩"
+footnoteReturnLinkContents: "↩"
 
 taxonomies:
   year: "year"
@@ -53,6 +53,8 @@ params:
   contact: "mailto:skorotkiewicz@gmail.com"
 
 markup:
+  highlight:
+    noClasses: false
   goldmark:
     renderer:
       unsafe: true
