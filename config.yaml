@@ -18,7 +18,7 @@ permalinks:
   month: "/archive/:slug/"
   note: "/note/:slug/"
   techlog: "/techlog/:slug/"
-  daily: "/daily/:year/:month/:day/:slug/"
+  # daily: "/daily/:year/:month/:day/:slug/"
 
 menu:
   main:
@@ -40,9 +40,9 @@ menu:
     - name: Search
       url: "search/"
       weight: 6
-    - name: Daily
-      url: "daily/"
-      weight: 7
+    # - name: Daily
+    #   url: "daily/"
+    #   weight: 7
 
 params:
   author: "Sebastian Korotkiewicz"
