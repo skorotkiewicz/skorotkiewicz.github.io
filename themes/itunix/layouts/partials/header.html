@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
+<html lang="{{ .Site.Language.Locale }}">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +11,7 @@
   <link rel="alternate" type="application/rss+xml" title="Techlog" href="/index.xml">
   <link rel="icon" type="image/png" href="/images/favicon.png" sizes="64x64" />
   {{ partial "seo" . }}
-  {{ $minima := resources.Get "scss/minima.scss" | resources.ToCSS (dict "outputStyle" "compressed") | fingerprint }}
+  {{ $minima := resources.Get "scss/minima.scss" | css.Sass (dict "outputStyle" "compressed") | fingerprint }}
   <link rel="stylesheet" href="{{ $minima.Permalink }}">
 </head>
 

@@ -1,5 +1,8 @@
 baseurl: "https://sekor.eu.org/"
-languageCode: "en-us"
+locale: "en-US"
+timeZone: "Europe/Berlin"
+# ignoreFiles:
+#   - ' copy\.md$'
 title: "Sebastian Korotkiewicz - Tech{{log}}"
 theme: "itunix"
 footnotereturnlinkcontents: "↩"
