@@ -1,16 +1,1 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2016/10 on Sebastian Korotkiewicz - Tech{{log}}</title><link>https://sekor.eu.org/archive/2016/10/</link><description>Recent content in 2016/10 on Sebastian Korotkiewicz - Tech{{log}}</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://sekor.eu.org/archive/2016/10/index.xml" rel="self" type="application/rss+xml"/><item><title>Nginx configuration for SSH tunnel</title><link>https://sekor.eu.org/techlog/nginx-configuration-for-ssh-tunnel/</link><pubDate>Sun, 09 Oct 2016 21:06:32 +0000</pubDate><guid>https://sekor.eu.org/techlog/nginx-configuration-for-ssh-tunnel/</guid><description>upstream tunnel {
-server 127.0.0.1:3000;
-}
-server {
-listen 80;
-server_name dev.server.tld www.dev.server.tld;
-#optional
-location / {
-proxy_set_header X-Real-IP $remote_addr;
-proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-proxy_set_header Host $http_host;
-proxy_redirect off;
-proxy_pass http://tunnel;
-}
-}
-ssh -vnNT -R 3000:localhost:80 root@server.tld</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2016/10 on Sebastian Korotkiewicz - Tech{{log}}</title><link>https://sekor.eu.org/archive/2016/10/</link><description>Recent content in 2016/10 on Sebastian Korotkiewicz - Tech{{log}}</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Sun, 09 Oct 2016 21:06:32 +0000</lastBuildDate><atom:link href="https://sekor.eu.org/archive/2016/10/index.xml" rel="self" type="application/rss+xml"/><item><title>Nginx configuration for SSH tunnel</title><link>https://sekor.eu.org/techlog/nginx-configuration-for-ssh-tunnel/</link><pubDate>Sun, 09 Oct 2016 21:06:32 +0000</pubDate><guid>https://sekor.eu.org/techlog/nginx-configuration-for-ssh-tunnel/</guid><description>&lt;pre tabindex="0"&gt;&lt;code&gt;upstream tunnel {&#13;&#10; server 127.0.0.1:3000;&#13;&#10;}&#13;&#10;&#13;&#10;server {&#13;&#10; listen 80;&#13;&#10; server_name dev.server.tld www.dev.server.tld;&#13;&#10;&#13;&#10; #optional&#13;&#10; location / {&#13;&#10; proxy_set_header X-Real-IP $remote_addr;&#13;&#10; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;&#13;&#10; proxy_set_header Host $http_host;&#13;&#10; proxy_redirect off;&#13;&#10;&#13;&#10; proxy_pass http://tunnel;&#13;&#10; }&#13;&#10;}&#10;&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex="0"&gt;&lt;code&gt;ssh -vnNT -R 3000:localhost:80 root@server.tld&#10;&lt;/code&gt;&lt;/pre&gt;</description></item></channel></rss>
