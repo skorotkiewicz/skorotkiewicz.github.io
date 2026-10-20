@@ -2,7 +2,7 @@
 title: "Push to multiple git remotes with one command"
 date: 2026-10-20T22:39:21+00:00
 year: "2026"
-month: "2021/10"
+month: "2026/10"
 # categories:
 #   - Posts
 tags:
