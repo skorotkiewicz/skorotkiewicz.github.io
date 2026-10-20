@@ -17,10 +17,18 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      DART_SASS_VERSION: "1.105.2"
     permissions:
       contents: write
     steps:
       - uses: actions/checkout@v7
+
+      - name: Set up SCSS compiler
+        run: |
+          curl --fail --location --retry 3 "https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERSION}/dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz" --output "${RUNNER_TEMP}/dart-sass.tar.gz"
+          tar --extract --gzip --file "${RUNNER_TEMP}/dart-sass.tar.gz" --directory "${RUNNER_TEMP}"
+          echo "${RUNNER_TEMP}/dart-sass" >> "${GITHUB_PATH}"
 
       - name: Set up Hugo
         uses: peaceiris/actions-hugo@v3
@@ -36,7 +44,9 @@ jobs:
           hugo list future
 
       - name: Build
-        run: hugo --minify --panicOnWarning --printPathWarnings
+        run: |
+          sass --version
+          hugo --minify --panicOnWarning --printPathWarnings
 
       - name: Publish to GitHub Pages
         if: github.event_name != 'pull_request'
