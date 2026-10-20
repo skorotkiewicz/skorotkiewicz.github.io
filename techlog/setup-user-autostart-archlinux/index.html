@@ -12,8 +12,7 @@ nano ~/.config/systemd/user/app.service containing:
 <a class=page-link href=/note/>Notes</a>
 <a class=page-link href=/tags/>Tags</a>
 <a class=page-link href=/contact/>Contact</a>
-<a class=page-link href=/search/>Search</a>
-<a class=page-link href=/daily/>Daily</a></div></nav></div></header><main id=main-content tabindex=-1 class=page-content aria-label=Content style=padding-bottom:5px><div class="wrapper wrapper_post"><article class=post itemscope itemtype=https://schema.org/BlogPosting><header class=post-header><h1 class=post-title itemprop="name headline">Setup user autostart and properly configure systemd in Arch Linux</h1><div class=post-meta><div class="post-date pull-left">Posted on
+<a class=page-link href=/search/>Search</a></div></nav></div></header><main id=main-content tabindex=-1 class=page-content aria-label=Content style=padding-bottom:5px><div class="wrapper wrapper_post"><article class=post itemscope itemtype=https://schema.org/BlogPosting><header class=post-header><h1 class=post-title itemprop="name headline">Setup user autostart and properly configure systemd in Arch Linux</h1><div class=post-meta><div class="post-date pull-left">Posted on
 <time datetime=2024-01-12T07:00:00+02:00>Jan 12, 2024</time></div><div class=pull-right><a href=/tags/networking/>#networking</a>
 <a href=/tags/server/>#server</a></div></div><br></header><div class=post-content itemprop=articleBody><p>Create user:</p><ul><li><code>useradd -m -s /bin/bash username</code></li></ul><p>Create example service, like node app:</p><ul><li><code>nano ~/.config/systemd/user/app.service</code></li></ul><p>containing:</p><pre tabindex=0><code>[Unit]
 Description=One of the servers

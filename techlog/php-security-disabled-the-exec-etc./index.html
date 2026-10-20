@@ -9,8 +9,7 @@ disable_functions = exec, shell_exec, system, popen, passthru, …"><meta proper
 <a class=page-link href=/note/>Notes</a>
 <a class=page-link href=/tags/>Tags</a>
 <a class=page-link href=/contact/>Contact</a>
-<a class=page-link href=/search/>Search</a>
-<a class=page-link href=/daily/>Daily</a></div></nav></div></header><main id=main-content tabindex=-1 class=page-content aria-label=Content style=padding-bottom:5px><div class="wrapper wrapper_post"><article class=post itemscope itemtype=https://schema.org/BlogPosting><header class=post-header><h1 class=post-title itemprop="name headline">PHP Security - disabled the exec, etc.</h1><div class=post-meta><div class="post-date pull-left">Posted on
+<a class=page-link href=/search/>Search</a></div></nav></div></header><main id=main-content tabindex=-1 class=page-content aria-label=Content style=padding-bottom:5px><div class="wrapper wrapper_post"><article class=post itemscope itemtype=https://schema.org/BlogPosting><header class=post-header><h1 class=post-title itemprop="name headline">PHP Security - disabled the exec, etc.</h1><div class=post-meta><div class="post-date pull-left">Posted on
 <time datetime=2012-09-30T08:05:06Z>Sep 30, 2012</time></div><div class=pull-right><a href=/tags/linux/>#linux</a>
 <a href=/tags/php/>#php</a>
 <a href=/tags/security/>#security</a></div></div><br></header><div class=post-content itemprop=articleBody><p>In /etc/php5/apache2/<strong>php.ini</strong></p><p>as someone already can upload phpshell it will not do too much…</p><pre tabindex=0><code>disable_functions = exec, shell_exec, system, popen, passthru, escapeshellarg, escapeshellcmd, proc_close, proc_open, ini_alter, dl, popen, show_source, set_time_limit, php_uname, phpinfo, diskfreespace, disk_total_space, disk_free_space, get_current_user, posix_uname

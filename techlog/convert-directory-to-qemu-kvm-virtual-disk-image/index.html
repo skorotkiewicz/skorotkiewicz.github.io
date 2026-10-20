@@ -6,8 +6,7 @@ dd if=/dev/null of=example.img …"><meta property="og:url" content="https://sek
 <a class=page-link href=/note/>Notes</a>
 <a class=page-link href=/tags/>Tags</a>
 <a class=page-link href=/contact/>Contact</a>
-<a class=page-link href=/search/>Search</a>
-<a class=page-link href=/daily/>Daily</a></div></nav></div></header><main id=main-content tabindex=-1 class=page-content aria-label=Content style=padding-bottom:5px><div class="wrapper wrapper_post"><article class=post itemscope itemtype=https://schema.org/BlogPosting><header class=post-header><h1 class=post-title itemprop="name headline">Convert directory to QEMU/KVM virtual disk image</h1><div class=post-meta><div class="post-date pull-left">Posted on
+<a class=page-link href=/search/>Search</a></div></nav></div></header><main id=main-content tabindex=-1 class=page-content aria-label=Content style=padding-bottom:5px><div class="wrapper wrapper_post"><article class=post itemscope itemtype=https://schema.org/BlogPosting><header class=post-header><h1 class=post-title itemprop="name headline">Convert directory to QEMU/KVM virtual disk image</h1><div class=post-meta><div class="post-date pull-left">Posted on
 <time datetime=2016-01-01T18:10:58+02:00>Jan 1, 2016</time></div><div class=pull-right><a href=/tags/linux/>#linux</a>
 <a href=/tags/qemu/>#qemu</a>
 <a href=/tags/vm/>#vm</a></div></div><br></header><div class=post-content itemprop=articleBody><p>First, create a raw image of the required size. I&rsquo;ll assume 10G is enough. Using seek creates a sparse file, which saves space.</p><p><code>dd if=/dev/null of=example.img bs=1M seek=10240</code></p><p>Next, create a filesystem on it.</p><p><code>mkfs.ext4 -F example.img</code></p><p>(Note that you need the -F option for mkfs.ext4 to operate on a file as opposed to a disk partition)</p><p>Then, mount it.</p><pre tabindex=0><code>mkdir /mnt/example

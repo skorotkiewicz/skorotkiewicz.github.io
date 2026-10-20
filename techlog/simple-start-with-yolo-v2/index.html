@@ -12,8 +12,7 @@ make new directory for frames and put to stepup/ a video to split
 <a class=page-link href=/note/>Notes</a>
 <a class=page-link href=/tags/>Tags</a>
 <a class=page-link href=/contact/>Contact</a>
-<a class=page-link href=/search/>Search</a>
-<a class=page-link href=/daily/>Daily</a></div></nav></div></header><main id=main-content tabindex=-1 class=page-content aria-label=Content style=padding-bottom:5px><div class="wrapper wrapper_post"><article class=post itemscope itemtype=https://schema.org/BlogPosting><header class=post-header><h1 class=post-title itemprop="name headline">Simple start with YOLO v2</h1><div class=post-meta><div class="post-date pull-left">Posted on
+<a class=page-link href=/search/>Search</a></div></nav></div></header><main id=main-content tabindex=-1 class=page-content aria-label=Content style=padding-bottom:5px><div class="wrapper wrapper_post"><article class=post itemscope itemtype=https://schema.org/BlogPosting><header class=post-header><h1 class=post-title itemprop="name headline">Simple start with YOLO v2</h1><div class=post-meta><div class="post-date pull-left">Posted on
 <time datetime=2017-08-22T17:14:30+02:00>Aug 22, 2017</time></div><div class=pull-right><a href=/tags/linux/>#linux</a>
 <a href=/tags/yolo/>#yolo</a></div></div><br></header><div class=post-content itemprop=articleBody><iframe width=800 height=500 src="https://www.youtube.com/embed/2-5Z8SxP2WY?rel=0&amp;showinfo=0" frameborder=0 allowfullscreen></iframe><p>reduce frames to 15 per sec:<br><code># ffmpeg -i stepup.mp4 -r 15 stepup15.mp4</code></p><p>make new directory for frames and put to stepup/ a video to split<br><code>#mkdir stepup/; mkdir yolo_stepup/</code></p><p>split to frames:<br><code># ffmpeg -i stepup15.mp4 stepup_%04d.png</code></p><p>lets begin the games!<br>run this script, make sure are you not in stepup/, you shold be in darknet/<br></p><pre tabindex=0><code>
 #!/bin/bash

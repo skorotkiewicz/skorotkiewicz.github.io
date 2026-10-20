@@ -3,8 +3,7 @@
 <a class=page-link href=/note/>Notes</a>
 <a class=page-link href=/tags/>Tags</a>
 <a class=page-link href=/contact/>Contact</a>
-<a class=page-link href=/search/>Search</a>
-<a class=page-link href=/daily/>Daily</a></div></nav></div></header><main id=main-content tabindex=-1 class=page-content aria-label=Content style=padding-bottom:5px><div class="wrapper wrapper_post"><article class=post itemscope itemtype=https://schema.org/BlogPosting><header class=post-header><h1 class=post-title itemprop="name headline">Connection Limit Linux</h1><div class=post-meta><div class="post-date pull-left">Posted on
+<a class=page-link href=/search/>Search</a></div></nav></div></header><main id=main-content tabindex=-1 class=page-content aria-label=Content style=padding-bottom:5px><div class="wrapper wrapper_post"><article class=post itemscope itemtype=https://schema.org/BlogPosting><header class=post-header><h1 class=post-title itemprop="name headline">Connection Limit Linux</h1><div class=post-meta><div class="post-date pull-left">Posted on
 <time datetime=2012-09-16T10:06:30Z>Sep 16, 2012</time></div><div class=pull-right><a href=/tags/linux/>#linux</a>
 <a href=/tags/iptables/>#iptables</a></div></div><br></header><div class=post-content itemprop=articleBody><pre tabindex=0><code>iptables -A INPUT -p tcp --syn --dport 80 -m connlimit --connlimit-above 10 -j REJECT --reject-with tcp-reset
 </code></pre></div><span style=color:silver>Share on:</span><div id=share-buttons><a class=facebook title="Share this on Facebook" href="https://facebook.com/sharer.php?u=https%3a%2f%2fsekor.eu.org%2ftechlog%2fconnection-limit-linux%2f"><svg viewBox="0 0 1792 1792"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759H734V905H479V609h255V391q0-186 104-288.5T1115 0q147 0 228 12z"/></svg></a>

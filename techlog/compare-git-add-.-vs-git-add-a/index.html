@@ -6,8 +6,7 @@ The difference is that git add -A also stages files in …"><meta property="og:u
 <a class=page-link href=/note/>Notes</a>
 <a class=page-link href=/tags/>Tags</a>
 <a class=page-link href=/contact/>Contact</a>
-<a class=page-link href=/search/>Search</a>
-<a class=page-link href=/daily/>Daily</a></div></nav></div></header><main id=main-content tabindex=-1 class=page-content aria-label=Content style=padding-bottom:5px><div class="wrapper wrapper_post"><article class=post itemscope itemtype=https://schema.org/BlogPosting><header class=post-header><h1 class=post-title itemprop="name headline">Compare `git add .` vs `git add -A`</h1><div class=post-meta><div class="post-date pull-left">Posted on
+<a class=page-link href=/search/>Search</a></div></nav></div></header><main id=main-content tabindex=-1 class=page-content aria-label=Content style=padding-bottom:5px><div class="wrapper wrapper_post"><article class=post itemscope itemtype=https://schema.org/BlogPosting><header class=post-header><h1 class=post-title itemprop="name headline">Compare `git add .` vs `git add -A`</h1><div class=post-meta><div class="post-date pull-left">Posted on
 <time datetime=2018-12-12T06:11:23+02:00>Dec 12, 2018</time></div><div class=pull-right><a href=/tags/git/>#git</a></div></div><br></header><div class=post-content itemprop=articleBody><p>Both of these will stage all files, including new files (which <code>git commit -a</code> misses) and deleted files.</p><p>The difference is that <code>git add -A</code> also stages files in higher directories that still belong to the same git repository. Here&rsquo;s an example:</p><pre tabindex=0><code>/my-repo
   .git/
   subfolder/

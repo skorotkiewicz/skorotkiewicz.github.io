@@ -6,8 +6,7 @@ check the path to your openvpn.exe! New-NetFirewallRule -DisplayName “OpenVPN 
 <a class=page-link href=/note/>Notes</a>
 <a class=page-link href=/tags/>Tags</a>
 <a class=page-link href=/contact/>Contact</a>
-<a class=page-link href=/search/>Search</a>
-<a class=page-link href=/daily/>Daily</a></div></nav></div></header><main id=main-content tabindex=-1 class=page-content aria-label=Content style=padding-bottom:5px><div class="wrapper wrapper_post"><article class=post itemscope itemtype=https://schema.org/BlogPosting><header class=post-header><h1 class=post-title itemprop="name headline">How to add a Windows Firewall rule to enable client-to-client communication through OpenVPN</h1><div class=post-meta><div class="post-date pull-left">Posted on
+<a class=page-link href=/search/>Search</a></div></nav></div></header><main id=main-content tabindex=-1 class=page-content aria-label=Content style=padding-bottom:5px><div class="wrapper wrapper_post"><article class=post itemscope itemtype=https://schema.org/BlogPosting><header class=post-header><h1 class=post-title itemprop="name headline">How to add a Windows Firewall rule to enable client-to-client communication through OpenVPN</h1><div class=post-meta><div class="post-date pull-left">Posted on
 <time datetime=2017-12-09T23:18:20+02:00>Dec 9, 2017</time></div><div class=pull-right><a href=/tags/windows/>#windows</a>
 <a href=/tags/firewall/>#firewall</a>
 <a href=/tags/openvpn/>#openvpn</a></div></div><br></header><div class=post-content itemprop=articleBody><p>Open PowerShell with Administrator Privileges and type:<br><small>check the path to your <code>openvpn.exe</code>!</small><br></p><pre tabindex=0><code>New-NetFirewallRule -DisplayName “OpenVPN allow Inbound” -Direction Inbound -Program %ProgramFiles%\OpenVPN\bin\openvpn.exe -RemoteAddress LocalSubnet -Action Allow

@@ -9,8 +9,7 @@ I keep my main repo on a self-hosted server and mirror it to GitHub. Two remotes
 <a class=page-link href=/note/>Notes</a>
 <a class=page-link href=/tags/>Tags</a>
 <a class=page-link href=/contact/>Contact</a>
-<a class=page-link href=/search/>Search</a>
-<a class=page-link href=/daily/>Daily</a></div></nav></div></header><main id=main-content tabindex=-1 class=page-content aria-label=Content style=padding-bottom:5px><div class="wrapper wrapper_post"><article class=post itemscope itemtype=https://schema.org/BlogPosting><header class=post-header><h1 class=post-title itemprop="name headline">Push to multiple git remotes with one command</h1><div class=post-meta><div class="post-date pull-left">Posted on
+<a class=page-link href=/search/>Search</a></div></nav></div></header><main id=main-content tabindex=-1 class=page-content aria-label=Content style=padding-bottom:5px><div class="wrapper wrapper_post"><article class=post itemscope itemtype=https://schema.org/BlogPosting><header class=post-header><h1 class=post-title itemprop="name headline">Push to multiple git remotes with one command</h1><div class=post-meta><div class="post-date pull-left">Posted on
 <time datetime=2026-10-20T22:39:21+02:00>Oct 20, 2026</time></div><div class=pull-right><a href=/tags/git/>#git</a>
 <a href=/tags/cheat/>#cheat</a>
 <a href=/tags/sheet/>#sheet</a></div></div><br></header><div class=post-content itemprop=articleBody><p><strong>Push to multiple git remotes with one command</strong></p><p>I keep my main repo on a self-hosted server and mirror it to GitHub. Two remotes, one command.</p><p><strong>1. Add the remotes</strong></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>git remote add aurcade ssh://git@myserver.org:2222/user/repo.git
