@@ -28,6 +28,6 @@ layout: projects
   <p id="projects-status" role="status" aria-live="polite"></p>
   <button type="button" class="projects-retry" hidden>Try again</button>
   <ul id="projects-list" class="projects-list" aria-label="Projects"></ul>
-  <p class="projects-source"><a href="https://yap.sekor.eu.org/documents/128e05de4e1b3055dbad4163fa9106ceba199d9112e2065856ef23b852c5c1c5">View project feed</a></p>
+  <p class="projects-source">This project list is managed with <a href="https://github.com/skorotkiewicz/localist">Localist</a>. <a href="https://yap.sekor.eu.org/documents/128e05de4e1b3055dbad4163fa9106ceba199d9112e2065856ef23b852c5c1c5">View project feed</a></p>
   <noscript><p>Enable JavaScript to load the project list, or open the project feed above.</p></noscript>
 </section>
