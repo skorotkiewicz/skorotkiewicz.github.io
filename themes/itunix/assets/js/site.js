@@ -141,7 +141,9 @@
         if (!response.ok) throw new Error('Projects unavailable');
         const data = await response.json();
         if (!Array.isArray(data.projects)) throw new Error('Invalid project list');
-        projects = data.projects.filter((project) => project?.public === true && typeof project.name === 'string').map((project) => ({
+        projects = data.projects.filter((project) => project?.public === true && typeof project.name === 'string')
+          .sort((a, b) => (Date.parse(b.updatedAt) || 0) - (Date.parse(a.updatedAt) || 0))
+          .map((project) => ({
           name: project.name,
           category: typeof project.category === 'string' ? project.category : 'Other',
           status: typeof project.status === 'string' ? project.status : '',
