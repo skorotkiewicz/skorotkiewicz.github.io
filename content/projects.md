@@ -4,7 +4,10 @@ description: "My current projects, their status, and source repositories."
 layout: projects
 ---
 
-<!-- projects https://github.com/skorotkiewicz/localist -->
+<!-- 
+    projects https://github.com/skorotkiewicz/localist 
+      - themes/itunix/assets/js/site.js l-58:l-173
+-->
 <section id="projects-view" data-source="https://yap.sekor.eu.org/documents/128e05de4e1b3055dbad4163fa9106ceba199d9112e2065856ef23b852c5c1c5">
   <p>Things I'm building and maintaining.</p>
   <form class="projects-filters" hidden>
