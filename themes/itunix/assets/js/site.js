@@ -54,6 +54,125 @@
     });
   }
 
+
+// yap projects https://github.com/skorotkiewicz/localist
+
+  const projectsView = document.querySelector('#projects-view');
+  if (projectsView) {
+    const filters = projectsView.querySelector('form');
+    const query = filters.elements.namedItem('query');
+    const category = filters.elements.namedItem('category');
+    const projectStatus = filters.elements.namedItem('status');
+    const list = projectsView.querySelector('#projects-list');
+    const message = projectsView.querySelector('#projects-status');
+    const retry = projectsView.querySelector('.projects-retry');
+    const statuses = { progress: 'In progress', complete: 'Completed' };
+    let projects = [];
+
+    function repositoryURL(value) {
+      if (typeof value !== 'string') return null;
+      const address = value.replace(/^git@github\.com:/i, 'https://github.com/');
+      try {
+        const url = new URL(address);
+        if (!['https:', 'http:'].includes(url.protocol)) return null;
+        url.pathname = url.pathname.replace(/\.git\/?$/, '');
+        return url;
+      } catch { return null; }
+    }
+
+    function renderProjects() {
+      const words = query.value.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
+      const matches = projects.filter((project) => {
+        const text = [project.name, project.description, project.category, ...project.tags].join(' ').toLocaleLowerCase();
+        return (!category.value || project.category === category.value)
+          && (!projectStatus.value || project.status === projectStatus.value)
+          && words.every((word) => text.includes(word));
+      });
+      const fragment = document.createDocumentFragment();
+      for (const project of matches) {
+        const item = document.createElement('li');
+        const heading = document.createElement('h2');
+        heading.className = 'project-name';
+        const repositories = [...new Set(project.repositories.map(repositoryURL).filter(Boolean).map((url) => url.href))];
+        if (repositories.length) {
+          const link = document.createElement('a');
+          link.href = repositories[0];
+          link.textContent = project.name;
+          heading.append(link);
+        } else { heading.textContent = project.name; }
+        item.append(heading);
+        const meta = document.createElement('p');
+        meta.className = 'project-meta';
+        meta.textContent = [project.category, statuses[project.status] || project.status, ...project.tags].filter(Boolean).join(' · ');
+        item.append(meta);
+        if (project.description) {
+          const description = document.createElement('p');
+          description.className = 'project-description';
+          description.textContent = project.description;
+          item.append(description);
+        }
+        if (repositories.length) {
+          const links = document.createElement('p');
+          links.className = 'project-repositories';
+          for (const address of repositories) {
+            const link = document.createElement('a');
+            link.href = address;
+            link.textContent = new URL(address).hostname === 'github.com' ? 'GitHub' : new URL(address).hostname;
+            links.append(link);
+          }
+          item.append(links);
+        }
+        fragment.append(item);
+      }
+      list.replaceChildren(fragment);
+      message.textContent = matches.length
+        ? `${matches.length} ${matches.length === 1 ? 'project' : 'projects'}${matches.length !== projects.length ? ` of ${projects.length}` : ''}.`
+        : (projects.length ? 'No projects match these filters.' : 'No public projects yet.');
+    }
+
+    async function loadProjects() {
+      projectsView.setAttribute('aria-busy', 'true');
+      message.textContent = 'Loading projects…';
+      retry.hidden = true;
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 12000);
+      try {
+        const response = await fetch(projectsView.dataset.source, { signal: controller.signal, cache: 'no-store' });
+        if (!response.ok) throw new Error('Projects unavailable');
+        const data = await response.json();
+        if (!Array.isArray(data.projects)) throw new Error('Invalid project list');
+        projects = data.projects.filter((project) => project?.public === true && typeof project.name === 'string').map((project) => ({
+          name: project.name,
+          category: typeof project.category === 'string' ? project.category : 'Other',
+          status: typeof project.status === 'string' ? project.status : '',
+          description: typeof project.description === 'string' ? project.description.trim() : '',
+          tags: Array.isArray(project.tags) ? project.tags.filter((tag) => typeof tag === 'string') : [],
+          repositories: Array.isArray(project.repositories) ? project.repositories : [],
+        }));
+        const categories = [...new Set(projects.map((project) => project.category))].sort((a, b) => a.localeCompare(b));
+        const selected = category.value;
+        category.replaceChildren(new Option('All categories', ''), ...categories.map((name) => new Option(name, name)));
+        if (categories.includes(selected)) category.value = selected;
+        filters.hidden = false;
+        renderProjects();
+      } catch {
+        message.textContent = 'Projects could not load. Try again or open the project feed below.';
+        retry.hidden = false;
+      } finally {
+        clearTimeout(timeout);
+        projectsView.setAttribute('aria-busy', 'false');
+      }
+    }
+    filters.addEventListener('submit', (event) => event.preventDefault());
+    filters.addEventListener('input', renderProjects);
+    filters.addEventListener('change', renderProjects);
+    retry.addEventListener('click', loadProjects);
+    loadProjects();
+  }
+
+// /yap projects
+
+
   const input = document.querySelector('#search-input');
   if (!input) return;
   const form = document.querySelector('#search-container');

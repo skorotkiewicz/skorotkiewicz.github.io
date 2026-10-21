@@ -11,6 +11,9 @@ slug: projects
 draft: false
 ---
 
+<!-- projects https://github.com/skorotkiewicz/localist -->
+For my current work, see the [Projects page]({{< relref "/projects.md" >}}). The list below covers earlier projects.
+
 <style>
 
 table {

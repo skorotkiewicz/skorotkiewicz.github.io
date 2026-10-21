@@ -1,0 +1,34 @@
+.projects-filters:not([hidden]) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.projects-filter {
+  display: flex;
+  flex: 1 1 160px;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 14px;
+}
+.projects-filter:first-child { flex-grow: 2; }
+.projects-filters input, .projects-filters select, .projects-retry {
+  box-sizing: border-box;
+  min-width: 0;
+  width: 100%;
+  padding: 9px 10px;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  background: #fff;
+  color: #111;
+  font: inherit;
+}
+.projects-retry { width: auto; margin-bottom: 15px; cursor: pointer; }
+.projects-list { list-style: none; margin-left: 0; }
+.projects-list > li { padding: 18px 0; border-bottom: 1px solid #e8e8e8; }
+.post-content .project-name { margin-bottom: 5px; font-size: 20px; line-height: 1.4; }
+.project-meta { margin-bottom: 8px; color: #555; font-size: 14px; }
+.project-description { margin-bottom: 8px; white-space: pre-line; overflow-wrap: anywhere; }
+.project-repositories { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 0; font-size: 14px; }
+.projects-source { margin-top: 20px; font-size: 14px; }
